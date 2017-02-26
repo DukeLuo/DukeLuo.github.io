@@ -57,8 +57,6 @@
 					
 						<li><a href="/archives">Archives</a></li>
 					
-						<li><a href="/about">About</a></li>
-					
 					<li>
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
@@ -75,80 +73,20 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/" title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1" itemprop="url">MIT 6.00.1x  计算机科学和Python编程导论  Set 1</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="DukeLuo" target="_blank" itemprop="author">DukeLuo</a>
-		
-  <p class="article-time">
-    <time datetime="2017-02-26T04:41:02.752Z" itemprop="datePublished"> 发表于 2017-02-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="Counting-Vowels"><a href="#Counting-Vowels" class="headerlink" title="Counting Vowels "></a><strong>Counting Vowels </strong></h3><blockquote>
-<p>Assume s is a string of lower case characters.<br>Write a program that counts up the number of vowels contained in the string s. Valid vowels are: ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’. For example, if s = ‘azcbobobegghakl’, your program should print:<br><code>Number of vowels: 5</code></p>
-<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'Number of vowel: '</span>+str(s.count(<span class="string">'a'</span>)+s.count(<span class="string">'e'</span>)+s.count(<span class="string">'i'</span>)+s.count(<span class="string">'o'</span>)+s.count(<span class="string">'u'</span>)))</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Counting-bobs"><a href="#Counting-bobs" class="headerlink" title="Counting bobs "></a><strong>Counting bobs </strong></h3><blockquote>
-<p>Assume s is a string of lower case characters.<br>Write a program that prints the number of times the string ‘bob’ occurs in s. For example, if s = ‘azcbobobegghakl’, then your program should print:<br><code>Number of times bob occurs is: 2</code></p>
-<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="number">0</span></span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)<span class="number">-2</span>):</span><br><span class="line">    <span class="keyword">if</span> (s[i:i+<span class="number">3</span>]==<span class="string">'bob'</span>):</span><br><span class="line">        num+=<span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Number of times bob occurs is: '</span>+str(num))</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Alphabetical-Substrings"><a href="#Alphabetical-Substrings" class="headerlink" title="Alphabetical Substrings"></a><strong>Alphabetical Substrings</strong></h3><blockquote>
-<p>Assume s is a string of lower case characters.<br>Write a program that prints the longest substring of s in which the letters occur in alphabetical order. For example,  if s = ‘azcbobobegghakl’, then your program should print:<br><code>Longest substring in alphabetical order is: beggh</code></p>
-<p>In the case of ties, print the first substring. For example, if s = ‘abcbcd’, then your program should print:<br><code>Longest substring in alphabetical order is: abc</code></p>
-<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span><br><span class="line">若未按照字母顺序，便分割字符串，得到字符子串，</span><br><span class="line">然后打印长度最长的字符子串</span><br><span class="line">'''</span></span><br><span class="line">newL=[]</span><br><span class="line">beg=<span class="number">0</span></span><br><span class="line">remain=s </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)<span class="number">-1</span>):</span><br><span class="line">    <span class="keyword">if</span> (s[i+<span class="number">1</span>] &lt; s[i]):</span><br><span class="line">        end=i+<span class="number">1</span></span><br><span class="line">        newL.append(s[beg:end])</span><br><span class="line">        beg=end</span><br><span class="line">        remain=s[beg:]</span><br><span class="line">newL.append(remain)</span><br><span class="line">longest=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> newL:</span><br><span class="line">    <span class="keyword">if</span> len(e) &gt; len(longest):</span><br><span class="line">        longest=e</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Longest substring in alphabetical order is: '</span>+str(longest))</span><br></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<h3 id="I’m-gonna-make-him-an-offer-he-can’t-refuse-——《Godfather》"><a href="#I’m-gonna-make-him-an-offer-he-can’t-refuse-——《Godfather》" class="headerlink" title="I’m gonna make him an offer he can’t refuse.    ——《Godfather》"></a><strong><em>I’m gonna make him an offer he can’t refuse.</em></strong>    ——<strong>《Godfather》</strong></h3></blockquote>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/MIT/">MIT</a><a href="/tags/分享/">分享</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/" title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1" itemprop="url">
+  
+    <h1 itemprop="name">MIT 6.00.1x  计算机科学和Python编程导论  Set 1</h1>
+    
+     
+      <p itemprop="description" >My personal solution to the problem set 1.</p>
+      
+    
+    <time datetime="2017-02-26T04:41:02.752Z" itemprop="datePublished">2017-02-26</time>
+  </a>
+</section>
 
 
 
