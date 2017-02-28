@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>MIT 6.00.1x  计算机科学和Python编程导论  Set 1 | DukeLuo&#39;s Blog</title>
+    <title>关于python变量名的几点注意 | DukeLuo&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="DukeLuo">
     
 
     
-    <meta name="description" content="My personal solution to the problem set 1.">
+    <meta name="description" content="一点笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 1">
-<meta property="og:url" content="http://yoursite.com/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/index.html">
+<meta property="og:title" content="关于python变量名的几点注意">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/关于python变量名的几点注意/index.html">
 <meta property="og:site_name" content="DukeLuo's Blog">
-<meta property="og:description" content="My personal solution to the problem set 1.">
-<meta property="og:updated_time" content="2017-02-26T04:43:33.204Z">
+<meta property="og:description" content="一点笔记">
+<meta property="og:updated_time" content="2017-02-28T10:47:28.348Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 1">
-<meta name="twitter:description" content="My personal solution to the problem set 1.">
+<meta name="twitter:title" content="关于python变量名的几点注意">
+<meta name="twitter:description" content="一点笔记">
 
     
     <link rel="alternative" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
@@ -78,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/" title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1" itemprop="url">MIT 6.00.1x  计算机科学和Python编程导论  Set 1</a>
+      <a href="/2017/02/28/关于python变量名的几点注意/" title="关于python变量名的几点注意" itemprop="url">关于python变量名的几点注意</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="DukeLuo" target="_blank" itemprop="author">DukeLuo</a>
 		
   <p class="article-time">
-    <time datetime="2017-02-26T04:41:02.752Z" itemprop="datePublished"> 发表于 2017-02-26</time>
+    <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished"> 发表于 2017-02-28</time>
     
   </p>
 </header>
@@ -94,31 +94,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-Vowels"><span class="toc-number">1.</span> <span class="toc-text">Counting Vowels </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-bobs"><span class="toc-number">2.</span> <span class="toc-text">Counting bobs </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabetical-Substrings"><span class="toc-number">3.</span> <span class="toc-text">Alphabetical Substrings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I’m-gonna-make-him-an-offer-he-can’t-refuse-——《Godfather》"><span class="toc-number">4.</span> <span class="toc-text">I’m gonna make him an offer he can’t refuse.    ——《Godfather》</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Points"><span class="toc-number">1.</span> <span class="toc-text">Points</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="Counting-Vowels"><a href="#Counting-Vowels" class="headerlink" title="Counting Vowels "></a><strong>Counting Vowels </strong></h3><blockquote>
-<p>Assume s is a string of lower case characters.<br>Write a program that counts up the number of vowels contained in the string s. Valid vowels are: ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’. For example, if s = ‘azcbobobegghakl’, your program should print:<br><code>Number of vowels: 5</code></p>
-<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'Number of vowel: '</span>+str(s.count(<span class="string">'a'</span>)+s.count(<span class="string">'e'</span>)+s.count(<span class="string">'i'</span>)+s.count(<span class="string">'o'</span>)+s.count(<span class="string">'u'</span>)))</span><br></pre></td></tr></table></figure>
+		<h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><p>1.类似<code>__xxx__</code>的变量名，以双下划线开头，且以双下划线结尾的，是特殊变量。特殊变量可以直接访问，不是private变量。不能用<code>__name__</code>,<code>__score__</code>这样的变量名。</p>
+<p>2.以一个下划线开头的实例变量名，比如<code>_name</code>，这样的实例变量外部是可以访问的，但是，约定俗成，应视为私有变量，不应随便访问。</p>
+<p>3.以__开头的实例变量就变成了一个private。只有内部可以访问，外部不能访问。</p>
+<p>4.可以通过_类名<strong>实例变量名强行访问</strong>实例变量名。</p>
 <hr>
-<h3 id="Counting-bobs"><a href="#Counting-bobs" class="headerlink" title="Counting bobs "></a><strong>Counting bobs </strong></h3><blockquote>
-<p>Assume s is a string of lower case characters.<br>Write a program that prints the number of times the string ‘bob’ occurs in s. For example, if s = ‘azcbobobegghakl’, then your program should print:<br><code>Number of times bob occurs is: 2</code></p>
-<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="number">0</span></span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)<span class="number">-2</span>):</span><br><span class="line">    <span class="keyword">if</span> (s[i:i+<span class="number">3</span>]==<span class="string">'bob'</span>):</span><br><span class="line">        num+=<span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Number of times bob occurs is: '</span>+str(num))</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Alphabetical-Substrings"><a href="#Alphabetical-Substrings" class="headerlink" title="Alphabetical Substrings"></a><strong>Alphabetical Substrings</strong></h3><blockquote>
-<p>Assume s is a string of lower case characters.<br>Write a program that prints the longest substring of s in which the letters occur in alphabetical order. For example,  if s = ‘azcbobobegghakl’, then your program should print:<br><code>Longest substring in alphabetical order is: beggh</code></p>
-<p>In the case of ties, print the first substring. For example, if s = ‘abcbcd’, then your program should print:<br><code>Longest substring in alphabetical order is: abc</code></p>
-<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span><br><span class="line">若未按照字母顺序，便分割字符串，得到字符子串，</span><br><span class="line">然后打印长度最长的字符子串</span><br><span class="line">'''</span></span><br><span class="line">newL=[]</span><br><span class="line">beg=<span class="number">0</span></span><br><span class="line">remain=s </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)<span class="number">-1</span>):</span><br><span class="line">    <span class="keyword">if</span> (s[i+<span class="number">1</span>] &lt; s[i]):</span><br><span class="line">        end=i+<span class="number">1</span></span><br><span class="line">        newL.append(s[beg:end])</span><br><span class="line">        beg=end</span><br><span class="line">        remain=s[beg:]</span><br><span class="line">newL.append(remain)</span><br><span class="line">longest=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> newL:</span><br><span class="line">    <span class="keyword">if</span> len(e) &gt; len(longest):</span><br><span class="line">        longest=e</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Longest substring in alphabetical order is: '</span>+str(longest))</span><br></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<h3 id="I’m-gonna-make-him-an-offer-he-can’t-refuse-——《Godfather》"><a href="#I’m-gonna-make-him-an-offer-he-can’t-refuse-——《Godfather》" class="headerlink" title="I’m gonna make him an offer he can’t refuse.    ——《Godfather》"></a><strong><em>I’m gonna make him an offer he can’t refuse.</em></strong>    ——<strong>《Godfather》</strong></h3></blockquote>
+<p><strong><em>请你相信我:</em></strong></p>
+<p><strong><em>我所说的每一句话，</em></strong></p>
+<p><strong><em>都是错的</em></strong></p>
+<p><strong>——和菜头</strong></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -132,7 +120,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/MIT/">MIT</a><a href="/tags/分享/">分享</a>
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/读书笔记/">读书笔记</a>
   </div>
 
 </div>
@@ -141,7 +129,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/02/28/关于python变量名的几点注意/" data-title="关于python变量名的几点注意 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -154,20 +142,20 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/02/28/关于python变量名的几点注意/" title="关于python变量名的几点注意">
-  <strong>上一篇：</strong><br/>
-  <span>
-  关于python变量名的几点注意</span>
+
+<div class="next">
+<a href="/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/"  title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1">
+ <strong>下一篇：</strong><br/> 
+ <span>MIT 6.00.1x  计算机科学和Python编程导论  Set 1
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1" data-url="http://yoursite.com/2017/02/26/MIT 6.00.1x  计算机科学和Python编程导论  Set 1/"></div>
+	<div class="ds-thread" data-thread-key="2017/02/28/关于python变量名的几点注意/" data-title="关于python变量名的几点注意" data-url="http://yoursite.com/2017/02/28/关于python变量名的几点注意/"></div>
 </section>
 
 
@@ -177,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-Vowels"><span class="toc-number">1.</span> <span class="toc-text">Counting Vowels </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-bobs"><span class="toc-number">2.</span> <span class="toc-text">Counting bobs </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabetical-Substrings"><span class="toc-number">3.</span> <span class="toc-text">Alphabetical Substrings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I’m-gonna-make-him-an-offer-he-can’t-refuse-——《Godfather》"><span class="toc-number">4.</span> <span class="toc-text">I’m gonna make him an offer he can’t refuse.    ——《Godfather》</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Points"><span class="toc-number">1.</span> <span class="toc-text">Points</span></a></li></ol>
  
   </div>
 
