@@ -1,0 +1,527 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>MIT 6.00.1x  计算机科学和Python编程导论  Set 3 | DukeLuo&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="DukeLuo">
+    
+
+    
+    <meta name="description" content="My personal solution to the problem set 3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 3">
+<meta property="og:url" content="http://yoursite.com/2017/03/13/MIT 6.00.1x 计算机科学和Python编程导论 Set 3/index.html">
+<meta property="og:site_name" content="DukeLuo's Blog">
+<meta property="og:description" content="My personal solution to the problem set 3.">
+<meta property="og:image" content="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurve.png">
+<meta property="og:image" content="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurveMarked.png">
+<meta property="og:image" content="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurveFill.png">
+<meta property="og:image" content="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurveRectangles.png">
+<meta property="og:image" content="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_Rectangle1.png">
+<meta property="og:updated_time" content="2017-03-13T13:47:38.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 3">
+<meta name="twitter:description" content="My personal solution to the problem set 3.">
+<meta name="twitter:image" content="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurve.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="DukeLuo&#39;s Blog" title="DukeLuo&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="DukeLuo&#39;s Blog">DukeLuo&#39;s Blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/13/MIT 6.00.1x 计算机科学和Python编程导论 Set 3/" title="MIT 6.00.1x  计算机科学和Python编程导论  Set 3" itemprop="url">MIT 6.00.1x  计算机科学和Python编程导论  Set 3</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="DukeLuo" target="_blank" itemprop="author">DukeLuo</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-12T16:00:00.000Z" itemprop="datePublished"> 发表于 2017-03-13</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Radiation-Exposure"><span class="toc-number">1.</span> <span class="toc-text">Radiation Exposure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hangman-Part-1-Is-The-Word-Guessed"><span class="toc-number">2.</span> <span class="toc-text">Hangman Part 1: Is The Word Guessed?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printing-Out-The-User’s-Guess"><span class="toc-number">3.</span> <span class="toc-text">Printing Out The User’s Guess</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printing-Out-All-Available-Letters"><span class="toc-number">4.</span> <span class="toc-text">Printing Out All Available Letters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hangman-Part-2-The-Game"><span class="toc-number">5.</span> <span class="toc-text">Hangman Part 2: The Game</span></a></li></ol>
+		
+		</div>
+		
+		<script src="/assets/js/APlayer.min.js"> </script><h3 id="Radiation-Exposure"><a href="#Radiation-Exposure" class="headerlink" title="Radiation Exposure"></a>Radiation Exposure</h3><blockquote>
+<p>感谢 glhezjnucn 同学贡献的翻译!<br>“Radioactive decay” is the process by which an unstable atom loses energy and emits ionizing particles - what is commonly refered to as radiation. Exposure to radiation can be dangerous and is very important to measure to ensure that one is not exposed to too terribly much of it.辐射衰变是不稳定原子失去能量并释放电离子的过程-这通常被称为辐射。接触辐射（暴露于辐射）可能是危险的，同时检测并确保人们不暴露于过量辐射（的环境）中变得重要。<br>The radioactivity of a material decreases over time, as the material decays. A radioactive decay curve describes this decay. The x-axis measures time, and the y-axis measures the amount of activity produced by the radioactive sample. ‘Activity’ is defined as the rate at which the nuclei within the sample undergo transititions - put simply, this measures how much radiation is emitted at any one point in time. The measurement of activity is called the Becquerel (Bq). Here is a sample radioactive decay curve:物质的辐射活性随着时间的流逝而减少，因为辐射物质在衰减。辐射衰减曲线用于描述这样的衰减过程。x轴表示时间，y轴表示辐射物质样品产生的辐射活性量。辐射的活性量定义为处于物质迁变的核的比率，它给出某一时刻所释放的辐射量。活性的度量称为Bq(理解为度量的单位即量纲)。如下是一个辐射衰减曲线的样例：<br><img src="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurve.png" alt=""><br>Now here’s the problem we’d like to solve. Let’s say Sarina has moved into a new apartment. Unbeknownst to her, there is a sample of Cobalt-60 inside one of the walls of the apartment. Initially that sample had 10 MBq of activity, but she moves in after the sample has been there for 5 years. She lives in the apartment for 6 years, then leaves. How much radiation was she exposed to?<br>现在我们需要解决的问题是，假若Sarina搬进了新的房子，并不为她所知的是，房子的墙里有一个放射性钴-60样品。初始时，该样品具有10MBq(百万Bq)的辐射活性，但她是那个放射性物质在那里5年后才住进去的，她在那里住了6年，然后离开了。现在请问她接触了多少辐射？<br>We can actually figure this out using the radioactive decay curve from above. What we want to know is her total radiation exposure from year 5 to year 11.<br>我们当然可以从上图的辐射曲线中计算出来。我们所需要知道的是从第5年到第11年她所接触的辐射总量。<br><img src="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurveMarked.png" alt=""><br>Total radiation exposure corresponds to the area between the two green lines at time = 5 and time = 11, and under the blue radioactive decay curve. This should make intuitive sense - if the x axis measures time, and the y axis measures activity, then the area under the curve measures (time <em> activity) = MBq</em>years, or, approximately the total number of MBq Sarina was exposed to in her time in the radioactive apartment (technically, this result is the combination of gamma rays and beta particles she was exposed to, but this gets a bit complicated, so we’ll ignore it. Sorry, physicists!).<br>辐射总量对应的是时间从5到11所对应的两条绿色线所对应区域的面积。这可以利用直觉-如果x轴是时间，y轴是活性度量，那么曲线下的面积(时间辐射活性)=MBq年，或者，近似的，就是Sarina在那段时间所接触的辐射量(技术地说，是由于伽玛射线与贝塔粒子，不过这太复杂了，因此我们忽略，抱歉,物理学家们！)<br><img src="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurveFill.png" alt=""><br>So far, so good. But, how do we calculate this? Unlike a simple shape - say a square, or a circle - we have no easy way to tell what the area under this curve is.<br>到此一切都不错。但是我们怎么来计算呢？不像简单的形状-如正方形，圆-我们没有简单的方法获得曲线下区域的面积。<br>However, we have learned a technique that can help us here - approximation. Let’s use an approximation algorithm to estimate the area under this curve! We’ll do so by first splitting up the area into equally-sized rectangles (in this case, six of them, one rectangle per year):<br>不过，我们学过一种技术可以帮助我们-近似。我们用近似的方法来估计曲线下区域的面积！我们将这么来做，先将区域切成等尺寸（意指其中一边等长）的长方形，如下情形，是6个，每年一个长方形。<br><img src="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_DecayCurveRectangles.png" alt=""><br>Once we’ve done that, we can figure out the area of each rectangle pretty easily. Recall that the area of a rectangle is found by multiplying the height of the rectangle by its width. The height of this rectangle:<br>当我们如此做了之后，我们可以非常简便的计算出每个长方形的面积。回忆一下长方形的面积是宽度乘以高度。而这里（红色的）长方形的高度：<br><img src="http://www.xuetangx.com/asset-v1:MITx+6_00_1x+sp+type@asset+block/files_ps03_files_Rectangle1.png" alt=""><br>is the value of the curve at 5.0. If the curve is described by a function, f, we can obtain the value of the curve by asking for f(5.0).<br>是曲线在5.0处的值（函数值）.如果曲线由函数, f, 给出，我们可以用f(5.0)得到函数值.<br><code>f(5.0) = 5.181</code><br>The width of the rectangle is 1.0. So the area of this single rectangle is 1.0<em>5.181 = 5.181. To approximate how much radiation Sarina was exposed to, we next calculate the area of each successive rectangle and then sum up the areas of each rectangle to get the total. When we do this, we find that Sarina was exposed to nearly 23 MBq of radiation (technically, her apartment was bombarded by 23e6 </em> 3.154e6 = 7.25e13 neutrons, for those interested…).<br>长方形的宽为1，因此面积（指红色的那个）为1.0<em>5.181 = 5.181. 为近似的计算Sarina接触的辐射总量，我们将逐次的面积加起来即可。当我们这么假设我们发现Sarina接触的辐射总量差不多是23 MBq (技术的说, 她的房子被大约23e6 </em> 3.154e6 = 7.25e13 个中子所轰炸, 如果有人感兴趣的话。).<br>Whether or not this will kill Sarina depends exactly on the type of radiation she was exposed to (see this link which discusses more about the ways of measuring radiation). Either way, she should probably ask her landlord for a substantial refund.<br>这是否足以使Sarina致命，这取决于她所接触辐射的类型（查看链接可以获知更多关于辐射量计算的信息）。或许她可以向房东索取大量的赔偿。<br>In this problem, you are asked to find the amount of radiation a person is exposed to during some period of time by completing the following function:<br>这个问题中，要求你计算某人在某个时间段所接触的辐射量，完成如下函数的设计：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">radiationExposure</span><span class="params">(start, stop, step)</span>:</span></span><br><span class="line">    <span class="string">'''</span><br><span class="line">    Computes and returns the amount of radiation exposed</span><br><span class="line">    to between the start and stop times. Calls the </span><br><span class="line">    function f (defined for you in the grading script)</span><br><span class="line">    to obtain the value of the function at any point.</span><br><span class="line"> </span><br><span class="line">    start: integer, the time at which exposure begins</span><br><span class="line">    stop: integer, the time at which exposure ends</span><br><span class="line">    step: float, the width of each rectangle. You can assume that</span><br><span class="line">      the step size will always partition the space evenly.</span><br><span class="line"></span><br><span class="line">    returns: float, the amount of radiation exposed to </span><br><span class="line">      between start and stop times.</span><br><span class="line">    '''</span></span><br><span class="line">    <span class="comment"># FILL IN YOUR CODE HERE...</span></span><br><span class="line">    totalRadiation=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> start&lt;stop:</span><br><span class="line">        totalRadiation+=step*f(start)</span><br><span class="line">        start+=step</span><br><span class="line">    <span class="keyword">return</span> totalRadiation</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Hangman-Part-1-Is-The-Word-Guessed"><a href="#Hangman-Part-1-Is-The-Word-Guessed" class="headerlink" title="Hangman Part 1: Is The Word Guessed?"></a>Hangman Part 1: Is The Word Guessed?</h3><blockquote>
+<p>Please read the Hangman Introduction before starting this problem. The helper functions you will be creating in the next three exercises are simply suggestions, but you DO have to implement them if you want to get points for this Hangman Problem Set. If you’d prefer to structure your Hangman program in a different way, feel free to redo this Problem Set in a different way. However, if you’re new to programming, or at a loss of how to construct this program, we strongly suggest that you implement the next three helper functions before continuing on to Hangman Part 2.<br>开始这个问题之前请阅读前面关于猜单词游戏Hangman的介绍说明。在接下来的三个练习中，你将创建辅助函数，建议的方法是简单的，但你想获得这个Hangman问题集的计分的话，你必须完成它们。如果你想以另外的方式构建Hangman游戏程序，你可以在别的地方重做设计。如果你是新手，或者对构建这个程序没有头绪的话，强烈建议你在进入游戏设计第二部分之前，实现下面的3个辅助函数。<br>We’ll start by writing 3 simple functions that will help us easily code the Hangman problem. First, implement the function isWordGuessed that takes in two parameters - a string, secretWord, and a list of letters, lettersGuessed. This function returns a boolean - True if secretWord has been guessed (ie, all the letters of secretWord are in lettersGuessed) and False otherwise.<br>我们从编写3个简单的辅助函数开始，这对完整解决游戏设计有帮助。首先实现函数isWordGuessed， 它有2个参数输入- 一个字符串, secretWord, 一个字符列表, lettersGuessed. 函数返回逻辑值 - True 如果 secretWord 已经被猜中 (ie, secretWord 中的所有字母都在lettersGuessed) 或 False 否则.<br>Example Usage:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>secretWord = <span class="string">'apple'</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lettersGuessed = [<span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'k'</span>, <span class="string">'p'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> isWordGuessed(secretWord, lettersGuessed)</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<p>For this function, you may assume that all the letters in secretWord and lettersGuessed are lowercase.<br>函数里,你可以假设secretWord 与 lettersGuessed 都是小写字母.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def isWordGuessed(secretWord, lettersGuessed):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    secretWord: string, the word the user is guessing</span><br><span class="line">    lettersGuessed: list, what letters have been guessed so far</span><br><span class="line">    returns: boolean, True if all the letters of secretWord are in lettersGuessed;</span><br><span class="line">      False otherwise</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    # FILL IN YOUR CODE HERE...</span><br><span class="line">    result=None</span><br><span class="line">    for letter in secretWord:</span><br><span class="line">        if letter in lettersGuessed:</span><br><span class="line">            result=True</span><br><span class="line">        else:</span><br><span class="line">            result=False</span><br><span class="line">            break</span><br><span class="line">    return result</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Printing-Out-The-User’s-Guess"><a href="#Printing-Out-The-User’s-Guess" class="headerlink" title="Printing Out The User’s Guess"></a>Printing Out The User’s Guess</h3><blockquote>
+<p>Next, implement the function getGuessedWord that takes in two parameters - a string, secretWord, and a list of letters, lettersGuessed. This function returns a string that is comprised of letters and underscores, based on what letters in lettersGuessed are in secretWord. This shouldn’t be too different from isWordGuessed!<br>接着, 设计函数getGuessedWord，它有2个输入参数- 一个字符串, secretWord, 一个字母列表, lettersGuessed. 函数返回一个字符串，该返回串由字母与下划线组成，内容取决于lettersGuessed 中的字母是否是 secretWord的字母. 这个函数不应该与前面编写的代码isWordGuessed相差太大!<br>Example Usage:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>secretWord = <span class="string">'apple'</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>lettersGuessed = [<span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'k'</span>, <span class="string">'p'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> getGuessedWord(secretWord, lettersGuessed)</span><br><span class="line"><span class="string">'_ pp_ e'</span></span><br></pre></td></tr></table></figure>
+<p>When inserting underscores into your string, it’s a good idea to add at least a space after each one, so it’s clear to the user how many unguessed letters are left in the string (compare the readability of <strong>_<em> with </em> <em> </em> _ ). This is called usability - it’s very important, when programming, to consider the usability of your program. If users find your program difficult to understand or operate, they won’t use it!<br>当在字符串中加入下划线时，一个好主意是后面加至少一个空格，这样用户看还有多少个字母未猜中会更清楚。 (比较一下形式 </strong> 与 <em> </em> <em> </em> ). 这是可用性（ usability ）- 这对编程是很重要的, 编程是要考虑可用性. 要是用户发现你的程序难以理解或操作，他们可能不会用它!<br>For this problem, you are free to use spacing in any way you wish - our grader will only check that the letters and underscores are in the proper order; it will not look at spacing. We do encourage you to think about usability when designing.<br>对这里的问题，你可以随意地使用空格-我们的检测程序只顺序地检测字母与下划线。我们鼓励你编程时考虑可用性。<br>For this function, you may assume that all the letters in secretWord and lettersGuessed are lowercase.<br>在函数中你可以假设 secretWord 和lettersGuessed 都是小写字母.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def getGuessedWord(secretWord, lettersGuessed):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    secretWord: string, the word the user is guessing</span><br><span class="line">    lettersGuessed: list, what letters have been guessed so far</span><br><span class="line">    returns: string, comprised of letters and underscores that represents</span><br><span class="line">      what letters in secretWord have been guessed so far.</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    # FILL IN YOUR CODE HERE...</span><br><span class="line">    wordStr=&apos;&apos;</span><br><span class="line">    for letter in secretWord:</span><br><span class="line">        if letter in lettersGuessed:</span><br><span class="line">            wordStr+=letter</span><br><span class="line">        else:</span><br><span class="line">            wordStr+=&apos;_ &apos;</span><br><span class="line">    return wordStr</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Printing-Out-All-Available-Letters"><a href="#Printing-Out-All-Available-Letters" class="headerlink" title="Printing Out All Available Letters"></a>Printing Out All Available Letters</h3><blockquote>
+<p>Next, implement the function getAvailableLetters that takes in one parameter - a list of letters, lettersGuessed. This function returns a string that is comprised of lowercase English letters - all lowercase English letters that are not in lettersGuessed.<br>接着，实现函数getAvailableLetters，它接受一个输入参数- 一个字母列表lettersGuessed. 函数返回所有没有被猜测过（即不在lettersGuessed中）的小写字母按字母顺序组成的字符串。<br>Example Usage:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lettersGuessed = [<span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'k'</span>, <span class="string">'p'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> getAvailableLetters(lettersGuessed)</span><br><span class="line">abcdfghjlmnoqtuvwxyz</span><br></pre></td></tr></table></figure>
+<p>Note that this function should return the letters in alphabetical order, as in the example above.注意返回的字符串要按字母顺序，如上所示。<br>For this function, you may assume that all the letters in lettersGuessed are lowercase.这里你可以假设lettersGuessed中的字母都是小写的。<br>Hint: You might consider using string.ascii_lowercase, which is a string comprised of all lowercase letters:提示: 你可以考虑使用 string.ascii_lowercase,来获得所有小写字母:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> string</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> string.ascii_lowercase</span><br><span class="line">abcdefghijklmnopqrstuvwxyz</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAvailableLetters</span><span class="params">(lettersGuessed)</span>:</span></span><br><span class="line">    <span class="string">'''</span><br><span class="line">    lettersGuessed: list, what letters have been guessed so far</span><br><span class="line">    returns: string, comprised of letters that represents what letters have not</span><br><span class="line">      yet been guessed.</span><br><span class="line">    '''</span></span><br><span class="line">    <span class="comment"># FILL IN YOUR CODE HERE...</span></span><br><span class="line">    <span class="keyword">import</span> string</span><br><span class="line">    availableLetters=string.ascii_lowercase</span><br><span class="line">    <span class="keyword">for</span> letter <span class="keyword">in</span> lettersGuessed:</span><br><span class="line">        <span class="keyword">if</span> letter <span class="keyword">in</span> availableLetters:</span><br><span class="line">            availableLetters=availableLetters.replace(letter,<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> availableLetters</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Hangman-Part-2-The-Game"><a href="#Hangman-Part-2-The-Game" class="headerlink" title="Hangman Part 2: The Game"></a>Hangman Part 2: The Game</h3><blockquote>
+<p>感谢 glhezjnucn 童鞋的给力翻译!!<br>Now you will implement the function hangman, which takes one parameter - the secretWord the user is to guess. This starts up an interactive game of Hangman between the user and the computer. Be sure you take advantage of the three helper functions, isWordGuessed, getGuessedWord, and getAvailableLetters, that you’ve defined in the previous part.<br>现在你将开始实现（完整的游戏）程序hangman, 它有一个输入参数 –用户需要去猜测的单词 secretWord（后续程序用到的变量名）. 由它开始游戏程序Hangman用户与计算机的交互过程。确保你用到之前部分设计完成的辅助函数isWordGuessed, getGuessedWord, 和 getAvailableLetters.<br>Hints 提示:</p>
+<ul>
+<li><p>You should start by noticing where we’re using the provided functions (at the top of ps3_hangman.py) to load the words and pick a random one. Note that the functions loadWords and chooseWord should only be used on your local machine, not in the tutor. When you enter in your solution in the tutor, you only need to give your hangman function.<br>你需要注意到我们何时用到提供的函数 (程序 ps3_hangman.py的开始处) 来装入词库以及随机取词. 注意函数loadWords 和 chooseWord 只能用于你本地机器调试时，在提交代码中不用到. 当你提交解答代码时，你只须给出函数hangman.</p>
+</li>
+<li><p>Consider using lower() to convert user input to lower case. For example:考虑用函数 lower() 来将用户的输入转换为小写。<br><code>guess = &#39;A&#39;</code><br><code>guessInLowerCase = guess.lower()</code></p>
+</li>
+<li><p>Consider writing additional helper functions if you need them!如果你需要，你可以考虑编写额外的辅助函数</p>
+</li>
+<li><p>There are four important pieces of information you may wish to store:4个重要的信息你可能需要考虑保存</p>
+<ol>
+<li><code>secretWord</code>: The word to guess.猜测的目标单词.</li>
+<li><code>lettersGuessed</code>: The letters that have been guessed so far.追踪用户猜测过的字母</li>
+<li><code>mistakesMade</code>: The number of incorrect guesses made so far.记录用户猜测错误的次数</li>
+<li><code>availableLetters</code>: The letters that may still be guessed. Every time a player guesses a letter, the guessed letter must be removed from availableLetters (and if they guess a letter that is not in availableLetters, you should print a message telling them they’ve already guessed that - so try again!).还可以用来被猜测的字母，用户猜测过的字母需要从availableLetters移除，用户重复猜了的字母，你需要告知用户你已经猜过这个字母。</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">def hangman(secretWord):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    secretWord: string, the secret word to guess.</span><br><span class="line"></span><br><span class="line">    Starts up an interactive game of Hangman.</span><br><span class="line"></span><br><span class="line">    * At the start of the game, let the user know how many </span><br><span class="line">      letters the secretWord contains.</span><br><span class="line"></span><br><span class="line">    * Ask the user to supply one guess (i.e. letter) per round.</span><br><span class="line"></span><br><span class="line">    * The user should receive feedback immediately after each guess </span><br><span class="line">      about whether their guess appears in the computers word.</span><br><span class="line"></span><br><span class="line">    * After each round, you should also display to the user the </span><br><span class="line">      partially guessed word so far, as well as letters that the </span><br><span class="line">      user has not yet guessed.</span><br><span class="line"></span><br><span class="line">    Follows the other limitations detailed in the problem write-up.</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    # FILL IN YOUR CODE HERE...</span><br><span class="line">    print &apos;Welcome to the game Hangman!&apos;</span><br><span class="line">    print &apos;I am thinking of a word that is &apos;+str(len(secretWord))+&apos; letters long&apos;</span><br><span class="line">    print &apos;-------------&apos;</span><br><span class="line">    guessTime = 8</span><br><span class="line">    wordGuessed = &apos;&apos;</span><br><span class="line">    lettersGuessed = ()</span><br><span class="line">    while (guessTime &gt; 0):</span><br><span class="line">        print &apos;You have &apos;+str(guessTime)+&apos; guesses left&apos;</span><br><span class="line">        print &apos;Available letters: &apos;+getAvailableLetters(lettersGuessed)</span><br><span class="line">        inputLetter = raw_input(&apos;Please guess a letter: &apos;)</span><br><span class="line">        aLetter = inputLetter.lower()</span><br><span class="line">        if aLetter in lettersGuessed:</span><br><span class="line">            print &apos;Oops! You\&apos;ve already guessed that letter: &apos;+getGuessedWord(secretWord, lettersGuessed)</span><br><span class="line">            print &apos;------------&apos;</span><br><span class="line">        else:</span><br><span class="line">            lettersGuessed += (aLetter,)</span><br><span class="line">            if aLetter in secretWord:</span><br><span class="line">                print &apos;Good guess: &apos;+getGuessedWord(secretWord, lettersGuessed)</span><br><span class="line">                print &apos;------------&apos;</span><br><span class="line">                if getGuessedWord(secretWord,lettersGuessed).count(&apos;_ &apos;) ==0:</span><br><span class="line">                    print &apos;Congratulations,you won!&apos;</span><br><span class="line">                    break</span><br><span class="line">            else:</span><br><span class="line">                guessTime -= 1</span><br><span class="line">                print &apos;Oops! That letter is not in my word: &apos;+getGuessedWord(secretWord, lettersGuessed)</span><br><span class="line">                print &apos;------------&apos;</span><br><span class="line">    if guessTime == 0:</span><br><span class="line">        print &apos;Sorry,you ran out of guesses.The word was &apos;+str(secretWord)+&apos;.&apos;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong><em>If you’re with us,then be with us.</em> ——Storm</strong></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.daoapp.io/iframe?song=26420177&qssl=1&qlrc=1&qnarrow=0&autoplay=1"></iframe>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/MIT/">MIT</a><a href="/tags/分享/">分享</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/03/13/MIT 6.00.1x 计算机科学和Python编程导论 Set 3/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 3 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/03/06/体会之小游戏《Let's Go! PiPiXia!》/"  title="体会之小游戏《Let&#39;s Go! PiPiXia!》">
+ <strong>下一篇：</strong><br/> 
+ <span>体会之小游戏《Let&#39;s Go! PiPiXia!》
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2017/03/13/MIT 6.00.1x 计算机科学和Python编程导论 Set 3/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 3" data-url="http://yoursite.com/2017/03/13/MIT 6.00.1x 计算机科学和Python编程导论 Set 3/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Radiation-Exposure"><span class="toc-number">1.</span> <span class="toc-text">Radiation Exposure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hangman-Part-1-Is-The-Word-Guessed"><span class="toc-number">2.</span> <span class="toc-text">Hangman Part 1: Is The Word Guessed?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printing-Out-The-User’s-Guess"><span class="toc-number">3.</span> <span class="toc-text">Printing Out The User’s Guess</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Printing-Out-All-Available-Letters"><span class="toc-number">4.</span> <span class="toc-text">Printing Out All Available Letters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hangman-Part-2-The-Game"><span class="toc-number">5.</span> <span class="toc-text">Hangman Part 2: The Game</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/编程语言/" title="编程语言">编程语言<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/编程语言/转载/" title="转载">转载<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MIT/" title="MIT">MIT<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/分享/" title="分享">分享<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/体会心得/" title="体会心得">体会心得<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m DukeLuo. This is my blog. <br/>
+			I&#39;m the boss of this page, belive it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:defruturn@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="DukeLuo">DukeLuo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"dukeluo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
