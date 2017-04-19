@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-09T01:57:56.078Z</updated>
+  <updated>2017-04-19T15:50:31.677Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Let&#39;s begin</title>
+    <link href="http://yoursite.com/2017/04/19/begin/"/>
+    <id>http://yoursite.com/2017/04/19/begin/</id>
+    <published>2017-04-18T16:00:00.000Z</published>
+    <updated>2017-04-19T15:50:31.677Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><strong>首先，对萧大的编程入门指南一万个感谢！</strong>通过程序设计课程接触到C语言，便慢慢地迷上了0和1的世界，从此，在撸代码的道路上愈行愈远…  </p>
+<a id="more"></a>  
+<p>去年，偶然发现了萧大的编程指南，当时第一感觉，“ **，内容这么多，大部分还是英文材料，普通人能学嘛…”不过，经过短暂的犹豫后，便说服自己按照这份教程学习。那时，面对编程空有兴趣，什么都不会，什么都需要学，却不知何处下手。<br>记得当时下定决心后，竟有肾上激素分泌增加，心跳加速，脸红激动…</p>
+<h4 id="启蒙"><a href="#启蒙" class="headerlink" title="启蒙"></a>启蒙</h4><p>距离做出决定也有一段时间了，现今已完成MIT的6.00.1x课程与跟完廖雪峰python教程除实战部分。考虑到自己曾上过HIT的计算机导论，就没有完整地完成CS50课程，好像有些慢…<br>现在，纵向对比，从对CS了解的几乎为零，到如今完成了扫盲教育，对CS有了总体的感知。完成6.00.1x和教程后，积累了一定的代码量，对编程有了一些认知。在学习python的过程中，不认识的函数常需要自己查找文档，文档阅读能力也有了提高。</p>
+<p><img src="http://oonjkyvrf.bkt.clouddn.com/first.png" alt=""></p>
+<h4 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h4><p>按照指南，下一步便是指南中的关键点SICP。SICP是MIT多年的教材，包含如何构造计算机程序的魔法。拿到英文复印书籍时，“ **，好重…”哈哈，沉淀的都是知识。首先寄语自己，征服它!<br>跟完教程后，掌握了python的基本语法规则，计划在啃SICP的同时，通过一些小项目来不断锤炼。</p>
+<p><img src="http://oonjkyvrf.bkt.clouddn.com/second.png" alt=""></p>
+<h4 id="有话说"><a href="#有话说" class="headerlink" title="有话说"></a>有话说</h4><p><strong><em>Aim for the moon.If you miss,you may hit a star.</em></strong> —W.Clement Stone</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;首先，对萧大的编程入门指南一万个感谢！&lt;/strong&gt;通过程序设计课程接触到C语言，便慢慢地迷上了0和1的世界，从此，在撸代码的道路上愈行愈远…  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="总结" scheme="http://yoursite.com/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python字符串编码</title>
     <link href="http://yoursite.com/2017/04/09/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/"/>
     <id>http://yoursite.com/2017/04/09/python字符串编码/</id>
     <published>2017-04-08T16:00:00.000Z</published>
-    <updated>2017-04-09T01:57:56.078Z</updated>
+    <updated>2017-04-19T15:48:16.788Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h4 id="Unicode-·-UTF-8"><a href="#Unicode-·-UTF-8" class="headerlink" title="Unicode · UTF-8"></a>Unicode · UTF-8</h4><p>传统的字符编码方案，并无统一的标准，在多语言混合文本，常常会产生冲突。Unicode便是为了解决传统字符编码方案的局限而产生的。Unicode最常用的是用两个字节表示一个字符。现代操作系统和大多编程语言都支持Unicode。处理英文时，用Unicode编码比ASCII编码要多出一倍的储存空间，于是就出现了UTF-8编码。UTF-8采用一种变长的编码方式，根据不同的数字大小编码成1-6个字节。常用的英文字母被编码成1个字节，汉字通常是3个字节。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。</p>
 <hr>
@@ -31,7 +61,7 @@
     
     <summary type="html">
     
-      一点笔记
+      关于python字符串编码的一些理解
     
     </summary>
     
