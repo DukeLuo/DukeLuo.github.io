@@ -14,13 +14,15 @@
     <meta name="description" content="My personal solution to the problem set 2.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 2">
-<meta property="og:url" content="http://yoursite.com/2017/03/05/MIT 6.00.1x 计算机科学和Python编程导论 Set 2/index.html">
+<meta property="og:url" content="http://dukeluo.github.io/2017/03/05/MIT 6.00.1x 计算机科学和Python编程导论 Set 2/index.html">
 <meta property="og:site_name" content="DukeLuo's Blog">
 <meta property="og:description" content="My personal solution to the problem set 2.">
+<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/cc.png">
 <meta property="og:updated_time" content="2017-03-12T00:57:18.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 2">
 <meta name="twitter:description" content="My personal solution to the problem set 2.">
+<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/cc.png">
 
     
     <link rel="alternative" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
@@ -190,7 +192,10 @@ Monthly payment upper bound = (Balance x (1 + Monthly interest rate)12) / 12.0
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">lowerBound = balance / <span class="number">12</span></span><br><span class="line">upperBound = (balance * (<span class="number">1</span> + annualInterestRate / <span class="number">12.0</span>) ** <span class="number">12</span>) / <span class="number">12.0</span>        </span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        pay = (lowerBound + upperBound) / <span class="number">2.0</span></span><br><span class="line">        unpaidBalance=balance</span><br><span class="line">        <span class="keyword">for</span> month <span class="keyword">in</span> range(<span class="number">12</span>):</span><br><span class="line">                unpaidBalance-=pay</span><br><span class="line">                unpaidBalance=unpaidBalance + unpaidBalance * (annualInterestRate /<span class="number">12.0</span>)</span><br><span class="line">        <span class="keyword">if</span> abs(unpaidBalance - <span class="number">0</span>) &lt;=<span class="number">0.01</span>:  <span class="comment">#控制精度</span></span><br><span class="line">                <span class="keyword">print</span> <span class="string">'Lowest Payment: '</span>+<span class="string">'%.2f'</span> % pay</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> unpaidBalance &gt; <span class="number">0</span>:</span><br><span class="line">                        lowerBound = pay</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                        upperBound = pay</span><br></pre></td></tr></table></figure>
 <hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.daoapp.io/iframe?song=21301195&qssl=1&qlrc=0&qnarrow=0&autoplay=1"></iframe>  
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.daoapp.io/iframe?song=21301195&qssl=1&qlrc=0&qnarrow=0&autoplay=1"></iframe>#### 版权声明<br><img src="http://oonjkyvrf.bkt.clouddn.com/cc.png" alt=""></p>
+<p>本作品采用<a href="https://creativecommons.org/licenses/by/2.5/cn/" target="_blank" rel="external">知识共享署名 2.5 中国大陆许可协议</a>进行许可。<br>本文首发于<a href="http://dukeluo.com" target="_blank" rel="external">DukeLuo’s Blog</a>。欢迎转载，但转载请注明来自<a href="http://dukeluo.com" target="_blank" rel="external">DukeLuo’s Blog</a>，并保持转载后文章内容的完整。本人保留所有版权相关权利。  </p>
+<p>本文永久链接：<a href="http://dukeluo.github.io/2017/03/05/MIT">http://dukeluo.github.io/2017/03/05/MIT</a> 6.00.1x 计算机科学和Python编程导论 Set 2/</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -212,7 +217,7 @@ Monthly payment upper bound = (Balance x (1 + Monthly interest rate)12) / 12.0
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/03/05/MIT 6.00.1x 计算机科学和Python编程导论 Set 2/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 2 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://dukeluo.github.io/2017/03/05/MIT 6.00.1x 计算机科学和Python编程导论 Set 2/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 2 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
