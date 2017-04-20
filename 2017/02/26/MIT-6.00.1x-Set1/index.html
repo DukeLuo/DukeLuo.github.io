@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>python字符串编码 | DukeLuo&#39;s Blog</title>
+    <title>MIT 6.00.1x  计算机科学和Python编程导论  Set 1 | DukeLuo&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="DukeLuo">
     
 
     
-    <meta name="description" content="关于python字符串编码的一些理解">
+    <meta name="description" content="My personal solution to the problem set 1.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python字符串编码">
-<meta property="og:url" content="http://dukeluo.github.io/2017/04/09/python字符串编码/index.html">
+<meta property="og:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 1">
+<meta property="og:url" content="http://dukeluo.github.io/2017/02/26/MIT-6.00.1x-Set1/index.html">
 <meta property="og:site_name" content="DukeLuo's Blog">
-<meta property="og:description" content="关于python字符串编码的一些理解">
+<meta property="og:description" content="My personal solution to the problem set 1.">
 <meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/cc.png">
-<meta property="og:updated_time" content="2017-04-20T15:50:58.309Z">
+<meta property="og:updated_time" content="2017-04-20T16:21:03.247Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python字符串编码">
-<meta name="twitter:description" content="关于python字符串编码的一些理解">
+<meta name="twitter:title" content="MIT 6.00.1x  计算机科学和Python编程导论  Set 1">
+<meta name="twitter:description" content="My personal solution to the problem set 1.">
 <meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/cc.png">
 
     
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/09/python字符串编码/" title="python字符串编码" itemprop="url">python字符串编码</a>
+      <a href="/2017/02/26/MIT-6.00.1x-Set1/" title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1" itemprop="url">MIT 6.00.1x  计算机科学和Python编程导论  Set 1</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="DukeLuo" target="_blank" itemprop="author">DukeLuo</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-08T16:00:00.000Z" itemprop="datePublished"> 发表于 2017-04-09</time>
+    <time datetime="2017-02-25T16:00:00.000Z" itemprop="datePublished"> 发表于 2017-02-26</time>
     
   </p>
 </header>
@@ -97,20 +97,35 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Unicode-·-UTF-8"><span class="toc-number">1.</span> <span class="toc-text">Unicode · UTF-8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python的字符串编码"><span class="toc-number">2.</span> <span class="toc-text">python的字符串编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#encode-·-decode"><span class="toc-number">3.</span> <span class="toc-text">encode() · decode()</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-Vowels"><span class="toc-number">1.</span> <span class="toc-text">Counting Vowels </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-bobs"><span class="toc-number">2.</span> <span class="toc-text">Counting bobs </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabetical-Substrings"><span class="toc-number">3.</span> <span class="toc-text">Alphabetical Substrings</span></a></li></ol>
 		
 		</div>
 		
-		<script src="/assets/js/APlayer.min.js"> </script><h4 id="Unicode-·-UTF-8"><a href="#Unicode-·-UTF-8" class="headerlink" title="Unicode · UTF-8"></a>Unicode · UTF-8</h4><p>传统的字符编码方案，并无统一的标准，在多语言混合文本，常常会产生冲突。Unicode便是为了解决传统字符编码方案的局限而产生的。Unicode最常用的是用两个字节表示一个字符。现代操作系统和大多编程语言都支持Unicode。处理英文时，用Unicode编码比ASCII编码要多出一倍的储存空间，于是就出现了UTF-8编码。UTF-8采用一种变长的编码方式，根据不同的数字大小编码成1-6个字节。常用的英文字母被编码成1个字节，汉字通常是3个字节。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。</p>
+		<script src="/assets/js/APlayer.min.js"> </script><h3 id="Counting-Vowels"><a href="#Counting-Vowels" class="headerlink" title="Counting Vowels "></a><strong>Counting Vowels </strong></h3><blockquote>
+<p>Assume s is a string of lower case characters.<br>Write a program that counts up the number of vowels contained in the string s. Valid vowels are: ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’. For example, if s = ‘azcbobobegghakl’, your program should print:<br><code>Number of vowels: 5</code></p>
+<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'Number of vowel: '</span>+str(s.count(<span class="string">'a'</span>)+s.count(<span class="string">'e'</span>)+s.count(<span class="string">'i'</span>)+s.count(<span class="string">'o'</span>)+s.count(<span class="string">'u'</span>)))</span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="python的字符串编码"><a href="#python的字符串编码" class="headerlink" title="python的字符串编码"></a>python的字符串编码</h4><p>Python 2.7 默认的编码方式是 ASCII，即当直接使用<code>&#39;&#39;</code>、<code>&quot;&quot;</code>或者<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>来定义字符串时，采用的是 ASCII 的编码方式。定义Unicode 字符串则需要在前面添加u。字符串<code>&#39;xxx&#39;</code>虽然是ASCII编码，但也可以看成是UTF-8编码，而<code>u&#39;xxx&#39;</code>则只能是Unicode编码。<br>Python 3.x 字符串默认的编码方式为 Unicode，即<code>&#39;string&#39;</code>和<code>u&#39;string&#39;</code>等价。若要定义 ASCII 编码的字符串需在字符串前加b。</p>
+<h3 id="Counting-bobs"><a href="#Counting-bobs" class="headerlink" title="Counting bobs "></a><strong>Counting bobs </strong></h3><blockquote>
+<p>Assume s is a string of lower case characters.<br>Write a program that prints the number of times the string ‘bob’ occurs in s. For example, if s = ‘azcbobobegghakl’, then your program should print:<br><code>Number of times bob occurs is: 2</code></p>
+<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="number">0</span></span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)<span class="number">-2</span>):</span><br><span class="line">    <span class="keyword">if</span> (s[i:i+<span class="number">3</span>]==<span class="string">'bob'</span>):</span><br><span class="line">        num+=<span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Number of times bob occurs is: '</span>+str(num))</span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="encode-·-decode"><a href="#encode-·-decode" class="headerlink" title="encode() · decode()"></a>encode() · decode()</h4><p>在操作字符串时，为避免乱码，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。<br>decode的作用是将其他编码的字符串转换成unicode编码，如<code>str1.decode(&#39;gb2312&#39;)</code>，表示将gb2312编码的字符串str1转换成unicode编码。<br>encode的作用是将unicode编码转换成其他编码的字符串，如<code>str2.encode(&#39;utf-8&#39;)</code>,表示将unicode编码的字符串str2转换成utf-8编码。</p>
+<h3 id="Alphabetical-Substrings"><a href="#Alphabetical-Substrings" class="headerlink" title="Alphabetical Substrings"></a><strong>Alphabetical Substrings</strong></h3><blockquote>
+<p>Assume s is a string of lower case characters.<br>Write a program that prints the longest substring of s in which the letters occur in alphabetical order. For example,  if s = ‘azcbobobegghakl’, then your program should print:<br><code>Longest substring in alphabetical order is: beggh</code></p>
+<p>In the case of ties, print the first substring. For example, if s = ‘abcbcd’, then your program should print:<br><code>Longest substring in alphabetical order is: abc</code></p>
+<p>For problems such as these, do not include raw_input statements or define the variable s in any way. Our automated testing will provide a value of s for you - so the code you submit in the following box should assume s is already defined. If you are confused by this instruction, please review L4 Problems 10 and 11 before you begin this problem set.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span><br><span class="line">若未按照字母顺序，便分割字符串，得到字符子串，</span><br><span class="line">然后打印长度最长的字符子串</span><br><span class="line">'''</span></span><br><span class="line">newL=[]</span><br><span class="line">beg=<span class="number">0</span></span><br><span class="line">remain=s </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)<span class="number">-1</span>):</span><br><span class="line">    <span class="keyword">if</span> (s[i+<span class="number">1</span>] &lt; s[i]):</span><br><span class="line">        end=i+<span class="number">1</span></span><br><span class="line">        newL.append(s[beg:end])</span><br><span class="line">        beg=end</span><br><span class="line">        remain=s[beg:]</span><br><span class="line">newL.append(remain)</span><br><span class="line">longest=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> newL:</span><br><span class="line">    <span class="keyword">if</span> len(e) &gt; len(longest):</span><br><span class="line">        longest=e</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Longest substring in alphabetical order is: '</span>+str(longest))</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong><em>I’m gonna make him an offer he can’t refuse.</em></strong>    —《Godfather》</p>
 <hr>
 <p><strong>版权声明</strong></p>
 <p><img src="http://oonjkyvrf.bkt.clouddn.com/cc.png" alt=""></p>
 <p>本作品采用<a href="https://creativecommons.org/licenses/by/2.5/cn/" target="_blank" rel="external">知识共享署名 2.5 中国大陆许可协议</a>进行许可。<br>本文首发于<a href="http://dukeluo.com" target="_blank" rel="external">DukeLuo’s Blog</a>。欢迎转载，但转载请注明来自<a href="http://dukeluo.com" target="_blank" rel="external">DukeLuo’s Blog</a>，并保持转载后文章内容的完整。本人保留所有版权相关权利。  </p>
-<p>本文永久链接：<a href="http://dukeluo.github.io/2017/04/09/python字符串编码/">http://dukeluo.github.io/2017/04/09/python字符串编码/</a></p>
+<p>本文永久链接：<a href="http://dukeluo.github.io/2017/02/26/MIT-6.00.1x-Set1/">http://dukeluo.github.io/2017/02/26/MIT-6.00.1x-Set1/</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -124,7 +139,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/读书笔记/">读书笔记</a>
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/MIT/">MIT</a><a href="/tags/分享/">分享</a>
   </div>
 
 </div>
@@ -133,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://dukeluo.github.io/2017/04/09/python字符串编码/" data-title="python字符串编码 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://dukeluo.github.io/2017/02/26/MIT-6.00.1x-Set1/" data-title="MIT 6.00.1x  计算机科学和Python编程导论  Set 1 | DukeLuo&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,21 +162,13 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/04/19/begin/" title="Let&#39;s begin">
+ <a href="/2017/02/28/python-name/" title="关于python变量名的几点注意">
   <strong>上一篇：</strong><br/>
   <span>
-  Let&#39;s begin</span>
+  关于python变量名的几点注意</span>
 </a>
 </div>
 
-
-<div class="next">
-<a href="/2017/03/31/MIT 6.00.1x 计算机科学和Python编程导论 Set 7/"  title="MIT 6.00.1x  计算机科学和Python编程导论  Set 7">
- <strong>下一篇：</strong><br/> 
- <span>MIT 6.00.1x  计算机科学和Python编程导论  Set 7
-</span>
-</a>
-</div>
 
 </nav>
 
@@ -173,7 +180,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Unicode-·-UTF-8"><span class="toc-number">1.</span> <span class="toc-text">Unicode · UTF-8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python的字符串编码"><span class="toc-number">2.</span> <span class="toc-text">python的字符串编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#encode-·-decode"><span class="toc-number">3.</span> <span class="toc-text">encode() · decode()</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-Vowels"><span class="toc-number">1.</span> <span class="toc-text">Counting Vowels </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-bobs"><span class="toc-number">2.</span> <span class="toc-text">Counting bobs </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Alphabetical-Substrings"><span class="toc-number">3.</span> <span class="toc-text">Alphabetical Substrings</span></a></li></ol>
  
   </div>
 
