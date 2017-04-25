@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2017-04-25T06:04:55.380Z</updated>
+  <updated>2017-04-25T06:09:12.930Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://dukeluo.github.io/2017/04/25/no1-sicp-notes/"/>
     <id>http://dukeluo.github.io/2017/04/25/no1-sicp-notes/</id>
     <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-04-25T06:04:55.380Z</updated>
+    <updated>2017-04-25T06:09:12.930Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。<br><a id="more"></a></p>
 <p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG" alt=""></p>
@@ -567,7 +567,7 @@
     <link href="http://dukeluo.github.io/2017/03/06/let&#39;s-go-PiPiXia/"/>
     <id>http://dukeluo.github.io/2017/03/06/let&#39;s-go-PiPiXia/</id>
     <published>2017-03-05T16:00:00.000Z</published>
-    <updated>2017-04-20T16:18:46.873Z</updated>
+    <updated>2017-04-25T06:09:25.018Z</updated>
     
     <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>在知乎上发现此游戏的分享，非常感谢作者的分享。这是我阅读的第一个小项目代码。给我最深的体会便是divide and conquer，逐步实现模块的功能，最后实现游戏的功能。简单分析，好像游戏实现的思路并不难。<br><a id="more"></a></p>
 <h3 id="module-1-PPX的实现"><a href="#module-1-PPX的实现" class="headerlink" title="module 1. PPX的实现"></a>module 1. PPX的实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> cocos</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PPX</span><span class="params">(cocos.sprite.Sprite)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(PPX, self).__init__(<span class="string">'ppx.png'</span>)</span><br><span class="line">        self.can_jump = <span class="keyword">False</span></span><br><span class="line">        self.speed = <span class="number">0</span></span><br><span class="line">        self.image_anchor = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        self.position = <span class="number">100</span>, <span class="number">300</span></span><br><span class="line">        self.schedule(self.update)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jump</span><span class="params">(self, h)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.can_jump:</span><br><span class="line">            self.y += <span class="number">1</span></span><br><span class="line">            self.speed -= max(min(h, <span class="number">10</span>), <span class="number">7</span>)</span><br><span class="line">            self.can_jump = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">land</span><span class="params">(self, y)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.y &gt; y - <span class="number">30</span>:</span><br><span class="line">            self.can_jump = <span class="keyword">True</span></span><br><span class="line">            self.speed = <span class="number">0</span></span><br><span class="line">            self.y = y</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self, dt)</span>:</span> <span class="comment">#重力属性</span></span><br><span class="line">        self.speed += <span class="number">10</span> * dt</span><br><span class="line">        self.y -= self.speed</span><br><span class="line">        <span class="keyword">if</span> self.y &lt; <span class="number">-80</span>:</span><br><span class="line">            self.reset()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.parent.reset()</span><br><span class="line">        self.can_jump = <span class="keyword">False</span></span><br><span class="line">        self.speed = <span class="number">0</span></span><br><span class="line">        self.position = <span class="number">100</span>, <span class="number">300</span></span><br></pre></td></tr></table></figure>
@@ -590,9 +590,7 @@
     
     </summary>
     
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="阅读" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/%E9%98%85%E8%AF%BB/"/>
+      <category term="阅读" scheme="http://dukeluo.github.io/categories/%E9%98%85%E8%AF%BB/"/>
     
     
       <category term="python" scheme="http://dukeluo.github.io/tags/python/"/>
