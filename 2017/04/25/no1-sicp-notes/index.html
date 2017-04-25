@@ -11,27 +11,18 @@
     
 
     
-    <meta name="description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。
-
-
-SchemeCS的关键是如何去对计算过程进行形式化表述，并如何实现它。计算机的过程必须是有效的。Lisp是至今第二古老的语言，Lisp的语">
+    <meta name="description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SICP笔记（一）">
 <meta property="og:url" content="http://dukeluo.github.io/2017/04/25/no1-sicp-notes/index.html">
 <meta property="og:site_name" content="DukeLuo's Blog">
-<meta property="og:description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。
-
-
-SchemeCS的关键是如何去对计算过程进行形式化表述，并如何实现它。计算机的过程必须是有效的。Lisp是至今第二古老的语言，Lisp的语">
+<meta property="og:description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。">
 <meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG">
 <meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/cc.png">
-<meta property="og:updated_time" content="2017-04-25T05:54:02.896Z">
+<meta property="og:updated_time" content="2017-04-25T06:04:55.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP笔记（一）">
-<meta name="twitter:description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。
-
-
-SchemeCS的关键是如何去对计算过程进行形式化表述，并如何实现它。计算机的过程必须是有效的。Lisp是至今第二古老的语言，Lisp的语">
+<meta name="twitter:description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。">
 <meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG">
 
     
@@ -111,7 +102,7 @@ SchemeCS的关键是如何去对计算过程进行形式化表述，并如何实
 		
 		</div>
 		
-		<script src="/assets/js/APlayer.min.js"> </script><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。</p>
+		<script src="/assets/js/APlayer.min.js"> </script><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。<br><a id="more"></a></p>
 <p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG" alt=""></p>
 <hr>
 <h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h3><p>CS的关键是如何去对计算过程进行形式化表述，并如何实现它。计算机的过程必须是有效的。<br>Lisp是至今第二古老的语言，Lisp的语法规则简单，简单到几分钟就可以学会，简单的语法规则让使用者可以全心地去考虑程序的内部逻辑。Lisp自己解释自己，解释Lisp的步骤是apply and eval,两者不断地相互运行。SICP的教学语言是Lisp的一个方言Scheme。</p>
@@ -132,7 +123,8 @@ SchemeCS的关键是如何去对计算过程进行形式化表述，并如何实
 <hr>
 <h3 id="Black-Box-Abstraction"><a href="#Black-Box-Abstraction" class="headerlink" title="Black-Box Abstraction"></a>Black-Box Abstraction</h3><p>一个递归的过程，是基于自身过程的定义。<br>过程用户不必去关心过程的实现细节，可以看成一个black box，只需了解这个的过程的作用是什么，能产生什么样的结果。<br>过程里的形式参数扮演着一个特殊的角色，形式参数的具体名字是什么并不重要，并不影响过程实现的功能，这样的名字称为约束变量(bound variable)。一个过程的定义约束了它的所有形式参数。相对的，如果一个参数不被约束，就说它是自由的(free)。过程的形式参数是相应过程体里的局部名字。<br>在形式参数的作用域中，没有必要显式地传递其值，可以让其作为内部定义的自由变量。</p>
 <hr>
-<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="external">传送门</a><br>参考资料：<a href="http://docs.racket-lang.org/sicp-manual/index.html" target="_blank" rel="external">SICP Collections</a><br><strong>版权声明</strong></p>
+<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="external">传送门</a><br>参考资料：<a href="http://docs.racket-lang.org/sicp-manual/index.html" target="_blank" rel="external">SICP Collections</a></p>
+<p><strong>版权声明</strong></p>
 <p><img src="http://oonjkyvrf.bkt.clouddn.com/cc.png" alt=""></p>
 <p>本作品采用<a href="https://creativecommons.org/licenses/by/2.5/cn/" target="_blank" rel="external">知识共享署名 2.5 中国大陆许可协议</a>进行许可。<br>本文首发于<a href="http://dukeluo.com" target="_blank" rel="external">DukeLuo’s Blog</a>。欢迎转载，但转载请注明来自<a href="http://dukeluo.com" target="_blank" rel="external">DukeLuo’s Blog</a>，并保持转载后文章内容的完整。本人保留所有版权相关权利。  </p>
 <p>本文永久链接：<a href="http://dukeluo.github.io/2017/04/25/no1-sicp-notes/">http://dukeluo.github.io/2017/04/25/no1-sicp-notes/</a></p>
