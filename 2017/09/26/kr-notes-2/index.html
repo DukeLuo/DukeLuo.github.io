@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>K&amp;R笔记（二） | DukeLuo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Points第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。">
+<meta name="keywords" content="Notes,K&amp;R,C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="K&amp;R笔记（二）">
+<meta property="og:url" content="http://dukeluo.github.io/2017/09/26/kr-notes-2/index.html">
+<meta property="og:site_name" content="DukeLuo&#39;s Blog">
+<meta property="og:description" content="Points第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/20171029135457.png">
+<meta property="og:updated_time" content="2018-04-08T13:58:50.489Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="K&amp;R笔记（二）">
+<meta name="twitter:description" content="Points第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。">
+<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/20171029135457.png">
+  
+    <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">DukeLuo&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" title="Github"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukeluo.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-kr-notes-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/26/kr-notes-2/" class="article-date">
+  <time datetime="2017-09-25T16:00:00.000Z" itemprop="datePublished">2017-09-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      K&amp;R笔记（二）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><p>第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。<br><a id="more"></a></p>
+<ul>
+<li><p>没有后缀的浮点数常量为<code>double</code>类型,表达式中<code>float</code>类型的操作数不会自动转换成<code>double</code>类型</p>
+</li>
+<li><p>常量表达式在编译时求值</p>
+</li>
+<li><p>任何变量的声明都可以使用<code>const</code>限定符限定，该限定符指定变量的值不能修改</p>
+</li>
+<li><p>为了保证程序的可移植性，如果要在<code>char</code>类型的变量中存储非字符数据，最好指定<code>signed</code>或<code>unsigned</code>限定符</p>
+</li>
+<li><p>对<code>signed</code>类型进行按位运算右移操作时，有些机器是算术移位(用符号位填补左边空出的部分)，有些是逻辑移位(用0填补左边空出的部分)。算术右移可以进行<code>sign</code>类型的除法运算，右移n位就等于除2的n次方。</p>
+</li>
+<li><p>表达式<code>x &amp;= (x-1)</code>可以删除x中最右边值为1的一个二进制位</p>
+</li>
+<li><p>函数调用、嵌套赋值语句、自增与自减运算符都有可能产生副作用(side effect)，在对表达式求值的同时，修改了某些变量的值。</p>
+</li>
+<li><p>在任何一种编程语言中，如果代码的执行结果与求值顺序相关，则都是不好的程序设计风格</p>
+</li>
+<li><p><code>;</code>是语句结束符；<code>,</code>是C语言优先级最低的运算符，适用于关系紧密的结构中，应该慎用</p>
+</li>
+<li><p><strong>C语言中，任何标识符(除了<code>goto</code>的label以及<code>main()</code>的<code>main</code>)在使用之前都一定要声明</strong> </p>
+</li>
+<li><p>使用宏可以节省大量代码，是一种元语言</p>
+</li>
+<li><p><code>#undef</code>可以取消标识符预处理器的定义</p>
+</li>
+</ul>
+<hr>
+<h3 id="作用域-·-链接-·-存储类"><a href="#作用域-·-链接-·-存储类" class="headerlink" title="作用域 · 链接 · 存储类"></a>作用域 · 链接 · 存储类</h3><p>标识符(identifier)可以指代多种实体，如对象、函数、结构标记等。其中的对象也称为变量，指的是一个存储位置，对其的解释依赖两个属性：存储类(storage class)和类型(type)。存储类指存储变量值的内存类型，决定其标识对象的存储区域的生存期(lifetime)；类型决定标识对象中值的含义。此外，作为标识符还具有一个作用域(scope)和一个连接(linkage)，作用域指程序中可以访问此名字的区域，连接决定另一作用域中的同一个名字是否指向同一个对象或函数。标识符的作用域与它的链接属性有关，但两个概念并不相同。<br>编译器可以确认四种作用域，文件作用域(file scope)、函数作用域(function scope)、代码块作用域(block scope)和原型作用域(prototype scope)。块结构中声明的标识符具有代码块作用域。嵌套的块结构中，内层的标识符可以屏蔽外层的标识符，因此标识符有一样的名字也是可以的，不过这不是好的设计风格。在非嵌套的状态，任何时刻都只至多允许一个块结构处于活动状态，不同代码块的变量可以共享同一个内存地址。任何在所有代码块之外声明的标识符具有文件作用域，表示这些标识符从声明之处直到所在源文件结尾处都是可以访问的。值得注意的是，通过<code>#include</code>指令包含到其他文件的声明，就好像在原文件中声明一样，作用域并不局限于头文件结尾，而延续到当前文件。原型作用域只适用于函数原型中声明的参数名，防止参数名与程序其他部分的名字冲突。函数作用域只用于<code>goto</code>语句，《C和指针》劝我们不要碰它。<br>链接属性包含三种情况，外部(external)、内部(internal)和无(null)。没有链接属性的标识符总是被当作单独个体，有多少个声明就有多少个独立实体。具有内部链接属性的标识符在同一个源文件中总是指向同一个实体，具有外部链接属性的标识符不论声明多少次、位于几个源文件都表示同一个实体。关键字<code>extern</code>和<code>static</code>用于在声明中修改标识符的链接属性。C语言中，对于函数而言，因为不允许嵌套定义，它总是外部的，缺省状态下具有外部链接；对于变量，只要其并非声明于代码块或函数定义内部，缺省状态下亦 具有外部链接属性。如果某个声明具有缺省external属性，使用<code>static</code>可以使它的链接属性变成internal；<code>extern</code>为一个标识符指定external链接属性，并且只对第一个声明有效。另外，有时我们不必显示使用<code>extern</code>关键字，就如上所指明的缺省情况，但是显式使用更能表达我们的意图，增加代码的可读性。<br>变量的存储类有两类，自动存储类( automatic)和静态存储类(static)，存储类由声明变量时使用的一些关键字和上下文共同决定。程序运行时，计算机有三个地方可以用于存储变量，普通内存、运行时堆栈、硬件寄存器。静态存储类的变量(静态变量）存储在普通内存中，自动存储类的变量(自动变量)存储在硬件寄存器或运行中的堆栈中。静态变量在程序运行之前创建，在执行期间一直存在，除非给其赋值，不然存储的值将保持不变。此外，我们无法为静态变量指定其他的存储类型。自动变量在执行时创建，代码块执行完后便自行销毁。声明中所涉及的标识符有<code>auto</code>、<code>register</code>、<code>static</code>等三个，前两个用来声明自动存储类对象，<code>auto</code>使用频率低，基本可以忽略；<code>register</code>声明的对象表明该对象使用频率高，希望放在寄存器中，但编译器可以忽略此选项，不予理睬；最后的关键字<code>static</code>可以用在代码块内部声明的变量，将其存储类从自动存储类变为静态存储类。缺省状态时，存储类由上下文决定，凡是在所有代码块之外声明的变量都是静态变量，存储在普通内存；凡是在块结构中声明的变量都是自动变量，存储在运行时的堆栈中。<br>具有外部链接属性的变量称为全局变量，与之对应的是局部变量，它是函数的私有变量，不可在函数外部通过名字访问。局部变量都是自动变量。<br><img src="http://oonjkyvrf.bkt.clouddn.com/20171029135457.png" alt=""><br>值得注意的是，声明与定义不同，并不引起存储器的分配，只是说明变量的属性。</p>
+<hr>
+<h3 id="字面值-·-常量"><a href="#字面值-·-常量" class="headerlink" title="字面值 · 常量"></a>字面值 · 常量</h3><p>字面值(literal)类似我们平常所说的值，比如3.14、0等。我们可以用<code>#define</code>为字面值起符号别名，此后别名可以出现在任何使用该值的地方。常量与变量一样，只是值不允许改变，用关键字<code>const</code>声明。C中的字符串常量(string literal)就是字符数组，程序在使用字符串常量的时候会生成一个指向字符的常量指针，是其存储地址而不是字符本身，所以我们不可以将字符串常量赋给字符数组。 </p>
+<hr>
+<p>参考： <a href="https://book.douban.com/subject/3012360" target="_blank" rel="noopener">C和指针</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukeluo.github.io/2017/09/26/kr-notes-2/" data-id="cjg6mrov5000gcrd1cfulggu6" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/K-R/">K&R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/26/algs4-notes-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Algs4笔记（一） --- 并查集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/17/kr-notes-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">K&amp;R笔记（一）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/实战/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程语言/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algs4/" style="font-size: 15px;">Algs4</a> <a href="/tags/C/" style="font-size: 13.33px;">C</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/K-R/" style="font-size: 11.67px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 16.67px;">Scheme</a> <a href="/tags/小项目/" style="font-size: 11.67px;">小项目</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/15/algs4-notes-7/">Algs4笔记（七） --- 符号表与二叉查找树</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/28/pratice-snake/">C语言实现贪吃蛇步骤实述</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/14/algs4-notes-6/">Algs4笔记（六） --- 冒泡排序与排序算法总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/09/algs4-notes-5/">Algs4笔记（五） --- 堆、优先队列与堆排序</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/04/algs4-notes-4/">Algs4笔记（四） --- 归并排序与快速排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Duke Luo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

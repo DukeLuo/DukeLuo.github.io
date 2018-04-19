@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>SICP笔记（五） | DukeLuo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="根据书中脚注，SICP中的闭包只是涉及组合方面的相关特性，并不涉及自由变量。使用闭包特性可以快速地构建复杂性，在本节的实例中我们可以看到其强大的威力。">
+<meta name="keywords" content="Notes,SICP,Scheme">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SICP笔记（五）">
+<meta property="og:url" content="http://dukeluo.github.io/2017/07/09/sicp-notes-5/index.html">
+<meta property="og:site_name" content="DukeLuo&#39;s Blog">
+<meta property="og:description" content="根据书中脚注，SICP中的闭包只是涉及组合方面的相关特性，并不涉及自由变量。使用闭包特性可以快速地构建复杂性，在本节的实例中我们可以看到其强大的威力。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-15T02:43:55.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SICP笔记（五）">
+<meta name="twitter:description" content="根据书中脚注，SICP中的闭包只是涉及组合方面的相关特性，并不涉及自由变量。使用闭包特性可以快速地构建复杂性，在本节的实例中我们可以看到其强大的威力。">
+  
+    <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">DukeLuo&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" title="Github"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukeluo.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-sicp-notes-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/09/sicp-notes-5/" class="article-date">
+  <time datetime="2017-07-08T16:00:00.000Z" itemprop="datePublished">2017-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SICP笔记（五）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><blockquote>
+<p>In general,an operation for combining data objects satisfies the closure property if results of combining things with that operation can themselves be combined using the same operation.<br><a id="more"></a></p>
+</blockquote>
+<p>根据书中脚注，SICP中的闭包只是涉及组合方面的相关特性，并不涉及自由变量。使用闭包特性可以快速地构建复杂性，在本节的实例中我们可以看到其强大的威力。</p>
+<hr>
+<h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><p>使用<code>cons</code>，可以轻松地构造序对，有序的序列也可以用<code>cons</code>构造。<br><code>(cons &lt;a1&gt; (cons &lt;a2&gt; (cons ... (cons &lt;an&gt; nil) ... )))</code>连续使用<code>cons</code>构造序列，<code>nil</code>意为空表，表示序对的链结束，但是此写法太过冗长，scheme便提供了基本操作<code>(list &lt;a1&gt; &lt;a2&gt; ... &lt;an&gt;)</code>，两者是等价的，是语法糖关系。<br>基本操作<code>list</code>可以构建出序列，序列是一种基本数据结构，我们常常需要对其处理。python中的list，python就提供了很丰富的基本方法，使用python处理list时就很得心应手。基于序列在scheme中的表示，使用递归和迭代的方法，我们构造了一些基本操作，<code>append</code>,<code>reverse</code>等。<br>想到闭包性质，我们很容易联想序列的元素本身也是序列的情况，第一感觉处理时应该是困难了不少，仔细想想递归的属性，递归当仁不让成为首选，轻松get!<br>处理层次性结构时，千万不要尝试进入数据的表示层，应当在抽象屏障之上处理数据结构。</p>
+<hr>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>map是一种重要的结构，在更高的层次上对表操作进行了抽象。Map为我们建起了一层抽象屏障，将实现表变换的过程与如何提取表中元素以及组合结果的细节隔离开，常与lambda函数配合使用。 </p>
+<h4 id="八皇后问题"><a href="#八皇后问题" class="headerlink" title="八皇后问题"></a>八皇后问题</h4><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; 八皇后问题</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">queens</span> board-size)</span><br><span class="line">  (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">queen-cols</span> k)</span><br><span class="line">    (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">=</span></span> k <span class="number">0</span>)</span><br><span class="line">        (<span class="name"><span class="builtin-name">list</span></span> empty-board)</span><br><span class="line">        (<span class="name">filter</span></span><br><span class="line">         (<span class="name"><span class="builtin-name">lambda</span></span> (positions) (<span class="name">safe?</span> k positions))</span><br><span class="line">         (<span class="name">flatmap</span></span><br><span class="line">          (<span class="name"><span class="builtin-name">lambda</span></span> (rest-of-queens)</span><br><span class="line">            (<span class="name"><span class="builtin-name">map</span></span> (<span class="name"><span class="builtin-name">lambda</span></span> (new-row)</span><br><span class="line">                   (<span class="name">adjoin-position</span> new-row k rest-of-queens))</span><br><span class="line">                 (<span class="name">enumerate-interval</span> <span class="number">1</span> board-size)))</span><br><span class="line">          (<span class="name">queen-cols</span> (<span class="name"><span class="builtin-name">-</span></span> k <span class="number">1</span>))))))</span><br><span class="line">  (<span class="name">queen-cols</span> board-size))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> empty-board '())</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">adjoin-position</span> new-row k rest-of-queens)</span><br><span class="line">  (<span class="name"><span class="builtin-name">cons</span></span> new-row rest-of-queens))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">safe?</span> k positions)</span><br><span class="line">  (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">iter</span> new-row rest-of-queens i)</span><br><span class="line">    (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">null?</span></span> rest-of-queens)</span><br><span class="line">        <span class="literal">#t</span></span><br><span class="line">        (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">current-row</span> (<span class="name"><span class="builtin-name">car</span></span> rest-of-queens)))</span><br><span class="line">          (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">or</span></span> (<span class="name"><span class="builtin-name">=</span></span> new-row current-row)</span><br><span class="line">                  (<span class="name"><span class="builtin-name">=</span></span> new-row (<span class="name"><span class="builtin-name">+</span></span> current-row</span><br><span class="line">                                i))</span><br><span class="line">                  (<span class="name"><span class="builtin-name">=</span></span> new-row (<span class="name"><span class="builtin-name">-</span></span> current-row</span><br><span class="line">                                i)))</span><br><span class="line">              <span class="literal">#f</span></span><br><span class="line">              (<span class="name">iter</span> new-row (<span class="name"><span class="builtin-name">cdr</span></span> rest-of-queens) (<span class="name"><span class="builtin-name">+</span></span> i <span class="number">1</span>))))))</span><br><span class="line">  (<span class="name">iter</span> (<span class="name"><span class="builtin-name">car</span></span> positions) (<span class="name"><span class="builtin-name">cdr</span></span> positions) <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>假设已经放好k-1个皇后，在此基础上，在第k列的每一行上摆上皇后，然后过滤合适的解。解法中的<code>flatmap</code>函数使用了嵌套映射，在正确放好k-1个皇后的基础上产生第k列的每一行放上皇后的集合扩展，<code>filter</code>函数通过<code>safe?</code>过滤合适的解。</p>
+<hr>
+<h3 id="约定接口"><a href="#约定接口" class="headerlink" title="约定接口"></a>约定接口</h3><p>还记得刚开始的时候，老师介绍说，本课程的三大方面，黑盒抽象，约定接口与元语言抽象。<br>约定接口利于模块化设计，可以单独地设计好模块，解决问题时只需从模块库中挑取合适的模块，组合起来，这种策略就非常灵活了，并且可以重复利用模块，大量减轻工作量。此处，序列是载体，将各种模块化的操作囊括进来，组合我们需要的目标程序。书中，先枚举区间内的数，接着映射，然后对所有结果过滤，累积合适的解。</p>
+<hr>
+<h3 id="图形语言"><a href="#图形语言" class="headerlink" title="图形语言"></a>图形语言</h3><p>本节的实例是一种图形语言的实现，在这种语言中，基本元素叫<code>painter</code>，不同以往的是，它是由过程表示，给<code>painter</code>传入一个<code>frame</code>参数，<code>painter</code>便在<code>frame</code>画出其表示的图像。因为<code>painter</code>是由过程表示的，于是lisp的组合方法完全适用于此语言，也就是说，这门图形语言嵌套在lisp中。在picture的组合中，因为picture具有闭包性质，我们便可以快速地通过一些基本操作构建复杂的操作。<br>在这门语言的实现中，我们抽象了好几个层次，在每一层上做出修改，最后的结果也会做出相应的改变。此实例，告诉我们数据和过程之间并没有区别，用过程表示数据，使编程变得简单且优雅！</p>
+<hr>
+<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="noopener">传送门</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukeluo.github.io/2017/07/09/sicp-notes-5/" data-id="cjg6mrova000pcrd10wh19kh7" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SICP/">SICP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scheme/">Scheme</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/22/python-list-argument/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python中列表作为参数的传递方式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/28/sicp-notes-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SICP笔记（四）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/实战/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程语言/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algs4/" style="font-size: 15px;">Algs4</a> <a href="/tags/C/" style="font-size: 13.33px;">C</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/K-R/" style="font-size: 11.67px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 16.67px;">Scheme</a> <a href="/tags/小项目/" style="font-size: 11.67px;">小项目</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/15/algs4-notes-7/">Algs4笔记（七） --- 符号表与二叉查找树</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/28/pratice-snake/">C语言实现贪吃蛇步骤实述</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/14/algs4-notes-6/">Algs4笔记（六） --- 冒泡排序与排序算法总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/09/algs4-notes-5/">Algs4笔记（五） --- 堆、优先队列与堆排序</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/04/algs4-notes-4/">Algs4笔记（四） --- 归并排序与快速排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Duke Luo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
