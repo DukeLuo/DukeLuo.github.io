@@ -8,19 +8,19 @@
   <title>C语言实现贪吃蛇步骤实述 | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="介绍贪吃蛇的实现过程。">
-<meta name="keywords" content="小项目,C">
+<meta name="keywords" content="C,小项目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言实现贪吃蛇步骤实述">
 <meta property="og:url" content="http://dukeluo.github.io/2018/03/28/pratice-snake/index.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="介绍贪吃蛇的实现过程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/snake.png">
-<meta property="og:updated_time" content="2018-04-08T14:55:44.732Z">
+<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/starsets/snake.png">
+<meta property="og:updated_time" content="2018-04-21T04:18:07.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言实现贪吃蛇步骤实述">
 <meta name="twitter:description" content="介绍贪吃蛇的实现过程。">
-<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/snake.png">
+<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/starsets/snake.png">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -43,6 +43,10 @@
       <h1 id="logo-wrap">
         <a href="/" id="logo">DukeLuo&#39;s Blog</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Knowledge is Power</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -108,7 +112,7 @@
 <hr>
 <h3 id="食物"><a href="#食物" class="headerlink" title="食物"></a>食物</h3><p>使用库函数<code>rand()</code>随机产生食物，注意，要在没有食物的时候产生！</p>
 <hr>
-<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>实现上面的各个函数后，整个贪吃蛇就呼之欲出了。首先初始化活动区域，初始化蛇，然后循环不断获取用户输入，产生下一个移动位置，蛇对其作出反应，打印活动区域。这其中有一个需要注意的点就是，蛇不能对与运动方向相反的指令作出响应，就是不能调头返回。<br><img src="http://oonjkyvrf.bkt.clouddn.com/snake.png" alt="snake"></p>
+<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>实现上面的各个函数后，整个贪吃蛇就呼之欲出了。首先初始化活动区域，初始化蛇，然后循环不断获取用户输入，产生下一个移动位置，蛇对其作出反应，打印活动区域。这其中有一个需要注意的点就是，蛇不能对与运动方向相反的指令作出响应，就是不能调头返回。<br><img src="http://oonjkyvrf.bkt.clouddn.com/starsets/snake.png" alt="snake"></p>
 <hr>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>我实现的贪吃蛇是控制台程序，为了美观，需要清屏、关闭回显、隐藏光标等美化操作。清屏与关闭回显，我使用了库函数中的<code>system()</code>函数;隐藏光标，我使用了<a href="https://blog.csdn.net/kevinshq/article/details/8179252" target="_blank" rel="noopener">这</a>提供的方法。要注意的是，对终端设置后记得在退出时将设置修改回来。还有一个，贪吃蛇需要判断键盘是否有输入，有的话需要及时读入，了解到有这么一个库函数<code>kbhit()</code>实现了这个功能，不过linux下的C并没有这个头文件，我谷歌了一个<code>kbhit()</code>在linux下的实现，在<a href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html" target="_blank" rel="noopener">这</a>，感觉这才是这个程序的重点哈，不过，水平太菜，只好直接复制了。</p>
 <p>源程序： <a href="https://github.com/DukeLuo/starSets" target="_blank" rel="noopener">这里</a></p>
@@ -122,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/03/28/pratice-snake/" data-id="cjg6mrova000ocrd1hfjkzur0" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/03/28/pratice-snake/" data-id="cjg7hq6od000npid1ywq43zkp" class="article-share-link">Share</a>
       
       
       
