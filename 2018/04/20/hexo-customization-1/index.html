@@ -5,20 +5,20 @@
   
 
   
-  <title>python字符串编码 | DukeLuo&#39;s Blog</title>
+  <title>定制自己的Hexo博客主题Landscape | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于python字符串编码的一些理解">
-<meta name="keywords" content="Python">
+  <meta name="description" content="个性化定制Hexo博客主题Landscape。">
+<meta name="keywords" content="Hexo,总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python字符串编码">
-<meta property="og:url" content="http://dukeluo.github.io/2017/04/09/python-string/index.html">
+<meta property="og:title" content="定制自己的Hexo博客主题Landscape">
+<meta property="og:url" content="http://dukeluo.github.io/2018/04/20/hexo-customization-1/index.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
-<meta property="og:description" content="关于python字符串编码的一些理解">
+<meta property="og:description" content="个性化定制Hexo博客主题Landscape。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-08T14:41:18.729Z">
+<meta property="og:updated_time" content="2018-04-20T06:15:15.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python字符串编码">
-<meta name="twitter:description" content="关于python字符串编码的一些理解">
+<meta name="twitter:title" content="定制自己的Hexo博客主题Landscape">
+<meta name="twitter:description" content="个性化定制Hexo博客主题Landscape。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -73,14 +73,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-python-string" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-customization-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/09/python-string/" class="article-date">
-  <time datetime="2017-04-08T16:00:00.000Z" itemprop="datePublished">2017-04-09</time>
+    <a href="/2018/04/20/hexo-customization-1/" class="article-date">
+  <time datetime="2018-04-19T16:00:00.000Z" itemprop="datePublished">2018-04-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    <a class="article-category-link" href="/categories/记录/">记录</a>
   </div>
 
   </div>
@@ -91,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python字符串编码
+      定制自己的Hexo博客主题Landscape
     </h1>
   
 
@@ -99,20 +99,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Unicode-·-UTF-8"><a href="#Unicode-·-UTF-8" class="headerlink" title="Unicode · UTF-8"></a>Unicode · UTF-8</h4><p>传统的字符编码方案，并无统一的标准，在多语言混合文本，常常会产生冲突。Unicode便是为了解决传统字符编码方案的局限而产生的。Unicode最常用的是用两个字节表示一个字符。现代操作系统和大多编程语言都支持Unicode。处理英文时，用Unicode编码比ASCII编码要多出一倍的储存空间，于是就出现了UTF-8编码。UTF-8采用一种变长的编码方式，根据不同的数字大小编码成1-6个字节。常用的英文字母被编码成1个字节，汉字通常是3个字节。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。<br><a id="more"></a></p>
-<hr>
-<h4 id="python的字符串编码"><a href="#python的字符串编码" class="headerlink" title="python的字符串编码"></a>python的字符串编码</h4><p>Python 2.7 默认的编码方式是 ASCII，即当直接使用<code>&#39;&#39;</code>、<code>&quot;&quot;</code>或者<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>来定义字符串时，采用的是 ASCII 的编码方式。定义Unicode 字符串则需要在前面添加u。字符串<code>&#39;xxx&#39;</code>虽然是ASCII编码，但也可以看成是UTF-8编码，而<code>u&#39;xxx&#39;</code>则只能是Unicode编码。<br>Python 3.x 字符串默认的编码方式为 Unicode，即<code>&#39;string&#39;</code>和<code>u&#39;string&#39;</code>等价。若要定义 ASCII 编码的字符串需在字符串前加b。</p>
-<hr>
-<h4 id="encode-·-decode"><a href="#encode-·-decode" class="headerlink" title="encode() · decode()"></a>encode() · decode()</h4><p>在操作字符串时，为避免乱码，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。<br>decode的作用是将其他编码的字符串转换成unicode编码，如<code>str1.decode(&#39;gb2312&#39;)</code>，表示将gb2312编码的字符串str1转换成unicode编码。<br>encode的作用是将unicode编码转换成其他编码的字符串，如<code>str2.encode(&#39;utf-8&#39;)</code>,表示将unicode编码的字符串str2转换成utf-8编码。</p>
+        <p>接触Hexo博客也一年多了，去年刚接触的时候，什么都不知道，Git、Node.js等一概不知，按着网上的教程，一步步抓瞎地折腾，花了一个周末，没想到竟然搭建成功了。那时，跟着教程，使用了主题<a href="https://github.com/wuchong/jacman" target="_blank" rel="noopener">Jacman</a>，一阵子后自己把主题的配色给改成暗黑系的了，当时觉得很酷，后来越来越觉得不顺眼，寻思着什么时候换个主题。这时，我发现Hexo博客默认的主题<a href="https://github.com/hexojs/hexo-theme-landscape" target="_blank" rel="noopener">Landscape</a>挺好，尤其是那张<code>banner</code>大图，感觉很大气。纵使自己现在依然很菜，但我想以此主题为起点，个性化定制自己的博客主题，此文会长期更新下去，记录我的主题定制之路。</p>
+<a id="more"></a>
+<h3 id="导航栏添加链接"><a href="#导航栏添加链接" class="headerlink" title="导航栏添加链接"></a>导航栏添加链接</h3><p>修改themes/landscape/layout/_partial下的文件header.ejs，在id<code>sub-nav</code>添加自己想要添加链接的内容，譬如Github。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.github_url)&#123; %&gt;</span><br><span class="line">  &lt;a id=<span class="string">"nav-github-link"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav-icon"</span> href=<span class="string">"&lt;%- url_for(theme.github_url) %&gt;"</span> title=<span class="string">"Github"</span>&gt;&lt;/a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;% <span class="keyword">if</span> (theme.rss)&#123; %&gt;</span><br><span class="line">  &lt;a id=<span class="string">"nav-rss-link"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav-icon"</span> href=<span class="string">"&lt;%- url_for(theme.rss) %&gt;"</span> title=<span class="string">"&lt;%= __('rss_feed') %&gt;"</span>&gt;&lt;/a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后在themes/landscape/source/css/_partial下的文件header.styl，为添加的新链接指定样式。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#nav-github-link</span><br><span class="line">  &amp;:before</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"\f09b"</span></span><br><span class="line"></span><br><span class="line">#nav-rss-link</span><br><span class="line">  &amp;:before</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"\f09e"</span></span><br></pre></td></tr></table></figure></p>
+<p>最后在主题的配置文件themes/landscape/_config.yml，添加新加链接的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github_url: https://github.com/laowang</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/04/09/python-string/" data-id="cjgkfr1pp000ru4d1es433bxa" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/04/20/hexo-customization-1/" data-id="cjgkfr1pi000fu4d1ta232zfh" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
 
     </footer>
   </div>
@@ -120,19 +120,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/19/record-summary-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Let&#39;s begin
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/31/MIT-6.00.1x-Set7/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/04/15/algs4-notes-7/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MIT 6.00.1x  计算机科学和Python编程导论  Set 7</div>
+      <div class="article-nav-title">Algs4笔记（七） --- 符号表与二叉查找树</div>
     </a>
   
 </nav>
