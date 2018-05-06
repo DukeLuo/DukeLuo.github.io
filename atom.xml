@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-05-06T12:09:09.455Z</updated>
+  <updated>2018-05-06T12:33:23.633Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://dukeluo.github.io/2018/05/04/linkedlist-1/"/>
     <id>http://dukeluo.github.io/2018/05/04/linkedlist-1/</id>
     <published>2018-05-03T16:00:00.000Z</published>
-    <updated>2018-05-06T12:09:09.455Z</updated>
+    <updated>2018-05-06T12:33:23.633Z</updated>
     
     <summary type="html">
     
@@ -36,7 +36,7 @@
     
       <category term="链表" scheme="http://dukeluo.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
-      <category term="JS" scheme="http://dukeluo.github.io/tags/JS/"/>
+      <category term="JavaScript" scheme="http://dukeluo.github.io/tags/JavaScript/"/>
     
   </entry>
   
