@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-04-20T06:15:15.289Z</updated>
+  <updated>2018-05-06T12:09:09.455Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剖析链表，链表常用操作集合</title>
+    <link href="http://dukeluo.github.io/2018/05/04/linkedlist-1/"/>
+    <id>http://dukeluo.github.io/2018/05/04/linkedlist-1/</id>
+    <published>2018-05-03T16:00:00.000Z</published>
+    <updated>2018-05-06T12:09:09.455Z</updated>
+    
+    <summary type="html">
+    
+      介绍面试中常见的链表操作。
+    
+    </summary>
+    
+      <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="链表" scheme="http://dukeluo.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="JS" scheme="http://dukeluo.github.io/tags/JS/"/>
+    
+  </entry>
   
   <entry>
     <title>定制自己的Hexo博客主题Landscape</title>
@@ -451,30 +475,6 @@
     <summary type="html">
     
       &lt;p&gt;The ability to visualize the consequences of the actions under consideration is cruial to becoming an expert programmer,just as it is in any synthetic,creative activity.  &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（一）</title>
-    <link href="http://dukeluo.github.io/2017/04/25/sicp-notes-1/"/>
-    <id>http://dukeluo.github.io/2017/04/25/sicp-notes-1/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2018-04-08T13:01:52.526Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;环境搭建&quot;&gt;&lt;a href=&quot;#环境搭建&quot; class=&quot;headerlink&quot; title=&quot;环境搭建&quot;&gt;&lt;/a&gt;环境搭建&lt;/h3&gt;&lt;p&gt;我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。&lt;br&gt;
     
     </summary>
     
