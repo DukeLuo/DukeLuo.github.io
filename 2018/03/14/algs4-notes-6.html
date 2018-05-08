@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-118774787-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Algs4笔记（六） --- 冒泡排序与排序算法总结 | DukeLuo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
+<meta name="keywords" content="Notes,Algs4,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algs4笔记（六） --- 冒泡排序与排序算法总结">
+<meta property="og:url" content="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html">
+<meta property="og:site_name" content="DukeLuo&#39;s Blog">
+<meta property="og:description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/algs4-notes-6.jpg">
+<meta property="og:updated_time" content="2018-04-08T13:58:12.586Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algs4笔记（六） --- 冒泡排序与排序算法总结">
+<meta name="twitter:description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
+<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/algs4-notes-6.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">DukeLuo&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Knowledge is Power</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" title="Github"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukeluo.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-algs4-notes-6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/14/algs4-notes-6.html" class="article-date">
+  <time datetime="2018-03-13T16:00:00.000Z" itemprop="datePublished">2018-03-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/算法/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Algs4笔记（六） --- 冒泡排序与排序算法总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>冒泡排序(Bubble sort)是一种简单的排序算法，它重复地走访要排序的数组，一次比较两个元素，如果他们的顺序错误就把他们交换过来。算法名字很形象，因为更大或更小的元素会经由交换慢慢“浮”到数列的顶端，就像水中的气泡一样。<br><a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bubble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N = a.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N-<span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;N-<span class="number">1</span>-i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (less(a[j+<span class="number">1</span>], a[j]))</span><br><span class="line">                exch(a, j+<span class="number">1</span>, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>冒泡排序是原地排序算法，对于长度为\(N\)的数组，在最坏的情况下，冒泡排序需要\(～N^2/2\)次比较和\(～N^2/2\)次交换;在最好的情况下，冒泡排序需要\(～N^2/2\)次比较和\(0\)次交换。尽管这个算法是最简单了解和实现的排序算法之一，但它对于包含大量的元素的数组排序是很没有效率的。</p>
+<hr>
+<h3 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h3><p>如果一个排序算法能够保留数组中重复元素的相对位置则可以被称为是稳定的，稳定性不是每个排序算法理所应当具有的基本性质，以上介绍过的排序算法只有一部分是稳定的，但我们有很多方法能够将任意排序算法变成稳定的。<br><img src="http://oonjkyvrf.bkt.clouddn.com/algs4-notes-6.jpg" alt="排序算法总结"></p>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>维基百科：<a href="https://zh.wikipedia.org/zh-cn/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a></li>
+<li><a href="https://www.toptal.com/developers/sorting-algorithms/" target="_blank" rel="noopener">排序算法可视化</a></li>
+<li><a href="https://book.douban.com/subject/19952400/" target="_blank" rel="noopener">算法（第4版）</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html" data-id="cjgx0ny0h0006ukil4mkoynpc" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algs4/">Algs4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/28/pratice-snake.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C语言实现贪吃蛇步骤实述
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/09/algs4-notes-5.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Algs4笔记（五） --- 堆、优先队列与堆排序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/实战/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程语言/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algs4/" style="font-size: 15px;">Algs4</a> <a href="/tags/C/" style="font-size: 13.33px;">C</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.67px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/SICP/" style="font-size: 16.67px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 16.67px;">Scheme</a> <a href="/tags/小项目/" style="font-size: 11.67px;">小项目</a> <a href="/tags/总结/" style="font-size: 13.33px;">总结</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/04/linkedlist-1.html">剖析链表，链表常用操作集合</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/20/hexo-customization-1.html">定制自己的Hexo博客主题Landscape</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/15/algs4-notes-7.html">Algs4笔记（七） --- 符号表与二叉查找树</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/28/pratice-snake.html">C语言实现贪吃蛇步骤实述</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/14/algs4-notes-6.html">Algs4笔记（六） --- 冒泡排序与排序算法总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Duke Luo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
