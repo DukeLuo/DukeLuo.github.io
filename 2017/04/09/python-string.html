@@ -28,7 +28,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="关于python字符串编码的一些理解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-08T14:41:18.729Z">
+<meta property="og:updated_time" content="2018-05-08T04:59:55.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python字符串编码">
 <meta name="twitter:description" content="关于python字符串编码的一些理解">
@@ -112,16 +112,14 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Unicode-·-UTF-8"><a href="#Unicode-·-UTF-8" class="headerlink" title="Unicode · UTF-8"></a>Unicode · UTF-8</h4><p>传统的字符编码方案，并无统一的标准，在多语言混合文本，常常会产生冲突。Unicode便是为了解决传统字符编码方案的局限而产生的。Unicode最常用的是用两个字节表示一个字符。现代操作系统和大多编程语言都支持Unicode。处理英文时，用Unicode编码比ASCII编码要多出一倍的储存空间，于是就出现了UTF-8编码。UTF-8采用一种变长的编码方式，根据不同的数字大小编码成1-6个字节。常用的英文字母被编码成1个字节，汉字通常是3个字节。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。<br><a id="more"></a></p>
-<hr>
-<h4 id="python的字符串编码"><a href="#python的字符串编码" class="headerlink" title="python的字符串编码"></a>python的字符串编码</h4><p>Python 2.7 默认的编码方式是 ASCII，即当直接使用<code>&#39;&#39;</code>、<code>&quot;&quot;</code>或者<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>来定义字符串时，采用的是 ASCII 的编码方式。定义Unicode 字符串则需要在前面添加u。字符串<code>&#39;xxx&#39;</code>虽然是ASCII编码，但也可以看成是UTF-8编码，而<code>u&#39;xxx&#39;</code>则只能是Unicode编码。<br>Python 3.x 字符串默认的编码方式为 Unicode，即<code>&#39;string&#39;</code>和<code>u&#39;string&#39;</code>等价。若要定义 ASCII 编码的字符串需在字符串前加b。</p>
-<hr>
-<h4 id="encode-·-decode"><a href="#encode-·-decode" class="headerlink" title="encode() · decode()"></a>encode() · decode()</h4><p>在操作字符串时，为避免乱码，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。<br>decode的作用是将其他编码的字符串转换成unicode编码，如<code>str1.decode(&#39;gb2312&#39;)</code>，表示将gb2312编码的字符串str1转换成unicode编码。<br>encode的作用是将unicode编码转换成其他编码的字符串，如<code>str2.encode(&#39;utf-8&#39;)</code>,表示将unicode编码的字符串str2转换成utf-8编码。</p>
+        <h3 id="Unicode-·-UTF-8"><a href="#Unicode-·-UTF-8" class="headerlink" title="Unicode · UTF-8"></a>Unicode · UTF-8</h3><p>传统的字符编码方案，并无统一的标准，在多语言混合文本，常常会产生冲突。Unicode便是为了解决传统字符编码方案的局限而产生的。Unicode最常用的是用两个字节表示一个字符。现代操作系统和大多编程语言都支持Unicode。处理英文时，用Unicode编码比ASCII编码要多出一倍的储存空间，于是就出现了UTF-8编码。UTF-8采用一种变长的编码方式，根据不同的数字大小编码成1-6个字节。常用的英文字母被编码成1个字节，汉字通常是3个字节。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。<br><a id="more"></a></p>
+<h3 id="python的字符串编码"><a href="#python的字符串编码" class="headerlink" title="python的字符串编码"></a>python的字符串编码</h3><p>Python 2.7 默认的编码方式是 ASCII，即当直接使用<code>&#39;&#39;</code>、<code>&quot;&quot;</code>或者<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>来定义字符串时，采用的是 ASCII 的编码方式。定义Unicode 字符串则需要在前面添加u。字符串<code>&#39;xxx&#39;</code>虽然是ASCII编码，但也可以看成是UTF-8编码，而<code>u&#39;xxx&#39;</code>则只能是Unicode编码。<br>Python 3.x 字符串默认的编码方式为 Unicode，即<code>&#39;string&#39;</code>和<code>u&#39;string&#39;</code>等价。若要定义 ASCII 编码的字符串需在字符串前加b。</p>
+<h3 id="encode-·-decode"><a href="#encode-·-decode" class="headerlink" title="encode() · decode()"></a>encode() · decode()</h3><p>在操作字符串时，为避免乱码，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。<br>decode的作用是将其他编码的字符串转换成unicode编码，如<code>str1.decode(&#39;gb2312&#39;)</code>，表示将gb2312编码的字符串str1转换成unicode编码。<br>encode的作用是将unicode编码转换成其他编码的字符串，如<code>str2.encode(&#39;utf-8&#39;)</code>,表示将unicode编码的字符串str2转换成utf-8编码。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/04/09/python-string.html" data-id="cjgx0ny1u000qukilg4i2ppjs" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/04/09/python-string.html" data-id="cjgx8t9m2000gn4ilg2smmv4l" class="article-share-link">Share</a>
       
       
       

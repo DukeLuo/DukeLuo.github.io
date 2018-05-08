@@ -28,7 +28,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="现实中，我们常将世界看成聚集在一起的许多独立个体，每个个体都有自己的状态，比如你在夏日下搬砖，同时有人在宝马里吹空调，个体的状态随着时间不断改变，过去的改变会影响现在的表现，你辛辛苦苦搬了几个月砖，终于在年前开开心心地骑上小三轮回家过年。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-08T14:44:52.744Z">
+<meta property="og:updated_time" content="2018-05-08T05:19:05.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP笔记（七）">
 <meta name="twitter:description" content="现实中，我们常将世界看成聚集在一起的许多独立个体，每个个体都有自己的状态，比如你在夏日下搬砖，同时有人在宝马里吹空调，个体的状态随着时间不断改变，过去的改变会影响现在的表现，你辛辛苦苦搬了几个月砖，终于在年前开开心心地骑上小三轮回家过年。">
@@ -116,19 +116,19 @@ ga('send', 'pageview');
 <p>使用<code>set!</code>操作我们就可以对某个变量实现赋值操作，引进赋值操作后，我们愉快着的同时带来了系列麻烦，比如摧毁了代换模型，时刻注意语句的先后顺序，提防side-effect bugs。<br>不使用任何赋值的程序设计称为函数式程序设计(functional programming)，函数式编程可以看成对数学事实的表达，每次对程序给定相同的参数，只能得到一个相同的结果。与函数式对应的是命令式程序设计(imperative programming)，命令式大量使用赋值操作。由于赋值操作，每次对一个程序给定相同的参数，得到的结果可能不同。</p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name"><span class="builtin-name">cons</span></span> x y)</span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (m)</span><br><span class="line">    (<span class="name">m</span> x</span><br><span class="line">       y</span><br><span class="line">       (<span class="name"><span class="builtin-name">lambda</span></span> (n) (<span class="name"><span class="builtin-name">set!</span></span> x n))</span><br><span class="line">       (<span class="name"><span class="builtin-name">lambda</span></span> (n) (<span class="name"><span class="builtin-name">set!</span></span> y n)))))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name"><span class="builtin-name">car</span></span> x)</span><br><span class="line">  (<span class="name">x</span> (<span class="name"><span class="builtin-name">lambda</span></span> (a b sa sb) a)))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name"><span class="builtin-name">cdr</span></span> x)</span><br><span class="line">  (<span class="name">x</span> (<span class="name"><span class="builtin-name">lambda</span></span> (a b sa sb) b)))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name"><span class="builtin-name">set-car!</span></span> x y)</span><br><span class="line">  (<span class="name">x</span> (<span class="name"><span class="builtin-name">lambda</span></span> (a b sa sb) (<span class="name">sa</span> y))))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name"><span class="builtin-name">set-cdr!</span></span> x y)</span><br><span class="line">  (<span class="name">x</span> (<span class="name"><span class="builtin-name">lambda</span></span> (a b sa sb) (<span class="name">sb</span> y))))</span><br></pre></td></tr></table></figure>
 <p>以上是对丘奇方法的修改，使用<code>set!</code>定义了<code>set-car!</code>和<code>set-cdr!</code>，这个过程中，没有使用任何数据，通过lambda表达式创建过程对象，“无中生有”构造了序对。</p>
-<hr>
 <h3 id="环境模型"><a href="#环境模型" class="headerlink" title="环境模型"></a>环境模型</h3><p>原先的代换模型基于“变量名是值的名字”这一事实，因为引入了赋值，值和变量名并不是一一对应，代换模型便无法适用于赋值操作存在的情况。我们构建新的计算模型，环境模型(environment model)，来解决这个问题。环境模型建立的是变量名和储存值的地址之间的关系，并且变量的值允许改变。<br>环境模型的使用可以总结为两条规则：</p>
 <ul>
 <li>一个程序对象被用于一组参数，是通过构建一个新框架来完成的。框架包含形式参数到调用中使用的实际参数的映射，而后将在构造起的这一环境的上下文中求值过程体。这个新框架的外围环境就是作为被应用的那个过程对象的一部分的环境。</li>
 <li>相对于某个特定的环境求值lambda表达式，将创建起一个过程对象，一个由lambda表达式的文本和一个指向创建这个过程对象时所在环境的指针构成的序对。 </li>
 </ul>
-<hr>
 <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>引入了赋值操作<code>set!</code>，最基本的序对也扩展了能力，增加了变动函数(mutator)，我们有能力定义变动的表结构。基于变动的表结构，我们定义了链表(linked list)，双向链表(doubly linked list)，队列(queue)，双端队列(deque)，表格(table)等数据结构。其中实现的二维表格就可以实现上一章提到的operation table的功能。<br>我们模拟了两个实例，数字电路和约束的传播，两个实例中使用了面向对象的思想，将系统分成一个个功能模块，我们在计算机中模拟其在现实中的特征。每个对象实例通过自己的局部状态变量维护自己的状态，在系统中，各个对象实例互不影响。  </p>
+<hr>
+<p>习题解答：<a href="https://github.com/DukeLuo/SICP" target="_blank" rel="noopener">传送门</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/08/19/sicp-notes-7.html" data-id="cjgx0ny220015ukil3p5irh40" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/08/19/sicp-notes-7.html" data-id="cjgx8t9m7000pn4ilkoci6yip" class="article-share-link">Share</a>
       
       
       

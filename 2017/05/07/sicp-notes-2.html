@@ -28,15 +28,15 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="The ability to visualize the consequences of the actions under consideration is cruial to becoming an expert programmer,just as it is in any synthetic,creative activity.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-test-1.png">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-test-2.png">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-debug-1.png">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-debug-2.png">
-<meta property="og:updated_time" content="2018-04-08T13:01:04.958Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdP1lq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdPMfs.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdPlpn.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdPKYj.png">
+<meta property="og:updated_time" content="2018-05-08T05:24:51.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP笔记（二）">
 <meta name="twitter:description" content="The ability to visualize the consequences of the actions under consideration is cruial to becoming an expert programmer,just as it is in any synthetic,creative activity.">
-<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-test-1.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/08/CdP1lq.png">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -123,14 +123,10 @@ ga('send', 'pageview');
 <p>通过代换模型，一个线性递归过程是一个先展开后收缩的形状，当计算过程建立一个延迟操作的链条时，过程展开，而这些操作的执行就表现为过程的收缩。执行递归过程需要解释器跟踪维持这些延迟操作的轨迹。  </p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; 阶乘的线性迭代实现</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">factorial</span> n)</span><br><span class="line">	(<span class="name">fact-iter</span> <span class="number">1</span> <span class="number">1</span> n))</span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">fact-iter</span> product counter max-count)</span><br><span class="line">	(<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&gt;</span></span> counter max-count)</span><br><span class="line">		product</span><br><span class="line">		(<span class="name">fact-iter</span> (<span class="name"><span class="builtin-name">*</span></span> counter product)</span><br><span class="line">				   (<span class="name"><span class="builtin-name">+</span></span> counter <span class="number">1</span>)</span><br><span class="line">				   max-count)))</span><br></pre></td></tr></table></figure>
 <p>与线性递归相比，线性迭代并没有展开或者收缩的形状。一个迭代计算过程的状态可以用固定数目的状态变量来描述，同时有一套固定的规则用来描述当计算过程从一个状态到下一状态时，变量应该如何变化，并还可能有一个用来指明结束条件的结束测试。<br>如果我们中途打断计算过程，然后向解释器提供程序变量的值，迭代过程就能唤醒，但迭代过程却不能，这是因为递归过程有一些由解释器维持的隐藏信息，并不存在于程序变量之中。</p>
-<hr>
 <h3 id="recursive-process-·-recursive-procedure"><a href="#recursive-process-·-recursive-procedure" class="headerlink" title="recursive process · recursive procedure"></a>recursive process · recursive procedure</h3><p>当我们描述一个程序是递归的时，我们是指这个程序的定义中引用了它自己的语法事实；当说某个计算过程是递归时，指这个过程的进展方式，而不是指写程序时的语法形式。如，上文的fact-iter是一个递归程序，计算时却产生一个迭代过程。<br>现今的大多数语言的实现设计中，对于任何递归程序的解释，消耗的内存总与程序调用的次数成正比，哪怕当计算过程从原理上看是迭代的。因此，这些语言要描述迭代过程要通过特殊的循环结构。</p>
-<hr>
 <h3 id="树形递归"><a href="#树形递归" class="headerlink" title="树形递归"></a>树形递归</h3><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; Fibonacci数列的递归实现</span></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">fib</span> n)</span><br><span class="line">	(<span class="name"><span class="builtin-name">cond</span></span> ((<span class="name"><span class="builtin-name">=</span></span> n <span class="number">0</span>) <span class="number">0</span>)</span><br><span class="line">		  ((<span class="name"><span class="builtin-name">=</span></span> n <span class="number">1</span>) <span class="number">1</span>)</span><br><span class="line">		  (<span class="name"><span class="builtin-name">else</span></span> (<span class="name"><span class="builtin-name">+</span></span> (<span class="name">fib</span> (<span class="name"><span class="builtin-name">-</span></span> n <span class="number">1</span>))</span><br><span class="line">				   (<span class="name">fib</span> (<span class="name"><span class="builtin-name">-</span></span> n <span class="number">2</span>))))))</span><br></pre></td></tr></table></figure>
 <p>就像(fib n)的计算过程，树形递归的进展过程像一棵树。树形递归过程使用大量的计算步骤，随着输入成指数增长，进行大量的重复计算，效率低，但思路清晰直接，同时是处理层次结构数据的好工具。</p>
-<hr>
 <h3 id="增长的阶"><a href="#增长的阶" class="headerlink" title="增长的阶"></a>增长的阶</h3><p>在计算机科学中，算法分析(Analysis of algorithm)是分析执行一个给定需要消耗的计算资源数量（例如计算时间，存储器使用等）的过程。算法的效率或复杂度在理论上表示为一个函数。其定义域是输入数据的长度（通常考虑任意大的输入，没有上界），值域通常是执行步骤数量（时间复杂度）或者存储器位置数量（空间复杂度）。<br>增长的阶只是提供了一种对计算过程行为的一种很粗略的描述，并不能精准地描述计算过程中资源的消耗，但却可以提供了一种有效的方法预期当我们改变问题的规模时，过程的行为将如何变化。</p>
-<hr>
 <h3 id="求幂"><a href="#求幂" class="headerlink" title="求幂"></a>求幂</h3><table>
 <thead>
 <tr>
@@ -155,25 +151,19 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
-<hr>
 <h3 id="素数检测"><a href="#素数检测" class="headerlink" title="素数检测"></a>素数检测</h3><p>寻找因子：对于数n，从2开始寻找最小整数因子。如若最小整数因子是n，则为素数；否则不是。<br>费马检测：通过费马检测的数，不一定是素数，无法通过的一定不是素数。能骗过费马检测的数称为卡迈克尔数(Carmichael numbers)，卡迈克尔数数量非常少。像这种存在任意小概率出错机会的算法称为概率算法(probabilistic algorithms)。</p>
-<hr>
-<h3 id="Testing-·-Debugging"><a href="#Testing-·-Debugging" class="headerlink" title="Testing · Debugging"></a>Testing · Debugging</h3><p><strong><em>Testing</em></strong></p>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; testing in racket</span></span><br><span class="line">(<span class="name"><span class="builtin-name">require</span></span> htdp/testing) <span class="comment">;导入库</span></span><br><span class="line">(<span class="name">check-expect</span> &lt;funct-call&gt; &lt;expected-output&gt;)</span><br><span class="line">(<span class="name">generate-report</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-test-1.png" alt=""></p>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-test-2.png" alt=""></p>
-<p><strong><em>Debugging</em></strong></p>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; debugging in racket</span></span><br><span class="line">(<span class="name"><span class="builtin-name">require</span></span> racket/trace)</span><br><span class="line">(<span class="name">trace</span> fac)</span><br></pre></td></tr></table></figure>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-debug-1.png" alt=""></p>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.2/no2-debug-2.png" alt=""></p>
+<h3 id="Testing-·-Debugging"><a href="#Testing-·-Debugging" class="headerlink" title="Testing · Debugging"></a>Testing · Debugging</h3><h4 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h4><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; testing in racket</span></span><br><span class="line">(<span class="name"><span class="builtin-name">require</span></span> htdp/testing) <span class="comment">;导入库</span></span><br><span class="line">(<span class="name">check-expect</span> &lt;funct-call&gt; &lt;expected-output&gt;)</span><br><span class="line">(<span class="name">generate-report</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/05/08/CdP1lq.png" alt=""><br><img src="https://s1.ax1x.com/2018/05/08/CdPMfs.png" alt=""></p>
+<h4 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h4><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;;; debugging in racket</span></span><br><span class="line">(<span class="name"><span class="builtin-name">require</span></span> racket/trace)</span><br><span class="line">(<span class="name">trace</span> fac)</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/05/08/CdPlpn.png" alt=""><br><img src="https://s1.ax1x.com/2018/05/08/CdPKYj.png" alt=""></p>
 <h3 id="有话说"><a href="#有话说" class="headerlink" title="有话说"></a>有话说</h3><p><strong>语言是为了分歧而存在的，真正相知的两个人，无需多说。</strong></p>
 <hr>
-<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="noopener">传送门</a></p>
+<p>习题解答：<a href="https://github.com/DukeLuo/SICP" target="_blank" rel="noopener">传送门</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/05/07/sicp-notes-2.html" data-id="cjgx0ny1y000xukilrqmw1tfz" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/05/07/sicp-notes-2.html" data-id="cjgx8t9m6000nn4ilrz7zsvmp" class="article-share-link">Share</a>
       
       
       

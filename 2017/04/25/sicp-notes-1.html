@@ -28,12 +28,12 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG">
-<meta property="og:updated_time" content="2018-04-08T13:01:52.526Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdCrdg.png">
+<meta property="og:updated_time" content="2018-05-08T05:09:50.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP笔记（一）">
 <meta name="twitter:description" content="环境搭建我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。">
-<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/08/CdCrdg.png">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -115,10 +115,8 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>我使用的环境是DrRacket，安装好Racket后，打开主菜单”File”，找到”Package Manager…”，在”DO What I Mean”中输入”sicp”，导入sicp包。写Scheme程序时，首行写上”#lang sicp”。<br><a id="more"></a></p>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.1/set-up-environment.PNG" alt=""></p>
-<hr>
+<p><img src="https://s1.ax1x.com/2018/05/08/CdCrdg.png" alt=""></p>
 <h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h3><p>CS的关键是如何去对计算过程进行形式化表述，并如何实现它。计算机的过程必须是有效的。<br>Lisp是至今第二古老的语言，Lisp的语法规则简单，简单到几分钟就可以学会，简单的语法规则让使用者可以全心地去考虑程序的内部逻辑。Lisp自己解释自己，解释Lisp的步骤是apply and eval,两者不断地相互运行。SICP的教学语言是Lisp的一个方言Scheme。</p>
-<hr>
 <h3 id="程序设计的基本元素"><a href="#程序设计的基本元素" class="headerlink" title="程序设计的基本元素"></a>程序设计的基本元素</h3><p>任何一种强有力的编程语言，都应该有一下的三种机制：</p>
 <ul>
 <li>基本表达式</li>
@@ -128,19 +126,16 @@ ga('send', 'pageview');
 <p>Scheme中的表达式采用前缀表示法，括号里最左边的叫操作符(operator)，其他的叫做操作对象(operand)。前缀表示法的优点，完全适用于带任意个实参的情况；可以直接扩充，理论上讲没有任何深度的限制。<br>define是最简单的一种抽象方法，通过define可以将值与符号关联。解释器维护着某种储存来跟踪符号和值的联系，这种储存就叫做环境。符号的值就是环境中和这些对象相互关联的对象，环境扮演的角色就是用于决定表达式中各个符号的意义。</p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">square</span> x) (<span class="name"><span class="builtin-name">*</span></span> x x))</span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">square</span>) (<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">*</span></span> x x)))</span><br></pre></td></tr></table></figure>
 <p>这两种定义方式是等价的，都是定义了一个square过程，可以看作语法糖关系。</p>
-<hr>
 <h3 id="应用序-·-正则序"><a href="#应用序-·-正则序" class="headerlink" title="应用序 · 正则序"></a>应用序 · 正则序</h3><p>正则序(normal-order evaluation)；完全展开而后归约(fully expend and then reduce)<br>应用序(applicative-order evaluation)；先求值参数而后应用(evaluate the arguments and apply)<br>Lisp采用应用序，可以避免对表达式的重复求值；超出替换方式模拟的过程范围后，正则序的处理将会变得更复杂。<br>可以通过Ben测试来区分解释器采用的是应用序还是正则序求值。 </p>
-<hr>
 <h3 id="cond-·-if"><a href="#cond-·-if" class="headerlink" title="cond · if"></a>cond · if</h3><p>if是特殊形式，是条件表达式的一种受限形式，有自己特殊的规则，而一般的条件表达式不具有。and和or都是特殊形式而不是普通的过程，因为它们的子表达式不一定都会求值，而not是普通的过程。</p>
-<hr>
 <h3 id="Black-Box-Abstraction"><a href="#Black-Box-Abstraction" class="headerlink" title="Black-Box Abstraction"></a>Black-Box Abstraction</h3><p>一个递归的过程，是基于自身过程的定义。<br>过程用户不必去关心过程的实现细节，可以看成一个black box，只需了解这个的过程的作用是什么，能产生什么样的结果。<br>过程里的形式参数扮演着一个特殊的角色，形式参数的具体名字是什么并不重要，并不影响过程实现的功能，这样的名字称为约束变量(bound variable)。一个过程的定义约束了它的所有形式参数。相对的，如果一个参数不被约束，就说它是自由的(free)。过程的形式参数是相应过程体里的局部名字。<br>在形式参数的作用域中，没有必要显式地传递其值，可以让其作为内部定义的自由变量。</p>
 <hr>
-<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="noopener">传送门</a><br>参考资料：<a href="http://docs.racket-lang.org/sicp-manual/index.html" target="_blank" rel="noopener">SICP Collections</a></p>
+<p>习题解答：<a href="https://github.com/DukeLuo/SICP" target="_blank" rel="noopener">传送门</a><br>参考资料：<a href="http://docs.racket-lang.org/sicp-manual/index.html" target="_blank" rel="noopener">SICP Collections</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/04/25/sicp-notes-1.html" data-id="cjgx0ny1y000yukily5j2bt0c" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/04/25/sicp-notes-1.html" data-id="cjgx8t9m4000jn4il7ho7mg8t" class="article-share-link">Share</a>
       
       
       

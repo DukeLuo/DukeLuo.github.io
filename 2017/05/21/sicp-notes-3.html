@@ -28,7 +28,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="As programmers,we should be alert to opportunities to identify the underlying abstractions in our programs and to build upon them and generalize them to create more powerful abstractions.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-08T13:03:01.289Z">
+<meta property="og:updated_time" content="2018-05-08T05:18:21.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP笔记（三）">
 <meta name="twitter:description" content="As programmers,we should be alert to opportunities to identify the underlying abstractions in our programs and to build upon them and generalize them to create more powerful abstractions.">
@@ -122,28 +122,24 @@ ga('send', 'pageview');
 <li>They may be returned as the result of procedures</li>
 <li>They may be included in data structures</li>
 </ul>
-<hr>
 <h3 id="作为参数"><a href="#作为参数" class="headerlink" title="作为参数"></a>作为参数</h3><p>对整数和，立方和，莱布尼兹序列求和的过程中，都存在一个求和的过程，我们可以将其抽象。</p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">sum</span> term a next b)</span><br><span class="line">	(<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&gt;</span></span> a b)</span><br><span class="line">		<span class="number">0</span></span><br><span class="line">		(<span class="name"><span class="builtin-name">+</span></span> (<span class="name">term</span> a)</span><br><span class="line">		   (<span class="name">sum</span> term (<span class="name">next</span> a) next b))))</span><br></pre></td></tr></table></figure>
 <p>抽象出的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```scheme</span><br><span class="line">;;; [a,b]的整数求和</span><br><span class="line">(sum (lambda (x) x)</span><br><span class="line">     a</span><br><span class="line">     (lambda (x) (+ x 1)) </span><br><span class="line">     b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">;;; [a,b]的整数的立方求和</span><br><span class="line">(sum (lambda (x) (* x x x))</span><br><span class="line">     a</span><br><span class="line">     (lambda (x) (+ x 1)) </span><br><span class="line">     b)</span><br></pre></td></tr></table></figure></p>
-<hr>
 <h3 id="lambda-·-let"><a href="#lambda-·-let" class="headerlink" title="lambda · let"></a>lambda · let</h3><p>lambda表达式可以创建匿名函数，免去为函数取名字。创建的函数和使用<code>define</code>创建的函数除了没有绑定环境中的变量名之外，都是一样的。<br>let表达式可以创建局部变量。let表达式是lambda表达式的语法糖，对let表达式的求值过程中，解释器并不需要新的机制。let表达式中变量的作用域就是let表达式中的函数体。  </p>
 <ul>
 <li><code>let</code> allows one to bind variables as locally as possible to where they are to be used</li>
 <li>the variables’ values are computed outside the let</li>
 </ul>
-<hr>
 <h3 id="作为一般性的方法"><a href="#作为一般性的方法" class="headerlink" title="作为一般性的方法"></a>作为一般性的方法</h3><p>区间折半法寻找方程的根，时间复杂度O(log (L/T))，其中L是区间长度，T为可容忍的误差。<br>寻找函数不动点，使用平均阻尼(average damping)可以加速计算的收敛速度。</p>
-<hr>
 <h3 id="作为返回值"><a href="#作为返回值" class="headerlink" title="作为返回值"></a>作为返回值</h3><p>一般情况，将一计算过程写成程序可以有很多方式，有经验的程序员知道如何选择过程的形式，使其特别地清晰且易理解，并且使该计算过程中有用的元素能表现为一些分离的个体，能重新用于其他的应用中。<br>牛顿法求平方根，收敛速度比区间折半法快得多。</p>
 <hr>
 <p>至此，第一章阅读完毕，从4.21开始，刚好历时一个月，比想象中慢些，come on！！！   </p>
-<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="noopener">传送门</a></p>
+<p>习题解答：<a href="https://github.com/DukeLuo/SICP" target="_blank" rel="noopener">传送门</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/05/21/sicp-notes-3.html" data-id="cjgx0ny200011ukilsc5m7tbu" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/05/21/sicp-notes-3.html" data-id="cjgx8t9m4000kn4ilwnjjy0j7" class="article-share-link">Share</a>
       
       
       

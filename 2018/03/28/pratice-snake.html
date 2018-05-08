@@ -28,12 +28,12 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="介绍贪吃蛇的实现过程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/starsets/snake.png">
-<meta property="og:updated_time" content="2018-04-21T04:18:07.911Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdC3ZD.png">
+<meta property="og:updated_time" content="2018-05-08T04:56:58.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言实现贪吃蛇步骤实述">
 <meta name="twitter:description" content="介绍贪吃蛇的实现过程。">
-<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/starsets/snake.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/08/CdC3ZD.png">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -115,21 +115,15 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>贪吃蛇整个游戏过程就是玩家控制蛇在限定区域内重复移动、吃食的过程，因此实现这个小游戏需要一条蛇、一个限定区域以及食物。我们可以用一个数组来表示限定区域，对这个区域而言，我们希望有初始化的方法以及在终端打印的方法;对于蛇来讲，我们希望可以对其初始化、移动以及吃食的方法;食物的话，要求比较简单，只需要在没有食物的时候产生新的食物就可以。<br><a id="more"></a></p>
-<hr>
 <h3 id="活动区域"><a href="#活动区域" class="headerlink" title="活动区域"></a>活动区域</h3><p>我选择一维的字符数组来作为活动区域的载体，当储存元素为字符<code>&#39;S&#39;</code>时表示为蛇;元素为字符<code>&#39;F&#39;</code>时表示为食物;元素为字符<code>&#39;+&#39;</code>时表示为边界，其余的空闲空间则储存字符<code>&#39;0&#39;</code>。游戏的过程，本质上就是对这些字符的处理。实现区域的初始化和打印方法非常简单，是实现贪吃蛇过程中最简单的部分了。</p>
-<hr>
 <h3 id="蛇"><a href="#蛇" class="headerlink" title="蛇"></a>蛇</h3><p>我使用了一个类似双端队列的数据结构来表示蛇，不过它比双端队列简单多了，只需要实现双端队列的几个操作就可以了。<code>unshift()</code>用来在队列前端添加元素，<code>pop()</code>用来删除队列末端的元素，<code>get_head()</code>用来获取队首。值得注意的是，前面我用字符数组来实现活动区域，结果也用字符数组来实现这个储存位置的队列，结果给自己挖了一个大坑。蛇在限定区域内不断移动，就是通过操作储存位置的队列来实现的。<br>蛇移动的话，就是在队首添加元素，在队末删除元素。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move_snake</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    board[x] = <span class="string">'S'</span>;</span><br><span class="line">    unshift(x);</span><br><span class="line">    board[pop()] = <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>类似移动，吃食不过是不删除队末的元素。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">eat_snake</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    board[x] = <span class="string">'S'</span>;</span><br><span class="line">    unshift(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
 <h3 id="食物"><a href="#食物" class="headerlink" title="食物"></a>食物</h3><p>使用库函数<code>rand()</code>随机产生食物，注意，要在没有食物的时候产生！</p>
-<hr>
-<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>实现上面的各个函数后，整个贪吃蛇就呼之欲出了。首先初始化活动区域，初始化蛇，然后循环不断获取用户输入，产生下一个移动位置，蛇对其作出反应，打印活动区域。这其中有一个需要注意的点就是，蛇不能对与运动方向相反的指令作出响应，就是不能调头返回。<br><img src="http://oonjkyvrf.bkt.clouddn.com/starsets/snake.png" alt="snake"></p>
-<hr>
+<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>实现上面的各个函数后，整个贪吃蛇就呼之欲出了。首先初始化活动区域，初始化蛇，然后循环不断获取用户输入，产生下一个移动位置，蛇对其作出反应，打印活动区域。这其中有一个需要注意的点就是，蛇不能对与运动方向相反的指令作出响应，就是不能调头返回。<br><img src="https://s1.ax1x.com/2018/05/08/CdC3ZD.png" alt=""></p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>我实现的贪吃蛇是控制台程序，为了美观，需要清屏、关闭回显、隐藏光标等美化操作。清屏与关闭回显，我使用了库函数中的<code>system()</code>函数;隐藏光标，我使用了<a href="https://blog.csdn.net/kevinshq/article/details/8179252" target="_blank" rel="noopener">这</a>提供的方法。要注意的是，对终端设置后记得在退出时将设置修改回来。还有一个，贪吃蛇需要判断键盘是否有输入，有的话需要及时读入，了解到有这么一个库函数<code>kbhit()</code>实现了这个功能，不过linux下的C并没有这个头文件，我谷歌了一个<code>kbhit()</code>在linux下的实现，在<a href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html" target="_blank" rel="noopener">这</a>，感觉这才是这个程序的重点哈，不过，水平太菜，只好直接复制了。</p>
-<p>源程序： <a href="https://github.com/DukeLuo/starSets" target="_blank" rel="noopener">这里</a></p>
-<hr>
+<p>源程序： <a href="https://github.com/DukeLuo/Sand" target="_blank" rel="noopener">这里</a></p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
 <li><a href="https://aotu.io/notes/2017/09/25/h5game-snake/index.html" target="_blank" rel="noopener">H5游戏开发：贪吃蛇</a></li>
 <li><a href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html" target="_blank" rel="noopener">kbhit() for linux</a></li>
@@ -139,7 +133,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/03/28/pratice-snake.html" data-id="cjgx0ny230018ukilc4n0qazw" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/03/28/pratice-snake.html" data-id="cjgx8t9m0000dn4ilipvbgh18" class="article-share-link">Share</a>
       
       
       

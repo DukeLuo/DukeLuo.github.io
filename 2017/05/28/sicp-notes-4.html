@@ -28,13 +28,13 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="sicp的第二章讨论构造数据抽象。构造数据抽象是一个非常有用的工具，构造数据之后，便可以将构造的复合数据视为一个单元体，在构建程序让我们在更高的层次上思考问题，并可以增加程序的模块性，便于修改维护。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.4/racket_path.png">
-<meta property="og:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.4/racket_cmd.png">
-<meta property="og:updated_time" content="2018-04-08T14:52:40.473Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdP2Ae.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/CdPc7D.png">
+<meta property="og:updated_time" content="2018-05-08T05:32:30.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP笔记（四）">
 <meta name="twitter:description" content="sicp的第二章讨论构造数据抽象。构造数据抽象是一个非常有用的工具，构造数据之后，便可以将构造的复合数据视为一个单元体，在构建程序让我们在更高的层次上思考问题，并可以增加程序的模块性，便于修改维护。">
-<meta name="twitter:image" content="http://oonjkyvrf.bkt.clouddn.com/sicp/1.4/racket_path.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/08/CdP2Ae.png">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -118,7 +118,6 @@ ga('send', 'pageview');
         <p>sicp的第二章讨论构造数据抽象。构造数据抽象是一个非常有用的工具，构造数据之后，便可以将构造的复合数据视为一个单元体，在构建程序让我们在更高的层次上思考问题，并可以增加程序的模块性，便于修改维护。</p>
 <a id="more"></a>
 <h3 id="数据抽象"><a href="#数据抽象" class="headerlink" title="数据抽象"></a>数据抽象</h3><p>数据抽象将复合数据的使用与如何通过更基本的数据对象构造分离开来。复合数据和使用其的程序由选择函数(selector)和构造函数(constructor)联系起来。<br>在构造有理数数据结构时，使用到愿望思维(wishful thinking)。先假设已经实现对应数据结构的构造，考虑之后我们想要实现的功能，定义好合适的接口。<br>从序对构造起来的数据对象称为表结构数据。<br>抽象屏障，使复合数据的结构清晰，从基本的数据对象构造，层层封装，显示很强的条理性。</p>
-<hr>
 <h3 id="Church-numerals"><a href="#Church-numerals" class="headerlink" title="Church numerals"></a>Church numerals</h3><p>课后练习一道练习关于<a href="https://zh.wikipedia.org/wiki/%E9%82%B1%E5%A5%87%E6%95%B0" target="_blank" rel="noopener">Church numerals</a>的练习，感觉智商不够用。</p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> zero (<span class="name"><span class="builtin-name">lambda</span></span> (f) (<span class="name"><span class="builtin-name">lambda</span></span> (x) x)))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">add-1</span> n)</span><br><span class="line">  (<span class="name"><span class="builtin-name">lambda</span></span> (f) (<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name">f</span> ((<span class="name">n</span> f) x)))))</span><br></pre></td></tr></table></figure>
 <p>通过代换模型，可以得到</p>
@@ -128,18 +127,17 @@ ga('send', 'pageview');
 <p>试试，顺利产生了想要的结果~</p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; ((one inc) 0)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">&gt; ((two inc) 0)</span><br><span class="line"><span class="number">2</span></span><br><span class="line">&gt; (((add one two) inc) 0)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
 <p>基于一个自增的操作和一个基线条件0，我们就可以通过Church numerals生成所有的自然数了，Unbelievable！</p>
-<hr>
 <h3 id="设置Racket环境变量"><a href="#设置Racket环境变量" class="headerlink" title="设置Racket环境变量"></a>设置Racket环境变量</h3><p>未添加环境变量之前，任意目录下命令行无法直接使用racket命令，添加Racket的安装路径至PATH中，便解决了这个问题。</p>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.4/racket_path.png" alt=""></p>
-<p><img src="http://oonjkyvrf.bkt.clouddn.com/sicp/1.4/racket_cmd.png" alt=""></p>
-<hr>
-<p>习题解答：<a href="https://github.com/DukeLuo/sicp_exercise_answer" target="_blank" rel="noopener">传送门</a></p>
+<p><img src="https://s1.ax1x.com/2018/05/08/CdP2Ae.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2018/05/08/CdPc7D.png" alt=""></p>
 <h3 id="有话说"><a href="#有话说" class="headerlink" title="有话说"></a>有话说</h3><p>道生一，一生二，二生三，三生万物</p>
+<hr>
+<p>习题解答：<a href="https://github.com/DukeLuo/SICP" target="_blank" rel="noopener">传送门</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/05/28/sicp-notes-4.html" data-id="cjgx0ny210012ukil6xo78u7j" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/05/28/sicp-notes-4.html" data-id="cjgx8t9m5000ln4ildpidr4ki" class="article-share-link">Share</a>
       
       
       
