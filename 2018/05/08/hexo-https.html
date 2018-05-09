@@ -18,15 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>归档: 2017 | DukeLuo&#39;s Blog</title>
+  <title>官方支持，Hexo博客自定义域名开启HTTPS | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DukeLuo&#39;s Blog">
-<meta property="og:url" content="http://dukeluo.github.io/archives/2017/page/2/index.html">
+  <meta name="description" content="GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。">
+<meta name="keywords" content="Hexo,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="官方支持，Hexo博客自定义域名开启HTTPS">
+<meta property="og:url" content="http://dukeluo.github.io/2018/05/08/hexo-https.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
+<meta property="og:description" content="GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-09T06:34:46.402Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DukeLuo&#39;s Blog">
+<meta name="twitter:title" content="官方支持，Hexo博客自定义域名开启HTTPS">
+<meta name="twitter:description" content="GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -81,140 +86,61 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/22/python-list-argument.html" class="archive-article-date">
-  <time datetime="2017-07-21T16:00:00.000Z" itemprop="datePublished">7月 22</time>
+        <section id="main"><article id="post-hexo-https" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/hexo-https.html" class="article-date">
+  <time datetime="2018-05-07T16:00:00.000Z" itemprop="datePublished">2018-05-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/记录/">记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/22/python-list-argument.html">python中列表作为参数的传递方式</a>
+    <h1 class="article-title" itemprop="name">
+      官方支持，Hexo博客自定义域名开启HTTPS
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/09/sicp-notes-5.html" class="archive-article-date">
-  <time datetime="2017-07-08T16:00:00.000Z" itemprop="datePublished">7月 9</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/09/sicp-notes-5.html">SICP笔记（五）</a>
-    </h1>
-  
+        <p>GitHub官方在5月1号<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener">宣布</a>，GitHub Pages的自定义域名获得对HTTPS的支持。自己博客没有启用HTTPS，看到消息后，就想着折腾下吧。其实，很简单的，对着官方教程一步步来就可以了。<br><a id="more"></a></p>
+<p>首先，打开仓库的Settings，找到GitHub Pages项，有一个Enforce HTTPS，在前面的框打上钩就可以了。不过，我的框是灰色的，看来是以前没有配置好。不用着急，官方也有解决<a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="noopener">办法</a>，提供了两种解决方案。一种通过<a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-an-alias-or-aname-record-with-your-dns-provider" target="_blank" rel="noopener">配置<code>ALIAS</code>记录或<code>ANAME</code>记录</a>，另一种是<a href="https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider" target="_blank" rel="noopener">配置<code>A</code>记录</a>。我的域名托管在namecheap，使用其提供的BasicDNS，只支持<code>A</code>记录，因此按照方案，删除原来配置不正确的<code>A</code>记录，重新添加四条<code>A</code>记录。接下来就是等待生效了，挺久的，大概是24小时的样子。生效后，重新打开Settings,你会发现框框可以勾选了。<br>勾选成功开启后，可能浏览器地址栏旁边的小锁并不是绿色，这可能就是因为网页引用了HTTP的资源，譬如图片什么的。接下来，就是这些的迁移工作了。工作量可不小，完成后，博客就全站支持HTTPS了。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/28/sicp-notes-4.html" class="archive-article-date">
-  <time datetime="2017-05-27T16:00:00.000Z" itemprop="datePublished">5月 28</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/28/sicp-notes-4.html">SICP笔记（四）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/21/sicp-notes-3.html" class="archive-article-date">
-  <time datetime="2017-05-20T16:00:00.000Z" itemprop="datePublished">5月 21</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukeluo.github.io/2018/05/08/hexo-https.html" data-id="cjgyqcpg4000c7sil6tkfusem" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/21/sicp-notes-3.html">SICP笔记（三）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/07/sicp-notes-2.html" class="archive-article-date">
-  <time datetime="2017-05-06T16:00:00.000Z" itemprop="datePublished">5月 7</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/07/sicp-notes-2.html">SICP笔记（二）</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/25/sicp-notes-1.html" class="archive-article-date">
-  <time datetime="2017-04-24T16:00:00.000Z" itemprop="datePublished">4月 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/25/sicp-notes-1.html">SICP笔记（一）</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/archives/2017/">&laquo; 上一页</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2017/page/3/">3</a><a class="page-number" href="/archives/2017/page/4/">4</a><a class="extend next" rel="next" href="/archives/2017/page/3/">下一页 &raquo;</a>
-  </nav>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/04/linkedlist-1.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">剖析链表，链表常用操作集合</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
 
 </section>
         

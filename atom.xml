@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-05-06T12:33:23.633Z</updated>
+  <updated>2018-05-09T06:34:46.402Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>官方支持，Hexo博客自定义域名开启HTTPS</title>
+    <link href="http://dukeluo.github.io/2018/05/08/hexo-https.html"/>
+    <id>http://dukeluo.github.io/2018/05/08/hexo-https.html</id>
+    <published>2018-05-07T16:00:00.000Z</published>
+    <updated>2018-05-09T06:34:46.402Z</updated>
+    
+    <summary type="html">
+    
+      GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。
+    
+    </summary>
+    
+      <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="Hexo" scheme="http://dukeluo.github.io/tags/Hexo/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>剖析链表，链表常用操作集合</title>
@@ -67,7 +89,7 @@
     <link href="http://dukeluo.github.io/2018/04/15/algs4-notes-7.html"/>
     <id>http://dukeluo.github.io/2018/04/15/algs4-notes-7.html</id>
     <published>2018-04-14T16:00:00.000Z</published>
-    <updated>2018-05-08T03:55:34.041Z</updated>
+    <updated>2018-05-08T07:24:13.427Z</updated>
     
     <summary type="html">
     
@@ -113,7 +135,7 @@
     <link href="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html"/>
     <id>http://dukeluo.github.io/2018/03/14/algs4-notes-6.html</id>
     <published>2018-03-13T16:00:00.000Z</published>
-    <updated>2018-05-08T03:53:45.150Z</updated>
+    <updated>2018-05-08T07:25:15.934Z</updated>
     
     <summary type="html">
     
@@ -137,7 +159,7 @@
     <link href="http://dukeluo.github.io/2018/03/09/algs4-notes-5.html"/>
     <id>http://dukeluo.github.io/2018/03/09/algs4-notes-5.html</id>
     <published>2018-03-08T16:00:00.000Z</published>
-    <updated>2018-05-08T03:50:07.761Z</updated>
+    <updated>2018-05-08T07:25:22.173Z</updated>
     
     <summary type="html">
     
@@ -161,7 +183,7 @@
     <link href="http://dukeluo.github.io/2018/03/04/algs4-notes-4.html"/>
     <id>http://dukeluo.github.io/2018/03/04/algs4-notes-4.html</id>
     <published>2018-03-03T16:00:00.000Z</published>
-    <updated>2018-05-08T03:48:52.679Z</updated>
+    <updated>2018-05-08T07:25:26.161Z</updated>
     
     <summary type="html">
     
@@ -185,7 +207,7 @@
     <link href="http://dukeluo.github.io/2018/03/02/algs4-notes-3.html"/>
     <id>http://dukeluo.github.io/2018/03/02/algs4-notes-3.html</id>
     <published>2018-03-01T16:00:00.000Z</published>
-    <updated>2018-05-08T03:46:11.726Z</updated>
+    <updated>2018-05-08T07:25:32.815Z</updated>
     
     <summary type="html">
     
@@ -209,7 +231,7 @@
     <link href="http://dukeluo.github.io/2018/02/28/algs4-notes-2.html"/>
     <id>http://dukeluo.github.io/2018/02/28/algs4-notes-2.html</id>
     <published>2018-02-27T16:00:00.000Z</published>
-    <updated>2018-04-08T15:00:28.587Z</updated>
+    <updated>2018-05-08T07:04:47.615Z</updated>
     
     <summary type="html">
     
@@ -305,7 +327,7 @@
     <link href="http://dukeluo.github.io/2017/09/09/sicp-notes-8.html"/>
     <id>http://dukeluo.github.io/2017/09/09/sicp-notes-8.html</id>
     <published>2017-09-08T16:00:00.000Z</published>
-    <updated>2018-05-08T05:19:09.548Z</updated>
+    <updated>2018-05-08T07:02:35.350Z</updated>
     
     <summary type="html">
     
@@ -451,30 +473,6 @@
     <summary type="html">
     
       &lt;p&gt;As programmers,we should be alert to opportunities to identify the underlying abstractions in our programs and to build upon them and generalize them to create more powerful abstractions.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（二）</title>
-    <link href="http://dukeluo.github.io/2017/05/07/sicp-notes-2.html"/>
-    <id>http://dukeluo.github.io/2017/05/07/sicp-notes-2.html</id>
-    <published>2017-05-06T16:00:00.000Z</published>
-    <updated>2018-05-08T05:24:51.381Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;The ability to visualize the consequences of the actions under consideration is cruial to becoming an expert programmer,just as it is in any synthetic,creative activity.  &lt;/p&gt;
     
     </summary>
     
