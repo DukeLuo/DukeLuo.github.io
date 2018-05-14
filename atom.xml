@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-05-09T06:34:46.402Z</updated>
+  <updated>2018-05-14T08:59:43.195Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS学习（一）：清除浮动</title>
+    <link href="http://dukeluo.github.io/2018/05/13/css-clearfix.html"/>
+    <id>http://dukeluo.github.io/2018/05/13/css-clearfix.html</id>
+    <published>2018-05-12T16:00:00.000Z</published>
+    <updated>2018-05-14T08:59:43.195Z</updated>
+    
+    <summary type="html">
+    
+      介绍清除浮动的常用方法。
+    
+    </summary>
+    
+      <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="浮动" scheme="http://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>官方支持，Hexo博客自定义域名开启HTTPS</title>
     <link href="http://dukeluo.github.io/2018/05/08/hexo-https.html"/>
     <id>http://dukeluo.github.io/2018/05/08/hexo-https.html</id>
     <published>2018-05-07T16:00:00.000Z</published>
-    <updated>2018-05-09T06:34:46.402Z</updated>
+    <updated>2018-05-09T06:40:31.408Z</updated>
     
     <summary type="html">
     
@@ -32,9 +56,9 @@
       <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="Hexo" scheme="http://dukeluo.github.io/tags/Hexo/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="Hexo" scheme="http://dukeluo.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -78,9 +102,9 @@
       <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="Hexo" scheme="http://dukeluo.github.io/tags/Hexo/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="Hexo" scheme="http://dukeluo.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -449,30 +473,6 @@
     <summary type="html">
     
       &lt;p&gt;sicp的第二章讨论构造数据抽象。构造数据抽象是一个非常有用的工具，构造数据之后，便可以将构造的复合数据视为一个单元体，在构建程序让我们在更高的层次上思考问题，并可以增加程序的模块性，便于修改维护。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（三）</title>
-    <link href="http://dukeluo.github.io/2017/05/21/sicp-notes-3.html"/>
-    <id>http://dukeluo.github.io/2017/05/21/sicp-notes-3.html</id>
-    <published>2017-05-20T16:00:00.000Z</published>
-    <updated>2018-05-08T05:18:21.554Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;As programmers,we should be alert to opportunities to identify the underlying abstractions in our programs and to build upon them and generalize them to create more powerful abstractions.&lt;/p&gt;
     
     </summary>
     

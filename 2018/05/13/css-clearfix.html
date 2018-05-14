@@ -18,20 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>关于python变量名的几点注意 | DukeLuo&#39;s Blog</title>
+  <title>CSS学习（一）：清除浮动 | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一点笔记。">
-<meta name="keywords" content="Python">
+  <meta name="description" content="介绍清除浮动的常用方法。">
+<meta name="keywords" content="CSS,总结,浮动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于python变量名的几点注意">
-<meta property="og:url" content="http://dukeluo.github.io/2017/02/28/python-name.html">
+<meta property="og:title" content="CSS学习（一）：清除浮动">
+<meta property="og:url" content="http://dukeluo.github.io/2018/05/13/css-clearfix.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
-<meta property="og:description" content="一点笔记。">
+<meta property="og:description" content="介绍清除浮动的常用方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-08T04:59:27.389Z">
+<meta property="og:updated_time" content="2018-05-14T08:59:43.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于python变量名的几点注意">
-<meta name="twitter:description" content="一点笔记。">
+<meta name="twitter:title" content="CSS学习（一）：清除浮动">
+<meta name="twitter:description" content="介绍清除浮动的常用方法。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -86,14 +86,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-python-name" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-css-clearfix" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/28/python-name.html" class="article-date">
-  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
+    <a href="/2018/05/13/css-clearfix.html" class="article-date">
+  <time datetime="2018-05-12T16:00:00.000Z" itemprop="datePublished">2018-05-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
   </div>
@@ -104,7 +104,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      关于python变量名的几点注意
+      CSS学习（一）：清除浮动
     </h1>
   
 
@@ -112,20 +112,32 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><p>1.类似<code>__xxx__</code>的变量名，以双下划线开头，且以双下划线结尾的，是特殊变量。特殊变量可以直接访问，不是private变量。不能用<code>__name__</code>,<code>__score__</code>这样的变量名。<br><a id="more"></a></p>
-<p>2.以一个下划线开头的实例变量名，比如<code>_name</code>，这样的实例变量外部是可以访问的，但是，约定俗成，应视为私有变量，不应随便访问。</p>
-<p>3.以__开头的实例变量就变成了一个private。只有内部可以访问，外部不能访问。</p>
-<p>4.可以通过<code>_类名__实例变量名</code>强行访问__实例变量名。</p>
-<h3 id="有话说"><a href="#有话说" class="headerlink" title="有话说"></a>有话说</h3><p><strong><em>请你相信我:我所说的每一句话，都是错的</em></strong>       —和菜头</p>
+        <p>CSS中<code>float</code>属性一开始是用来实现文字围绕图片的效果，后来慢慢被用来实现多栏布局，<code>float</code>属性是实现多栏布局的常用实现，因为它对浏览器的兼容性好。如今，随着CSS3的支持，我们有更好的解决方案来实现多栏布局，比如flexbox。</p>
+<a id="more"></a>
+<h3 id="为什么要清除"><a href="#为什么要清除" class="headerlink" title="为什么要清除"></a>为什么要清除</h3><p>在CSS中，一共有三种定位机制：普通流(normal flow)、浮动(float)和绝对定位(absolute positioning)。HTML文档元素一般就是普通流，当我们对某一个元素使用<code>float</code>属性后，它就脱离了普通流，定位方式变成了浮动，当元素浮动之后，不会影响到块级元素的布局而只会影响行内元素（比如文本）的排列。文档中的普通流就会表现得如同浮动元素不存在一样，当浮动元素高度超出包含元素的时候，就会出现包含元素不会自动伸高来闭合浮动元素，浮动元素无法撑起包含元素，也就是“高度塌陷”现象。高度塌陷对布局来讲是致命的，我们才不写bug，为了修复，我们就需要清除浮动，把浮动元素给闭合了，不影响其他元素的布局。</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><h4 id="父元素使用overflow-auto"><a href="#父元素使用overflow-auto" class="headerlink" title="父元素使用overflow: auto"></a>父元素使用<code>overflow: auto</code></h4><p>这是在现代浏览器中最简单清除浮动的方式，<code>overflow</code>属性真正用途是用来指定当内容溢出其包含元素时的处理方式，它还有一个作用，可以迫使父元素包含浮动的子元素。使用<code>overflow</code>属性的值<code>hidden</code>也可以用来清除浮动，但是，它会剪切超出包含元素的部分。  </p>
+<h4 id="使用-after伪元素"><a href="#使用-after伪元素" class="headerlink" title="使用::after伪元素"></a>使用<code>::after</code>伪元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用<code>::after</code>伪元素添加了一个非浮动元素，使用<code>clear</code>属性来清除浮动，并且这个非浮动元素是不显示的，不影响布局。使用方法的话，只需要在需要清除浮动的元素中添加这个类名<code>clearfix</code>。</p>
+<h4 id="父元素同时浮动"><a href="#父元素同时浮动" class="headerlink" title="父元素同时浮动"></a>父元素同时浮动</h4><p>如题，同时浮动父元素，父元素浮动后，不管其子元素是否浮动，它都会紧紧地包围住其子元素。其原理是因为浮动的特性，自己可以试试看，显示边框，元素浮动后，它会收缩变得紧凑，紧紧包裹子元素。</p>
+<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><p>清除浮动还有下面的一些方法，不过它仅仅是可以做到清除浮动，不够理想，都有或多或少的缺陷，比如破坏HTML的语义性。</p>
+<ul>
+<li>在浮动元素末尾添加一个空的标签例如<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code></li>
+<li>使用 br标签<code>&lt;br clear=&quot;all&quot; /&gt;</code></li>
+</ul>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://www.zhihu.com/question/19915431" target="_blank" rel="noopener">如何理解 CSS 中的浮动布局方式？</a></li>
+<li><a href="https://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use" target="_blank" rel="noopener">What methods of ‘clearfix’ can I use?</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/02/28/python-name.html" data-id="cjh60t29u000s17ili5wprpe1" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/05/13/css-clearfix.html" data-id="cjh60t291000817ilwn19wydw" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浮动/">浮动</a></li></ul>
 
     </footer>
   </div>
@@ -133,19 +145,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2017/03/05/MIT-6.00.1x-Set2.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          MIT 6.00.1x  计算机科学和Python编程导论  Set 2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/26/MIT-6.00.1x-Set1.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/08/hexo-https.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MIT 6.00.1x  计算机科学和Python编程导论  Set 1</div>
+      <div class="article-nav-title">官方支持，Hexo博客自定义域名开启HTTPS</div>
     </a>
   
 </nav>
