@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-05-14T08:59:43.195Z</updated>
+  <updated>2018-06-15T13:17:52.467Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一道Leetcode题反应的问题：Segmentation fault是什么？</title>
+    <link href="http://dukeluo.github.io/2018/06/15/c-segfault.html"/>
+    <id>http://dukeluo.github.io/2018/06/15/c-segfault.html</id>
+    <published>2018-06-14T16:00:00.000Z</published>
+    <updated>2018-06-15T13:17:52.467Z</updated>
+    
+    <summary type="html">
+    
+      介绍C语言中的Segmentation fault。
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS学习（一）：清除浮动</title>
     <link href="http://dukeluo.github.io/2018/05/13/css-clearfix.html"/>
     <id>http://dukeluo.github.io/2018/05/13/css-clearfix.html</id>
     <published>2018-05-12T16:00:00.000Z</published>
-    <updated>2018-05-14T08:59:43.195Z</updated>
+    <updated>2018-05-21T14:59:18.861Z</updated>
     
     <summary type="html">
     
@@ -32,9 +54,9 @@
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
     
       <category term="浮动" scheme="http://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
     
@@ -316,9 +338,9 @@
     
       <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="K&amp;R" scheme="http://dukeluo.github.io/tags/K-R/"/>
-    
       <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
+    
+      <category term="K&amp;R" scheme="http://dukeluo.github.io/tags/K-R/"/>
     
   </entry>
   
@@ -340,9 +362,9 @@
     
       <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="K&amp;R" scheme="http://dukeluo.github.io/tags/K-R/"/>
-    
       <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
+    
+      <category term="K&amp;R" scheme="http://dukeluo.github.io/tags/K-R/"/>
     
   </entry>
   
@@ -449,30 +471,6 @@
     <summary type="html">
     
       根据书中脚注，SICP中的闭包只是涉及组合方面的相关特性，并不涉及自由变量。使用闭包特性可以快速地构建复杂性，在本节的实例中我们可以看到其强大的威力。
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（四）</title>
-    <link href="http://dukeluo.github.io/2017/05/28/sicp-notes-4.html"/>
-    <id>http://dukeluo.github.io/2017/05/28/sicp-notes-4.html</id>
-    <published>2017-05-27T16:00:00.000Z</published>
-    <updated>2018-05-08T05:32:30.874Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;sicp的第二章讨论构造数据抽象。构造数据抽象是一个非常有用的工具，构造数据之后，便可以将构造的复合数据视为一个单元体，在构建程序让我们在更高的层次上思考问题，并可以增加程序的模块性，便于修改维护。&lt;/p&gt;
     
     </summary>
     

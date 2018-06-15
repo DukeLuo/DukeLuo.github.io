@@ -83,6 +83,56 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-list-argument" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/22/python-list-argument.html" class="article-date">
+  <time datetime="2017-07-21T16:00:00.000Z" itemprop="datePublished">2017-07-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/22/python-list-argument.html">python中列表作为参数的传递方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阅读SICP的过程中，我尝试着用python将SICP的习题实现一遍。在对Exercise 2.36的实现中，遇到了些问题。Exercise 2.36是实现一个<code>accumulate_n</code>的累积函数，与先前的<code>accumulate</code>函数类似，<code>accumulate_n</code>函数的第三个参数<code>seqs</code>接受元素为列表的列表，并且所含元素的数目应该相同。<br>理想的输出如下：   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>accumulate_n(cons_of_list,[],[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">[[<span class="number">1</span>, <span class="number">4</span>], [<span class="number">2</span>, <span class="number">5</span>], [<span class="number">3</span>, <span class="number">6</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>accumulate_n(<span class="keyword">lambda</span> x,y:x + y,<span class="number">0</span>,[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">[<span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/22/python-list-argument.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukeluo.github.io/2017/07/22/python-list-argument.html" data-id="cjig1f9ns000osmilcl8mzoi2" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-sicp-notes-5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/09/sicp-notes-5.html" class="article-date">
@@ -119,7 +169,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/07/09/sicp-notes-5.html" data-id="cjh60t2a4001817ilufk83uh6" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/07/09/sicp-notes-5.html" data-id="cjig1f9nw000wsmil10h63kn1" class="article-share-link">Share</a>
       
       
       
@@ -168,7 +218,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/05/28/sicp-notes-4.html" data-id="cjh60t2a3001517il1lmcquho" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/05/28/sicp-notes-4.html" data-id="cjig1f9nw000vsmil4p4l2rcx" class="article-share-link">Share</a>
       
       
       
@@ -217,7 +267,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/05/21/sicp-notes-3.html" data-id="cjh60t2a1001417ildum1b08o" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/05/21/sicp-notes-3.html" data-id="cjig1f9nv000usmilw4hg04qy" class="article-share-link">Share</a>
       
       
       
@@ -266,7 +316,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/05/07/sicp-notes-2.html" data-id="cjh60t29z001117ilggasyx2i" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/05/07/sicp-notes-2.html" data-id="cjig1f9nv000tsmil2ayy9jpz" class="article-share-link">Share</a>
       
       
       
@@ -315,60 +365,11 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/04/25/sicp-notes-1.html" data-id="cjh60t29y001017ilt5b6s5c0" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2017/04/25/sicp-notes-1.html" data-id="cjig1f9nu000ssmil1akrf59o" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SICP/">SICP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scheme/">Scheme</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-practice-asciiImg" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/22/practice-asciiImg.html" class="article-date">
-  <time datetime="2017-04-21T16:00:00.000Z" itemprop="datePublished">2017-04-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/实战/">实战</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/22/practice-asciiImg.html">图片转化成字符画</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>先上效果图<br><img src="https://s1.ax1x.com/2018/05/08/CdCPMV.jpg" alt=""><br>
-        
-          <p class="article-more-link">
-            <a href="/2017/04/22/practice-asciiImg.html#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/04/22/practice-asciiImg.html" data-id="cjh60t29q000l17ilcctodj0i" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小项目/">小项目</a></li></ul>
 
     </footer>
   </div>
@@ -415,6 +416,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2018/06/15/c-segfault.html">一道Leetcode题反应的问题：Segmentation fault是什么？</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/13/css-clearfix.html">CSS学习（一）：清除浮动</a>
           </li>
         
@@ -428,10 +433,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/04/20/hexo-customization-1.html">定制自己的Hexo博客主题Landscape</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/15/algs4-notes-7.html">Algs4笔记（七） --- 符号表与二叉查找树</a>
           </li>
         
       </ul>

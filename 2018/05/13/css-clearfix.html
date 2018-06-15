@@ -21,14 +21,14 @@ ga('send', 'pageview');
   <title>CSS学习（一）：清除浮动 | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="介绍清除浮动的常用方法。">
-<meta name="keywords" content="CSS,总结,浮动">
+<meta name="keywords" content="总结,CSS,浮动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS学习（一）：清除浮动">
 <meta property="og:url" content="http://dukeluo.github.io/2018/05/13/css-clearfix.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="介绍清除浮动的常用方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T08:59:43.195Z">
+<meta property="og:updated_time" content="2018-05-21T14:59:18.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习（一）：清除浮动">
 <meta name="twitter:description" content="介绍清除浮动的常用方法。">
@@ -112,7 +112,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>CSS中<code>float</code>属性一开始是用来实现文字围绕图片的效果，后来慢慢被用来实现多栏布局，<code>float</code>属性是实现多栏布局的常用实现，因为它对浏览器的兼容性好。如今，随着CSS3的支持，我们有更好的解决方案来实现多栏布局，比如flexbox。</p>
+        <p>CSS中<code>float</code>属性一开始是用来实现文字围绕图片的效果，后来慢慢被用来实现多栏布局，<code>float</code>属性是实现多栏布局的常用实现，因为它对浏览器的兼容性好。如今，随着CSS3的支持，我们有更好的解决方案来实现多栏布局，比如flexbox。了解flexbox的更多知识，推荐阅读阮老师的文章<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a>。</p>
 <a id="more"></a>
 <h3 id="为什么要清除"><a href="#为什么要清除" class="headerlink" title="为什么要清除"></a>为什么要清除</h3><p>在CSS中，一共有三种定位机制：普通流(normal flow)、浮动(float)和绝对定位(absolute positioning)。HTML文档元素一般就是普通流，当我们对某一个元素使用<code>float</code>属性后，它就脱离了普通流，定位方式变成了浮动，当元素浮动之后，不会影响到块级元素的布局而只会影响行内元素（比如文本）的排列。文档中的普通流就会表现得如同浮动元素不存在一样，当浮动元素高度超出包含元素的时候，就会出现包含元素不会自动伸高来闭合浮动元素，浮动元素无法撑起包含元素，也就是“高度塌陷”现象。高度塌陷对布局来讲是致命的，我们才不写bug，为了修复，我们就需要清除浮动，把浮动元素给闭合了，不影响其他元素的布局。</p>
 <h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><h4 id="父元素使用overflow-auto"><a href="#父元素使用overflow-auto" class="headerlink" title="父元素使用overflow: auto"></a>父元素使用<code>overflow: auto</code></h4><p>这是在现代浏览器中最简单清除浮动的方式，<code>overflow</code>属性真正用途是用来指定当内容溢出其包含元素时的处理方式，它还有一个作用，可以迫使父元素包含浮动的子元素。使用<code>overflow</code>属性的值<code>hidden</code>也可以用来清除浮动，但是，它会剪切超出包含元素的部分。  </p>
@@ -133,7 +133,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/05/13/css-clearfix.html" data-id="cjh60t291000817ilwn19wydw" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/05/13/css-clearfix.html" data-id="cjig1f9nn000gsmilj1ep7ypy" class="article-share-link">Share</a>
       
       
       
@@ -144,6 +144,15 @@ ga('send', 'pageview');
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/06/15/c-segfault.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          一道Leetcode题反应的问题：Segmentation fault是什么？
+        
+      </div>
+    </a>
   
   
     <a href="/2018/05/08/hexo-https.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -187,6 +196,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2018/06/15/c-segfault.html">一道Leetcode题反应的问题：Segmentation fault是什么？</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/13/css-clearfix.html">CSS学习（一）：清除浮动</a>
           </li>
         
@@ -200,10 +213,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/04/20/hexo-customization-1.html">定制自己的Hexo博客主题Landscape</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/15/algs4-notes-7.html">Algs4笔记（七） --- 符号表与二叉查找树</a>
           </li>
         
       </ul>
