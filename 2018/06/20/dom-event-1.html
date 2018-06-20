@@ -18,22 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>Algs4笔记（六） --- 冒泡排序与排序算法总结 | DukeLuo&#39;s Blog</title>
+  <title>DOM中事件处理程序的第一个参数？ | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
-<meta name="keywords" content="Notes,Algs4,Java">
+  <meta name="description" content="关于DOM中事件处理程序第一个参数是事件对象的理解。">
+<meta name="keywords" content="事件对象,JavaScript,DOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Algs4笔记（六） --- 冒泡排序与排序算法总结">
-<meta property="og:url" content="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html">
+<meta property="og:title" content="DOM中事件处理程序的第一个参数？">
+<meta property="og:url" content="http://dukeluo.github.io/2018/06/20/dom-event-1.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
-<meta property="og:description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
+<meta property="og:description" content="关于DOM中事件处理程序第一个参数是事件对象的理解。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s1.ax1x.com/2018/05/08/Cdp36K.jpg">
-<meta property="og:updated_time" content="2018-05-08T07:25:15.934Z">
+<meta property="og:updated_time" content="2018-06-20T03:39:57.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Algs4笔记（六） --- 冒泡排序与排序算法总结">
-<meta name="twitter:description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
-<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/08/Cdp36K.jpg">
+<meta name="twitter:title" content="DOM中事件处理程序的第一个参数？">
+<meta name="twitter:description" content="关于DOM中事件处理程序第一个参数是事件对象的理解。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -88,14 +86,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-algs4-notes-6" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-dom-event-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/14/algs4-notes-6.html" class="article-date">
-  <time datetime="2018-03-13T16:00:00.000Z" itemprop="datePublished">2018-03-14</time>
+    <a href="/2018/06/20/dom-event-1.html" class="article-date">
+  <time datetime="2018-06-19T16:00:00.000Z" itemprop="datePublished">2018-06-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
   </div>
@@ -106,7 +104,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Algs4笔记（六） --- 冒泡排序与排序算法总结
+      DOM中事件处理程序的第一个参数？
     </h1>
   
 
@@ -114,28 +112,24 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>冒泡排序(Bubble sort)是一种简单的排序算法，它重复地走访要排序的数组，一次比较两个元素，如果他们的顺序错误就把他们交换过来。算法名字很形象，因为更大或更小的元素会经由交换慢慢“浮”到数列的顶端，就像水中的气泡一样。<br><a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bubble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N = a.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N-<span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;N-<span class="number">1</span>-i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (less(a[j+<span class="number">1</span>], a[j]))</span><br><span class="line">                exch(a, j+<span class="number">1</span>, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>冒泡排序是原地排序算法，对于长度为\(N\)的数组，在最坏的情况下，冒泡排序需要\(～N^2/2\)次比较和\(～N^2/2\)次交换;在最好的情况下，冒泡排序需要\(～N^2/2\)次比较和\(0\)次交换。尽管这个算法是最简单了解和实现的排序算法之一，但它对于包含大量的元素的数组排序是很没有效率的。</p>
-<h3 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h3><p>如果一个排序算法能够保留数组中重复元素的相对位置则可以被称为是稳定的，稳定性不是每个排序算法理所应当具有的基本性质，以上介绍过的排序算法只有一部分是稳定的，但我们有很多方法能够将任意排序算法变成稳定的。<br><img src="https://s1.ax1x.com/2018/05/08/Cdp36K.jpg" alt="排序算法总结"></p>
+        <p>我们知道，在触发DOM上的某个事件时，会产生一个事件对象，其中包含与事件相关的所有信息。<a href="https://book.douban.com/subject/10546125/" target="_blank" rel="noopener">JS高程</a>中有这样一句话，兼容DOM的浏览器会将一个事件对象传入到事件处理程序中，无论指定事件处理程序时使用什么方法，DOM0级或是DOM2级别，都会传入事件对象。   </p>
+<a id="more"></a>
+<p>事件处理程序有参数时直觉上还好理解，但是事件处理程序要是一个参数都没有指定，事件对象真的会传入事件处理程序吗？<br>以一个按钮<code>&lt;input type=&quot;button&quot; value=&quot;Click Me&quot; id=&quot;myBtn&quot;&gt;</code>为样本，我们可以看看是否真的如此。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMessage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Clicked"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>].type);</span><br><span class="line">&#125;</span><br><span class="line">btn.onclick = showMessage;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码，使用DOM0级的方法为按钮<code>myBtn</code>绑定了一个没有指定任何参数的事件处理程序，点击按钮后，控制台依次输出<code>Clicked</code>、<code>1</code>、<code>click</code>。<code>arguments</code>对象是一个类数组对象，包含着传入函数中的所有参数，利用它，我们可以获得关于参数的信息。从结果可以看出，浏览器确实将一个事件对象传入到事件处理程序，即便事件处理程序没有指定任何参数。<br>下面，看看事件处理程序指定参数的情况。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMessage</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Clicked"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>] === event);</span><br><span class="line">  <span class="built_in">console</span>.log(event.type);</span><br><span class="line">&#125;</span><br><span class="line">btn.onclick = showMessage;</span><br></pre></td></tr></table></figure></p>
+<p>点击按钮后，控制台依次输出<code>Clicked</code>、<code>1</code>、<code>true</code>、<code>click</code>。从结果可以得出，传入一个参数时，该参数名成为<code>arguments[0]</code>的别名，参数和<code>arguments[0]</code>指向同一个对象。因为是别名，所以传入的参数名可以是任何合法的标识符，之所以使用标识符<code>event</code>，是因为它更能表意，也是大家默认的习惯。<br>现在，可以得出结论了，无论指定事件处理程序时使用什么方法，事件处理程序始终有一个参数，也就是事件对象，由浏览器传入，保存在arguments[0]。</p>
 <hr>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>维基百科：<a href="https://zh.wikipedia.org/zh-cn/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a></li>
-<li><a href="https://www.toptal.com/developers/sorting-algorithms/" target="_blank" rel="noopener">排序算法可视化</a></li>
-<li><a href="https://book.douban.com/subject/19952400/" target="_blank" rel="noopener">算法（第4版）</a></li>
+<li><a href="https://book.douban.com/subject/10546125/" target="_blank" rel="noopener">JavaScript高级程序设计</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html" data-id="cjimk9epr000d3silf0fcte8c" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/06/20/dom-event-1.html" data-id="cjimk9epu000i3silwi4o9ox4" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algs4/">Algs4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件对象/">事件对象</a></li></ul>
 
     </footer>
   </div>
@@ -143,19 +137,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2018/03/28/pratice-snake.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          C语言实现贪吃蛇步骤实述
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/09/algs4-notes-5.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/15/c-segfault.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Algs4笔记（五） --- 堆、优先队列与堆排序</div>
+      <div class="article-nav-title">一道Leetcode题引起的思考：Segmentation fault是什么？</div>
     </a>
   
 </nav>

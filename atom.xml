@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-06-15T14:14:12.678Z</updated>
+  <updated>2018-06-20T03:39:57.693Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DOM中事件处理程序的第一个参数？</title>
+    <link href="http://dukeluo.github.io/2018/06/20/dom-event-1.html"/>
+    <id>http://dukeluo.github.io/2018/06/20/dom-event-1.html</id>
+    <published>2018-06-19T16:00:00.000Z</published>
+    <updated>2018-06-20T03:39:57.693Z</updated>
+    
+    <summary type="html">
+    
+      关于DOM中事件处理程序第一个参数是事件对象的理解。
+    
+    </summary>
+    
+      <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="事件对象" scheme="http://dukeluo.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="JavaScript" scheme="http://dukeluo.github.io/tags/JavaScript/"/>
+    
+      <category term="DOM" scheme="http://dukeluo.github.io/tags/DOM/"/>
+    
+  </entry>
   
   <entry>
     <title>一道Leetcode题引起的思考：Segmentation fault是什么？</title>
@@ -32,9 +56,9 @@
       <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
     
   </entry>
   
@@ -54,9 +78,9 @@
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="浮动" scheme="http://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
     
@@ -102,9 +126,9 @@
     
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="链表" scheme="http://dukeluo.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="JavaScript" scheme="http://dukeluo.github.io/tags/JavaScript/"/>
+    
+      <category term="链表" scheme="http://dukeluo.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
@@ -458,30 +482,6 @@
     
     
       <category term="Python" scheme="http://dukeluo.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（五）</title>
-    <link href="http://dukeluo.github.io/2017/07/09/sicp-notes-5.html"/>
-    <id>http://dukeluo.github.io/2017/07/09/sicp-notes-5.html</id>
-    <published>2017-07-08T16:00:00.000Z</published>
-    <updated>2018-05-08T05:33:32.950Z</updated>
-    
-    <summary type="html">
-    
-      根据书中脚注，SICP中的闭包只是涉及组合方面的相关特性，并不涉及自由变量。使用闭包特性可以快速地构建复杂性，在本节的实例中我们可以看到其强大的威力。
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
     
   </entry>
   
