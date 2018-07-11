@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-06-20T03:39:57.693Z</updated>
+  <updated>2018-07-11T01:48:30.460Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS学习（二）：背景图片如何定位？</title>
+    <link href="http://dukeluo.github.io/2018/07/10/css-bgposition.html"/>
+    <id>http://dukeluo.github.io/2018/07/10/css-bgposition.html</id>
+    <published>2018-07-09T16:00:00.000Z</published>
+    <updated>2018-07-11T01:48:30.460Z</updated>
+    
+    <summary type="html">
+    
+      利用平面直角坐标系介绍css背景属性`background-position`定位的原理。
+    
+    </summary>
+    
+      <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="定位" scheme="http://dukeluo.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>DOM中事件处理程序的第一个参数？</title>
@@ -461,27 +485,6 @@
       <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
     
       <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python中列表作为参数的传递方式</title>
-    <link href="http://dukeluo.github.io/2017/07/22/python-list-argument.html"/>
-    <id>http://dukeluo.github.io/2017/07/22/python-list-argument.html</id>
-    <published>2017-07-21T16:00:00.000Z</published>
-    <updated>2018-05-08T04:59:09.090Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;阅读SICP的过程中，我尝试着用python将SICP的习题实现一遍。在对Exercise 2.36的实现中，遇到了些问题。Exercise 2.36是实现一个&lt;code&gt;accumulate_n&lt;/code&gt;的累积函数，与先前的&lt;code&gt;accumulate&lt;/code&gt;函数类似，&lt;code&gt;accumulate_n&lt;/code&gt;函数的第三个参数&lt;code&gt;seqs&lt;/code&gt;接受元素为列表的列表，并且所含元素的数目应该相同。&lt;br&gt;理想的输出如下：   &lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;accumulate_n(cons_of_list,[],[[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;],[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;], [&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;], [&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;accumulate_n(&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; x,y:x + y,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,[[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;],[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Python" scheme="http://dukeluo.github.io/tags/Python/"/>
     
   </entry>
   
