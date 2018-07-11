@@ -21,14 +21,14 @@ ga('send', 'pageview');
   <title>CSS学习（二）：背景图片如何定位？ | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="利用平面直角坐标系介绍css背景属性`background-position`定位的原理。">
-<meta name="keywords" content="CSS,总结,定位">
+<meta name="keywords" content="总结,CSS,定位">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS学习（二）：背景图片如何定位？">
 <meta property="og:url" content="http://dukeluo.github.io/2018/07/10/css-bgposition.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="利用平面直角坐标系介绍css背景属性`background-position`定位的原理。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-11T01:48:30.460Z">
+<meta property="og:updated_time" content="2018-07-11T02:24:34.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习（二）：背景图片如何定位？">
 <meta name="twitter:description" content="利用平面直角坐标系介绍css背景属性`background-position`定位的原理。">
@@ -115,15 +115,15 @@ ga('send', 'pageview');
         <p>我们都知道<code>background-position</code>属性用来指定背景图片应该出现的位置，可以使用关键字、绝对值和相对值进行指定。在CSS Sprites中，这个属性使用比较频繁，使用过程中，我常混淆，经常切不到自己想要的效果，于是决定好好理解其工作机制，这篇文章就是介绍<code>background-position</code>属性是如何指定背景图片和背景区域的位置关系。    </p>
 <a id="more"></a>
 <h3 id="background-position"><a href="#background-position" class="headerlink" title="background-position"></a>background-position</h3><p>我使用ps制作了一张400px × 400px的图片作为背景图片。    </p>
-<p></p><p data-height="480" data-theme-id="light" data-slug-hash="MBWEra" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/MBWEra/" target="_blank" rel="noopener">background-position</a> by XiaoHong (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="480" data-theme-id="light" data-slug-hash="MBWEra" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/MBWEra/" target="_blank" rel="noopener">background-position-1</a> by Duke (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br>为了更好理解<code>background-position</code>属性定位的机制，我们可以将指定背景区域想象为一个平面直角坐标系，原点在左上角，x轴正方向从左到右，y轴正方向从上到下，这点和平常向上为y轴正方向的坐标系有所不同。在这个坐标系中，通过指定x、y的坐标值定位一个点，此点即是背景图片的左上角。    </p>
-<p></p><p data-height="480" data-theme-id="light" data-slug-hash="oMNEoo" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-2" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/oMNEoo/" target="_blank" rel="noopener">background-position-2</a> by XiaoHong (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="480" data-theme-id="light" data-slug-hash="oMNEoo" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-2" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/oMNEoo/" target="_blank" rel="noopener">background-position-2</a> by Duke (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br>如上图所示，<code>background-position</code>指定值<code>200px</code>和<code>300px</code>，即x为<code>200px</code>，y为<code>300px</code>，此点所在位置就是背景图片的左上角，因为部分背景图片因溢出背景区域被裁剪，就只剩下200px × 100px的左上角部分。   </p>
-<p></p><p data-height="480" data-theme-id="light" data-slug-hash="ZjExaa" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-3" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/ZjExaa/" target="_blank" rel="noopener">background-position-3</a> by XiaoHong (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="480" data-theme-id="light" data-slug-hash="ZjExaa" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-3" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/ZjExaa/" target="_blank" rel="noopener">background-position-3</a> by Duke (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br>可以指定正值就当然可以指定负值，如上所示，此时左上角被定位在<code>(0px, -300px)</code>处，因为向上为y轴负方向，背景图片上半的300px就因溢出被切除了，只留下400px × 100px的下部分。   </p>
-<p></p><p data-height="480" data-theme-id="light" data-slug-hash="rrNdXZ" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-4" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/rrNdXZ/" target="_blank" rel="noopener">background-position-4</a> by XiaoHong (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="480" data-theme-id="light" data-slug-hash="rrNdXZ" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-4" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/rrNdXZ/" target="_blank" rel="noopener">background-position-4</a> by Duke (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br>除了使用绝对值，也可以使用相对值指定。使用相对值时，定位方式直观上不好理解。但应清楚，最基本的方法是根据绝对值定位。使用相对值时它会将其转换，最终还是根据绝对值指定背景图片的左上角，转化的依据是<strong><code>x = (容器的宽度-图片的宽度) * percentX;y = (容器的高度-图片的高度) * percentY</code></strong>。上图经过计算，背景图片左上角被定位在<code>(-200px, 0px)</code>处，故背景图片被切除一半。</p>
-<p></p><p data-height="580" data-theme-id="light" data-slug-hash="yqLjrr" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-5" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/yqLjrr/" target="_blank" rel="noopener">background-position-5</a> by XiaoHong (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="580" data-theme-id="light" data-slug-hash="yqLjrr" data-default-tab="result" data-user="Haier" data-embed-version="2" data-pen-title="background-position-5" class="codepen">See the Pen <a href="https://codepen.io/Haier/pen/yqLjrr/" target="_blank" rel="noopener">background-position-5</a> by Duke (<a href="https://codepen.io/Haier" target="_blank" rel="noopener">@Haier</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <p><script async src="https://static.codepen.io/assets/embed/ei.js"></script><br>我们也可以通过关键字<code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>和<code>center</code>指定<code>background-position</code>属性，大家应该都喜欢这种简单明了的方式吧。一般指定两个关键字，如果只有一个，则另一个默认是<code>center</code>。这种方式也最终将转化成绝对值定位，不过先会转换成百分比，<code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>和<code>center</code>分别相当于<code>0%</code>、<code>100%</code>、<code>0%</code>、<code>100%</code>和<code>50%</code>。上图中的<code>background-position: right bottom;</code>和<code>background-position: 100% 100%;</code>效果是一模一样的。</p>
 <h3 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h3><p>使用上面介绍的理解方式，相信还是很好理解<code>background-position</code>的定位原理的。我想，<code>background-position</code>多数使用场景应该就是CSS Sprites了。CSS Sprites是一种网页图片应用处理方式，将一个页面涉及到的零星图片都包含到一张大图中去。这样一来，当访问该页面时，客户端只需要向服务器请求少量的图片，图片越多请求次数越少，造成延迟的可能性也就越小，能有效减轻服务器的压力；接下来应用CSS属性的<code>background-image</code>、<code>background-position</code>的组合进行背景定位，用数字精确地定位出背景图片的位置。</p>
 <hr>
@@ -136,7 +136,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/07/10/css-bgposition.html" data-id="cjjfqpqls000darilejthu2st" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/07/10/css-bgposition.html" data-id="cjjgjbqkp0009v3il1k9tgoro" class="article-share-link">Share</a>
       
       
       
@@ -236,7 +236,14 @@ ga('send', 'pageview');
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='/js/jquery-2.0.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
@@ -244,6 +251,7 @@ ga('send', 'pageview');
 
 
 <script src="/js/script.js"></script>
+
 
 
 
