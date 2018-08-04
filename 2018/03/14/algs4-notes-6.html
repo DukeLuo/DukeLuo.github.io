@@ -29,7 +29,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s1.ax1x.com/2018/05/08/Cdp36K.jpg">
-<meta property="og:updated_time" content="2018-05-08T07:25:15.934Z">
+<meta property="og:updated_time" content="2018-08-04T03:13:41.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algs4笔记（六） --- 冒泡排序与排序算法总结">
 <meta name="twitter:description" content="介绍基本排序算法冒泡排序，总结基本排序算法。">
@@ -118,7 +118,7 @@ ga('send', 'pageview');
 </script>
 
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>冒泡排序(Bubble sort)是一种简单的排序算法，它重复地走访要排序的数组，一次比较两个元素，如果他们的顺序错误就把他们交换过来。算法名字很形象，因为更大或更小的元素会经由交换慢慢“浮”到数列的顶端，就像水中的气泡一样。<br><a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bubble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N = a.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N-<span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;N-<span class="number">1</span>-i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (less(a[j+<span class="number">1</span>], a[j]))</span><br><span class="line">                exch(a, j+<span class="number">1</span>, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bubble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = a.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N-<span class="number">1</span>; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;N-<span class="number">1</span>-i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (less(a[j+<span class="number">1</span>], a[j]))</span><br><span class="line">                    exch(a, j+<span class="number">1</span>, j);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>冒泡排序是原地排序算法，对于长度为\(N\)的数组，在最坏的情况下，冒泡排序需要\(～N^2/2\)次比较和\(～N^2/2\)次交换;在最好的情况下，冒泡排序需要\(～N^2/2\)次比较和\(0\)次交换。尽管这个算法是最简单了解和实现的排序算法之一，但它对于包含大量的元素的数组排序是很没有效率的。</p>
 <h3 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h3><p>如果一个排序算法能够保留数组中重复元素的相对位置则可以被称为是稳定的，稳定性不是每个排序算法理所应当具有的基本性质，以上介绍过的排序算法只有一部分是稳定的，但我们有很多方法能够将任意排序算法变成稳定的。<br><img src="https://s1.ax1x.com/2018/05/08/Cdp36K.jpg" alt="排序算法总结"></p>
 <hr>
@@ -131,7 +131,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html" data-id="cjk98lphf0008pxilvkcjftuy" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html" data-id="cjkf6v7en000jtfilhp3dcom0" class="article-share-link">Share</a>
       
       
       
