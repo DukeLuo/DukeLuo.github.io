@@ -18,20 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>关于python变量名的几点注意 | DukeLuo&#39;s Blog</title>
+  <title>千山助手，开发之初体验 | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一点笔记。">
-<meta name="keywords" content="Python">
+  <meta name="description" content="记录第一次实现需求的开发过程。">
+<meta name="keywords" content="JavaScript,小项目,jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于python变量名的几点注意">
-<meta property="og:url" content="http://dukeluo.github.io/2017/02/28/python-name.html">
+<meta property="og:title" content="千山助手，开发之初体验">
+<meta property="og:url" content="http://dukeluo.github.io/2018/11/10/pratice-qianshan.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
-<meta property="og:description" content="一点笔记。">
+<meta property="og:description" content="记录第一次实现需求的开发过程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-08T04:59:27.389Z">
+<meta property="og:updated_time" content="2018-11-11T10:50:18.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于python变量名的几点注意">
-<meta name="twitter:description" content="一点笔记。">
+<meta name="twitter:title" content="千山助手，开发之初体验">
+<meta name="twitter:description" content="记录第一次实现需求的开发过程。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -86,14 +86,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-python-name" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-pratice-qianshan" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/28/python-name.html" class="article-date">
-  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
+    <a href="/2018/11/10/pratice-qianshan.html" class="article-date">
+  <time datetime="2018-11-09T16:00:00.000Z" itemprop="datePublished">2018-11-10</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    <a class="article-category-link" href="/categories/实战/">实战</a>
   </div>
 
   </div>
@@ -104,7 +104,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      关于python变量名的几点注意
+      千山助手，开发之初体验
     </h1>
   
 
@@ -112,20 +112,29 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h3><p>1.类似<code>__xxx__</code>的变量名，以双下划线开头，且以双下划线结尾的，是特殊变量。特殊变量可以直接访问，不是private变量。不能用<code>__name__</code>,<code>__score__</code>这样的变量名。<br><a id="more"></a></p>
-<p>2.以一个下划线开头的实例变量名，比如<code>_name</code>，这样的实例变量外部是可以访问的，但是，约定俗成，应视为私有变量，不应随便访问。</p>
-<p>3.以__开头的实例变量就变成了一个private。只有内部可以访问，外部不能访问。</p>
-<p>4.可以通过<code>_类名__实例变量名</code>强行访问__实例变量名。</p>
-<h3 id="有话说"><a href="#有话说" class="headerlink" title="有话说"></a>有话说</h3><p><strong><em>请你相信我:我所说的每一句话，都是错的</em></strong>       —和菜头</p>
+        <p>学习编程有些日子了，照着样例写一些花瓶demo着实无聊，最想做的就是用代码实现实际中的需求，让代码真正有价值。</p>
+<a id="more"></a>
+<h3 id="千山导航"><a href="#千山导航" class="headerlink" title="千山导航"></a>千山导航</h3><p><a href="http://qianshan.co" target="_blank" rel="noopener">千山导航</a>是一个简洁优雅的导航站，我一直将其设为我的浏览器首页。千山导航有默认的网站分类，也可以自定义设置，不过清除浏览器数据时，会一并删除。第一次遇见千山时，满心欢喜地配置好了，结果在一次清理之后，一切都回到了默认配置，后来，我就没有再自定义过了。这时候，我有了想法，想做点什么。千山助手是一个用户脚本，依托于拓展<a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a>或者<a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank" rel="noopener">Tampermonkey</a>，它为千山导航补充了几个实用功能。千山导航站点实现中使用了Bootstrap和jQuery，所以这个脚本也就使用了这两种技术。    </p>
+<h3 id="阻止事件传播"><a href="#阻止事件传播" class="headerlink" title="阻止事件传播"></a>阻止事件传播</h3><p>千山导航有一个快捷键功能，按下快捷键打开相应网站，不过在Firefox中并没有用，这应该是网站的遗留bug。此脚本往千山导航加上了一个搜索框，但当搜索框在输入时也会触发快捷键。一开始，我以为这会是脚本开发过程中最大的挑战，后来，一个阻止<code>keydown</code>事件传播的简单操作就完美解决搜索框和千山导航的兼容问题。    </p>
+<h3 id="实现文件下载"><a href="#实现文件下载" class="headerlink" title="实现文件下载"></a>实现文件下载</h3><p>导出备份需要将配置文件下载至本地，解决方案是利用<code>&lt;a&gt;</code>标签，先将配置字符串通过<code>Blob</code>构造函数转换成二进制数据，后使用<code>URL.createObjectURL()</code>方法将其作为<a>元素的<code>href</code>属性，使用<code>download</code>属性设置文件名，实现下载。    </a></p>
+<h3 id="实现文件选择框"><a href="#实现文件选择框" class="headerlink" title="实现文件选择框"></a>实现文件选择框</h3><p>导入备份的时候，需要一个文本选择框，浏览本地文件进行选择，最直接的做法是使用<code>type=&quot;file&quot;</code>，但是样式和千山导航的画风格格不入。一个优雅的解决方案是将<code>type=&quot;file&quot;</code>框隐藏，在文件选择框所在位置使用一个普通的<code>type=&quot;text&quot;</code>文本输入框冒充，同时绑定事件，当文本输入框被点击时会触发隐藏的<code>type=&quot;file&quot;</code>框的点击事件。如此这般偷梁换柱，既实现了功能，又美观了样式。    </p>
+<h3 id="读取本地文件"><a href="#读取本地文件" class="headerlink" title="读取本地文件"></a>读取本地文件</h3><p>读取选中的本地文件时，我使用了<code>FileReader</code>对象。<code>FileReader</code>对象是异步读取文件的，一开始，处理本地文件的函数都是返回空字符串，这是由于代码执行至<code>return</code>语句时，读取文件的异步操作还没有完成。后来，使用<code>Promise</code>对象解决了这个问题，成功封装了函数。<code>Promise</code>是异步编程的一种解决方案，这次是我第一次接触，又是知识的盲区－_－^。    </p>
+<h3 id="Bootstrap的版本"><a href="#Bootstrap的版本" class="headerlink" title="Bootstrap的版本"></a>Bootstrap的版本</h3><p>我是在本地调试代码的，一点一点修改样式，当一个个功能实现了之后，我将千山助手的代码插入千山导航。运行后发现，所有调整好的样式都乱了。这时才发现，千山导航使用的是Bootstrap3，而脚本用的是Bootstrap4，没有办法，样式错乱的都得改写。    </p>
+<p>一点一点，最终还是实现了这个脚本，第一次实现具体功能，还是很开心的。想一睹芳容的话，悄悄地戳<a href="https://github.com/DukeLuo/qianshan-helper.user.js" target="_blank" rel="noopener">这</a>。其实，几个月前，我用JS实现过插入一个搜索框，样式很丑，并且只在Firefox中有用，这段时间学习了jQuery和Bootstrap，就拿起这个项目练手了。    </p>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://www.zhangxinxu.com/wordpress/2017/07/js-text-string-download-as-html-json-file/" target="_blank" rel="noopener">JS前端创建html或json文件并浏览器导出下载</a></li>
+<li><a href="https://blog.shovonhasan.com/using-promises-with-filereader/" target="_blank" rel="noopener">Using Promises with FileReader</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2017/02/28/python-name.html" data-id="cjocrelvt000ooeilmjorb07t" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/11/10/pratice-qianshan.html" data-id="cjocrelvr000loeiletqogbm8" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小项目/">小项目</a></li></ul>
 
     </footer>
   </div>
@@ -133,19 +142,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2017/03/05/MIT-6.00.1x-Set2.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          MIT 6.00.1x  计算机科学和Python编程导论  Set 2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/26/MIT-6.00.1x-Set1.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/31/javascript-invocation-this.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MIT 6.00.1x  计算机科学和Python编程导论  Set 1</div>
+      <div class="article-nav-title">翻译 | 深入理解JavaScirpt的函数调用和&#34;this&#34;</div>
     </a>
   
 </nav>

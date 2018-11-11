@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-07-31T06:49:31.702Z</updated>
+  <updated>2018-11-11T10:50:18.995Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>千山助手，开发之初体验</title>
+    <link href="http://dukeluo.github.io/2018/11/10/pratice-qianshan.html"/>
+    <id>http://dukeluo.github.io/2018/11/10/pratice-qianshan.html</id>
+    <published>2018-11-09T16:00:00.000Z</published>
+    <updated>2018-11-11T10:50:18.995Z</updated>
+    
+    <summary type="html">
+    
+      记录第一次实现需求的开发过程。
+    
+    </summary>
+    
+      <category term="实战" scheme="http://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
+    
+    
+      <category term="JavaScript" scheme="http://dukeluo.github.io/tags/JavaScript/"/>
+    
+      <category term="小项目" scheme="http://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="jQuery" scheme="http://dukeluo.github.io/tags/jQuery/"/>
+    
+  </entry>
   
   <entry>
     <title>翻译 | 深入理解JavaScirpt的函数调用和&quot;this&quot;</title>
@@ -448,30 +472,6 @@
     <summary type="html">
     
       前面，我们引入了赋值操作，我们有了模拟对象状态的能力，可以描述时间的流逝；同时也失去了引用透明性，在处理并发问题时，也变得更加复杂。
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（七）</title>
-    <link href="http://dukeluo.github.io/2017/08/19/sicp-notes-7.html"/>
-    <id>http://dukeluo.github.io/2017/08/19/sicp-notes-7.html</id>
-    <published>2017-08-18T16:00:00.000Z</published>
-    <updated>2018-05-08T05:19:05.545Z</updated>
-    
-    <summary type="html">
-    
-      现实中，我们常将世界看成聚集在一起的许多独立个体，每个个体都有自己的状态，比如你在夏日下搬砖，同时有人在宝马里吹空调，个体的状态随着时间不断改变，过去的改变会影响现在的表现，你辛辛苦苦搬了几个月砖，终于在年前开开心心地骑上小三轮回家过年。
     
     </summary>
     
