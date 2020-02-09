@@ -29,7 +29,7 @@ ga('send', 'pageview');
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://files.dukeluo.me/2020/02/slowly-stamp.jpg">
 <meta property="article:published_time" content="2020-02-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-09T08:57:21.353Z">
+<meta property="article:modified_time" content="2020-02-09T09:00:17.219Z">
 <meta property="article:author" content="Duke Luo">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="小项目">
@@ -123,7 +123,7 @@ ga('send', 'pageview');
 <a id="more"></a>
 
 <h3 id="Slowly"><a href="#Slowly" class="headerlink" title="Slowly"></a>Slowly</h3><p><a href="https://web.getslowly.com/" target="_blank" rel="noopener">Slowly</a>，是一个慢的应用，在这里可以结识天南地北的笔友，交流的信件根据地点不同，派送时间从几天到几小时不等。在这里可以讨论各种东西，每次看到派送的小箭头，心中一片期待。我很喜欢这里。</p>
-<p><img src="https://files.dukeluo.me/2020/02/slowly-stamp.jpg" alt="slowly-stamp"></p>
+<p><img src="https://files.dukeluo.me/2020/02/slowly-stamp.jpg" alt=""></p>
 <h3 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h3><p><code>window</code> 对象上有 <code>print</code> 方法，可以直接调用系统的打印方法，选择保存为 pdf，粗暴解决问题。在我的这个场景下，如此会保存整个窗口的内容，样式不美观，我不满意这种效果。看了一些资料后，我选择的方法借助 jsPDF 和 html2canvas 两个三方库，html2canvas 用于把 html 页面转化为 canvas，如此可以保持页面原有的 css 样式，处理 canvas 为图片后，使用 jsPDF 插入 pdf 文档，解决核心问题。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="keyword">await</span> html2canvas(dom);</span><br><span class="line"></span><br><span class="line">pdf.addImage(canvas.toDataURL(<span class="string">'image/png'</span>), <span class="string">'PNG'</span>, <span class="number">0</span>, <span class="number">0</span>, imgWidth, imgHeight);</span><br></pre></td></tr></table></figure>
 
