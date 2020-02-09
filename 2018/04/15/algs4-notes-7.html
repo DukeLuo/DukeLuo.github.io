@@ -21,17 +21,19 @@ ga('send', 'pageview');
   <title>Algs4笔记（七） --- 符号表与二叉查找树 | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="介绍符号表与二叉查找树。">
-<meta name="keywords" content="Notes,Algs4,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algs4笔记（七） --- 符号表与二叉查找树">
 <meta property="og:url" content="http://dukeluo.github.io/2018/04/15/algs4-notes-7.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="介绍符号表与二叉查找树。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-08T07:24:13.427Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-05-11T18:03:44.000Z">
+<meta property="article:author" content="Duke Luo">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="Algs4">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Algs4笔记（七） --- 符号表与二叉查找树">
-<meta name="twitter:description" content="介绍符号表与二叉查找树。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -41,8 +43,10 @@ ga('send', 'pageview');
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container">
@@ -71,7 +75,7 @@ ga('send', 'pageview');
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" title="Github"></a>
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" target="_blank" rel="noopener" title="Github"></a>
         
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
@@ -93,7 +97,7 @@ ga('send', 'pageview');
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
   </div>
 
   </div>
@@ -112,11 +116,13 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        <script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 <h3 id="符号表"><a href="#符号表" class="headerlink" title="符号表"></a>符号表</h3><p>符号表(Symbol table)是一种存储键值对的数据结构，用来将一个键和一个值联系起来。我们将信息存储在其中，然后按照指定的键来搜索并获取这些信息，可见，符号表必须支持高效的插入和查找操作。符号表应用广泛，经常可见其身影，如Python中的数据结构<code>Dictionary</code>，JavaScript的复杂数据类型<code>Object</code>也可以看成一组键值对。</p>
 <a id="more"></a>
+
 <h3 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h3><p>链式结构可以支持高效的插入操作，二分查找可以保证查找的高效率，但是单链表无法支持二分查找，将二者结合起来，就产生了更高效的数据结构，二叉查找树(Binary Search Tree)。</p>
 <ul>
 <li>二叉树是一个空链接，或者是一个有左右两个链接的结点，并且每个链接都指向一棵独立的子二叉树。</li>
@@ -143,11 +149,11 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/04/15/algs4-notes-7.html" data-id="cjocsg39t000uqqilz8t824i1" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/04/15/algs4-notes-7.html" data-id="ck6dglns0001307z5d4cg837o" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algs4/">Algs4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algs4/" rel="tag">Algs4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/" rel="tag">Notes</a></li></ul>
 
     </footer>
   </div>
@@ -165,7 +171,7 @@ ga('send', 'pageview');
     </a>
   
   
-    <a href="/2018/03/28/pratice-snake.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/28/practice-snake.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">C语言实现贪吃蛇步骤实述</div>
     </a>
@@ -184,7 +190,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/实战/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程语言/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/翻译/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录/">记录</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E6%88%98/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a></li></ul>
     </div>
   </div>
 
@@ -194,7 +200,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algs4/" style="font-size: 15.71px;">Algs4</a> <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/CSS/" style="font-size: 11.43px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15.71px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14.29px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.43px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/SICP/" style="font-size: 17.14px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 17.14px;">Scheme</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/事件对象/" style="font-size: 10px;">事件对象</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小项目/" style="font-size: 12.86px;">小项目</a> <a href="/tags/总结/" style="font-size: 15.71px;">总结</a> <a href="/tags/浮动/" style="font-size: 10px;">浮动</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a>
+      <a href="/tags/Algs4/" style="font-size: 15.71px;">Algs4</a> <a href="/tags/C/" style="font-size: 12.86px;">C</a> <a href="/tags/CSS/" style="font-size: 11.43px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15.71px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14.29px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.43px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/SICP/" style="font-size: 17.14px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 17.14px;">Scheme</a> <a href="/tags/html2canvas/" style="font-size: 10px;">html2canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jsPDF/" style="font-size: 10px;">jsPDF</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">事件对象</a> <a href="/tags/%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">定位</a> <a href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/" style="font-size: 12.86px;">小项目</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 15.71px;">总结</a> <a href="/tags/%E6%B5%AE%E5%8A%A8/" style="font-size: 10px;">浮动</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">链表</a>
     </div>
   </div>
 
@@ -206,7 +212,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2018/11/10/pratice-qianshan.html">千山助手，开发之初体验</a>
+            <a href="/2020/02/08/slowly-html-pdf.html">从 html 到 pdf，为 Slowly 信件换衣裳</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/10/practice-qianshan.html">千山助手，开发之初体验</a>
           </li>
         
           <li>
@@ -221,10 +231,6 @@ ga('send', 'pageview');
             <a href="/2018/06/20/dom-event-1.html">DOM中事件处理程序的第一个参数？</a>
           </li>
         
-          <li>
-            <a href="/2018/06/15/c-segfault.html">一道Leetcode题引起的思考：Segmentation fault是什么？</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -237,7 +243,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Duke Luo<br>
+      &copy; 2020 Duke Luo<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -262,11 +268,17 @@ ga('send', 'pageview');
 </script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 
 

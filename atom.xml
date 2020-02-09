@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2018-11-11T11:20:48.036Z</updated>
+  <updated>2020-02-09T08:57:21.353Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -14,20 +14,48 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从 html 到 pdf，为 Slowly 信件换衣裳</title>
+    <link href="http://dukeluo.github.io/2020/02/08/slowly-html-pdf.html"/>
+    <id>http://dukeluo.github.io/2020/02/08/slowly-html-pdf.html</id>
+    <published>2020-02-07T16:00:00.000Z</published>
+    <updated>2020-02-09T08:57:21.353Z</updated>
+    
+    <summary type="html">
+    
+      记录 Slowly 信件从 html 到 pdf 的换装之旅
+    
+    </summary>
+    
+    
+      <category term="实战" scheme="http://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
+    
+    
+      <category term="JavaScript" scheme="http://dukeluo.github.io/tags/JavaScript/"/>
+    
+      <category term="小项目" scheme="http://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="jsPDF" scheme="http://dukeluo.github.io/tags/jsPDF/"/>
+    
+      <category term="html2canvas" scheme="http://dukeluo.github.io/tags/html2canvas/"/>
+    
+  </entry>
   
   <entry>
     <title>千山助手，开发之初体验</title>
-    <link href="http://dukeluo.github.io/2018/11/10/pratice-qianshan.html"/>
-    <id>http://dukeluo.github.io/2018/11/10/pratice-qianshan.html</id>
+    <link href="http://dukeluo.github.io/2018/11/10/practice-qianshan.html"/>
+    <id>http://dukeluo.github.io/2018/11/10/practice-qianshan.html</id>
     <published>2018-11-09T16:00:00.000Z</published>
-    <updated>2018-11-11T11:20:48.036Z</updated>
+    <updated>2018-12-04T20:18:06.000Z</updated>
     
     <summary type="html">
     
       记录第一次实现需求的开发过程。
     
     </summary>
+    
     
       <category term="实战" scheme="http://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
     
@@ -45,13 +73,14 @@
     <link href="http://dukeluo.github.io/2018/07/31/javascript-invocation-this.html"/>
     <id>http://dukeluo.github.io/2018/07/31/javascript-invocation-this.html</id>
     <published>2018-07-30T16:00:00.000Z</published>
-    <updated>2018-07-31T06:49:31.702Z</updated>
+    <updated>2018-07-31T04:39:00.000Z</updated>
     
     <summary type="html">
     
       翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)。
     
     </summary>
+    
     
       <category term="翻译" scheme="http://dukeluo.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
     
@@ -67,7 +96,7 @@
     <link href="http://dukeluo.github.io/2018/07/10/css-bgposition.html"/>
     <id>http://dukeluo.github.io/2018/07/10/css-bgposition.html</id>
     <published>2018-07-09T16:00:00.000Z</published>
-    <updated>2018-07-11T02:24:34.224Z</updated>
+    <updated>2018-07-17T03:26:48.000Z</updated>
     
     <summary type="html">
     
@@ -75,12 +104,13 @@
     
     </summary>
     
+    
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="定位" scheme="http://dukeluo.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
     
@@ -91,13 +121,14 @@
     <link href="http://dukeluo.github.io/2018/06/20/dom-event-1.html"/>
     <id>http://dukeluo.github.io/2018/06/20/dom-event-1.html</id>
     <published>2018-06-19T16:00:00.000Z</published>
-    <updated>2018-06-20T03:39:57.693Z</updated>
+    <updated>2018-06-23T05:14:38.000Z</updated>
     
     <summary type="html">
     
       关于DOM中事件处理程序第一个参数是事件对象的理解。
     
     </summary>
+    
     
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
@@ -115,7 +146,7 @@
     <link href="http://dukeluo.github.io/2018/06/15/c-segfault.html"/>
     <id>http://dukeluo.github.io/2018/06/15/c-segfault.html</id>
     <published>2018-06-14T16:00:00.000Z</published>
-    <updated>2018-06-15T14:14:12.678Z</updated>
+    <updated>2018-06-15T19:09:12.000Z</updated>
     
     <summary type="html">
     
@@ -123,12 +154,13 @@
     
     </summary>
     
+    
       <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
     
   </entry>
   
@@ -137,7 +169,7 @@
     <link href="http://dukeluo.github.io/2018/05/13/css-clearfix.html"/>
     <id>http://dukeluo.github.io/2018/05/13/css-clearfix.html</id>
     <published>2018-05-12T16:00:00.000Z</published>
-    <updated>2018-05-21T14:59:18.861Z</updated>
+    <updated>2018-05-23T02:25:30.000Z</updated>
     
     <summary type="html">
     
@@ -145,12 +177,13 @@
     
     </summary>
     
+    
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="浮动" scheme="http://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
     
@@ -161,13 +194,14 @@
     <link href="http://dukeluo.github.io/2018/05/08/hexo-https.html"/>
     <id>http://dukeluo.github.io/2018/05/08/hexo-https.html</id>
     <published>2018-05-07T16:00:00.000Z</published>
-    <updated>2018-05-09T06:40:31.408Z</updated>
+    <updated>2018-05-11T18:01:20.000Z</updated>
     
     <summary type="html">
     
       GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。
     
     </summary>
+    
     
       <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
@@ -183,13 +217,14 @@
     <link href="http://dukeluo.github.io/2018/05/04/linkedlist-1.html"/>
     <id>http://dukeluo.github.io/2018/05/04/linkedlist-1.html</id>
     <published>2018-05-03T16:00:00.000Z</published>
-    <updated>2018-05-06T12:33:23.633Z</updated>
+    <updated>2018-05-07T00:00:54.000Z</updated>
     
     <summary type="html">
     
       介绍面试中常见的链表操作。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -207,13 +242,14 @@
     <link href="http://dukeluo.github.io/2018/04/20/hexo-customization-1.html"/>
     <id>http://dukeluo.github.io/2018/04/20/hexo-customization-1.html</id>
     <published>2018-04-19T16:00:00.000Z</published>
-    <updated>2018-04-20T06:15:15.289Z</updated>
+    <updated>2018-05-07T00:00:56.000Z</updated>
     
     <summary type="html">
     
       个性化定制Hexo博客主题Landscape。
     
     </summary>
+    
     
       <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
@@ -229,13 +265,14 @@
     <link href="http://dukeluo.github.io/2018/04/15/algs4-notes-7.html"/>
     <id>http://dukeluo.github.io/2018/04/15/algs4-notes-7.html</id>
     <published>2018-04-14T16:00:00.000Z</published>
-    <updated>2018-05-08T07:24:13.427Z</updated>
+    <updated>2018-05-11T18:03:44.000Z</updated>
     
     <summary type="html">
     
       介绍符号表与二叉查找树。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -250,16 +287,17 @@
   
   <entry>
     <title>C语言实现贪吃蛇步骤实述</title>
-    <link href="http://dukeluo.github.io/2018/03/28/pratice-snake.html"/>
-    <id>http://dukeluo.github.io/2018/03/28/pratice-snake.html</id>
+    <link href="http://dukeluo.github.io/2018/03/28/practice-snake.html"/>
+    <id>http://dukeluo.github.io/2018/03/28/practice-snake.html</id>
     <published>2018-03-27T16:00:00.000Z</published>
-    <updated>2018-05-08T04:56:58.895Z</updated>
+    <updated>2018-12-04T20:18:06.000Z</updated>
     
     <summary type="html">
     
       介绍贪吃蛇的实现过程。
     
     </summary>
+    
     
       <category term="实战" scheme="http://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
     
@@ -275,13 +313,14 @@
     <link href="http://dukeluo.github.io/2018/03/14/algs4-notes-6.html"/>
     <id>http://dukeluo.github.io/2018/03/14/algs4-notes-6.html</id>
     <published>2018-03-13T16:00:00.000Z</published>
-    <updated>2018-08-04T03:13:41.898Z</updated>
+    <updated>2018-08-07T04:35:02.000Z</updated>
     
     <summary type="html">
     
       介绍基本排序算法冒泡排序，总结基本排序算法。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -299,13 +338,14 @@
     <link href="http://dukeluo.github.io/2018/03/09/algs4-notes-5.html"/>
     <id>http://dukeluo.github.io/2018/03/09/algs4-notes-5.html</id>
     <published>2018-03-08T16:00:00.000Z</published>
-    <updated>2018-05-08T07:25:22.173Z</updated>
+    <updated>2018-05-11T18:03:44.000Z</updated>
     
     <summary type="html">
     
       介绍数据结构堆和优先队列，介绍基本排序算法堆排序。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -323,13 +363,14 @@
     <link href="http://dukeluo.github.io/2018/03/04/algs4-notes-4.html"/>
     <id>http://dukeluo.github.io/2018/03/04/algs4-notes-4.html</id>
     <published>2018-03-03T16:00:00.000Z</published>
-    <updated>2018-05-08T07:25:26.161Z</updated>
+    <updated>2018-05-11T18:03:44.000Z</updated>
     
     <summary type="html">
     
       介绍基本排序算法：归并序和快速排序。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -347,13 +388,14 @@
     <link href="http://dukeluo.github.io/2018/03/02/algs4-notes-3.html"/>
     <id>http://dukeluo.github.io/2018/03/02/algs4-notes-3.html</id>
     <published>2018-03-01T16:00:00.000Z</published>
-    <updated>2018-05-08T07:25:32.815Z</updated>
+    <updated>2018-05-11T18:03:44.000Z</updated>
     
     <summary type="html">
     
       介绍基本排序算法：选择排序、插入排序和希尔排序。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -371,13 +413,14 @@
     <link href="http://dukeluo.github.io/2018/02/28/algs4-notes-2.html"/>
     <id>http://dukeluo.github.io/2018/02/28/algs4-notes-2.html</id>
     <published>2018-02-27T16:00:00.000Z</published>
-    <updated>2018-08-03T08:28:07.918Z</updated>
+    <updated>2018-08-07T04:35:04.000Z</updated>
     
     <summary type="html">
     
       介绍背包(bag)、队列(queue)、栈(stack)等三种基础集合数据类型。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -395,13 +438,14 @@
     <link href="http://dukeluo.github.io/2017/12/26/algs4-notes-1.html"/>
     <id>http://dukeluo.github.io/2017/12/26/algs4-notes-1.html</id>
     <published>2017-12-25T16:00:00.000Z</published>
-    <updated>2018-07-27T14:54:10.666Z</updated>
+    <updated>2018-07-31T04:40:14.000Z</updated>
     
     <summary type="html">
     
       Coursera上算法四的课程第一周讲的是union-find算法和算法分析的基础，通过开发、改进union-find算法的过程，解剖麻雀，向我们展示开发算法的一般过程。
     
     </summary>
+    
     
       <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
@@ -419,13 +463,14 @@
     <link href="http://dukeluo.github.io/2017/09/26/kr-notes-2.html"/>
     <id>http://dukeluo.github.io/2017/09/26/kr-notes-2.html</id>
     <published>2017-09-25T16:00:00.000Z</published>
-    <updated>2018-05-08T05:35:53.110Z</updated>
+    <updated>2018-05-11T18:03:44.000Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Points&quot;&gt;&lt;a href=&quot;#Points&quot; class=&quot;headerlink&quot; title=&quot;Points&quot;&gt;&lt;/a&gt;Points&lt;/h3&gt;&lt;p&gt;第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。&lt;br&gt;
+      &lt;h3 id=&quot;Points&quot;&gt;&lt;a href=&quot;#Points&quot; class=&quot;headerlink&quot; title=&quot;Points&quot;&gt;&lt;/a&gt;Points&lt;/h3&gt;&lt;p&gt;第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。    &lt;/p&gt;
     
     </summary>
+    
     
       <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
@@ -443,13 +488,14 @@
     <link href="http://dukeluo.github.io/2017/09/17/kr-notes-1.html"/>
     <id>http://dukeluo.github.io/2017/09/17/kr-notes-1.html</id>
     <published>2017-09-16T16:00:00.000Z</published>
-    <updated>2018-05-08T04:41:53.385Z</updated>
+    <updated>2018-05-11T18:03:44.000Z</updated>
     
     <summary type="html">
     
       花了四个多月的时间阅读完英文版SICP前三章，速度真心慢，不过锤炼了阅读能力，裸考六级给过了。下一步我准备先将SICP后两章缓一缓，期间先阅读完《The C programming Language》(K&amp;R)，想想体验到编程的乐趣就是通过学校的C语言课程，阅读这本C语言经典希望重新认识C。
     
     </summary>
+    
     
       <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
@@ -459,30 +505,6 @@
       <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
     
       <category term="K&amp;R" scheme="http://dukeluo.github.io/tags/K-R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SICP笔记（八）</title>
-    <link href="http://dukeluo.github.io/2017/09/09/sicp-notes-8.html"/>
-    <id>http://dukeluo.github.io/2017/09/09/sicp-notes-8.html</id>
-    <published>2017-09-08T16:00:00.000Z</published>
-    <updated>2018-08-04T09:00:58.971Z</updated>
-    
-    <summary type="html">
-    
-      前面，我们引入了赋值操作，我们有了模拟对象状态的能力，可以描述时间的流逝；同时也失去了引用透明性，在处理并发问题时，也变得更加复杂。
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="SICP" scheme="http://dukeluo.github.io/tags/SICP/"/>
-    
-      <category term="Scheme" scheme="http://dukeluo.github.io/tags/Scheme/"/>
     
   </entry>
   

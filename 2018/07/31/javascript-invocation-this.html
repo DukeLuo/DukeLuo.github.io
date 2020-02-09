@@ -20,19 +20,20 @@ ga('send', 'pageview');
   
   <title>翻译 | 深入理解JavaScirpt的函数调用和&#34;this&#34; | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)。">
-<meta name="keywords" content="JavaScript,this">
+  <meta name="description" content="翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https:&#x2F;&#x2F;yehudakatz.com&#x2F;2011&#x2F;08&#x2F;11&#x2F;understanding-javascript-function-invocation-and-this&#x2F;)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="翻译 | 深入理解JavaScirpt的函数调用和&quot;this&quot;">
 <meta property="og:url" content="http://dukeluo.github.io/2018/07/31/javascript-invocation-this.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
-<meta property="og:description" content="翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https:&#x2F;&#x2F;yehudakatz.com&#x2F;2011&#x2F;08&#x2F;11&#x2F;understanding-javascript-function-invocation-and-this&#x2F;)。">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2018/07/31/PdIAoj.png">
-<meta property="og:updated_time" content="2018-07-31T06:49:31.702Z">
+<meta property="article:published_time" content="2018-07-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-07-31T04:39:00.000Z">
+<meta property="article:author" content="Duke Luo">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="this">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="翻译 | 深入理解JavaScirpt的函数调用和&quot;this&quot;">
-<meta name="twitter:description" content="翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)。">
 <meta name="twitter:image" content="https://s1.ax1x.com/2018/07/31/PdIAoj.png">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
@@ -43,8 +44,10 @@ ga('send', 'pageview');
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container">
@@ -73,7 +76,7 @@ ga('send', 'pageview');
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" title="Github"></a>
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" target="_blank" rel="noopener" title="Github"></a>
         
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
@@ -95,7 +98,7 @@ ga('send', 'pageview');
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/翻译/">翻译</a>
+    <a class="article-category-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a>
   </div>
 
   </div>
@@ -116,26 +119,44 @@ ga('send', 'pageview');
       
         <p>过去很多年里，我看到过太多关于JavaScript函数调用的混淆。尤其是，很多人抱怨函数调用中this的语义令人困惑。<br>在我看来，通过理解核心函数调用原语，然后将其他所有调用函数的方法视为在原语之上的语法糖，如此便可澄清很多这类疑惑。事实上，这正是ECMAScript规范对此的看法。在某些方面，这篇文章是规范的简化，但基本思路是一样的。</p>
 <a id="more"></a>
+
 <h3 id="核心原语"><a href="#核心原语" class="headerlink" title="核心原语"></a>核心原语</h3><p>首先，我们先看一下函数调用的核心原语，Function对象的<code>call</code>方法[1]。调用方法方法相对简单。</p>
 <ol>
 <li>从参数1到末尾创建一个参数列表(<code>argList</code>)</li>
 <li>第一个参数（参数0)是<code>thisValue</code></li>
 <li>通过将<code>this</code>的值设为<code>thisValue</code>和<code>argList</code>作为其参数列表调用函数</li>
 </ol>
-<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span> + <span class="string">" says hello "</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hello.call(<span class="string">"Yehuda"</span>, <span class="string">"world"</span>) <span class="comment">//=&gt; Yehuda says hello world</span></span><br></pre></td></tr></table></figure></p>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span> + <span class="string">" says hello "</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hello.call(<span class="string">"Yehuda"</span>, <span class="string">"world"</span>) <span class="comment">//=&gt; Yehuda says hello world</span></span><br></pre></td></tr></table></figure>
+
 <p>如你所见，我们通过将<code>this</code>设置为<code>“Yehuda”</code>和单个参数<code>“world”</code>来调用<code>hello</code>方法。这正是JavaScript中函数调用的核心原语。你可以认为所有其他方式的函数调用都可”去糖“得到这个原语。（“去糖”是指采用一种方便的语法并用更基本的核心原语来描述它）。   </p>
 <p><em>[1]在ES5规范中，<code>call</code>方法是用另一个更底层的原语来描述的，但它是在那个原语之上的简单封装，所以我在这里简化了一下。有关更多信息，请参阅本文末尾。</em></p>
-<h3 id="简单的函数调用"><a href="#简单的函数调用" class="headerlink" title="简单的函数调用"></a>简单的函数调用</h3><p>显而易见，一直用<code>call</code>调用函数将会非常烦人。JavaScript允许我们直接使用括号语法<code>hello(&quot;world&quot;)</code>来调用函数。当我们这样做时，调用“去糖”如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello "</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this:</span></span><br><span class="line">hello(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// desugars to:</span></span><br><span class="line">hello.call(<span class="built_in">window</span>, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong>仅在使用严格模式</strong>[2]的ECMAScript 5中，此行为将改变：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this:</span></span><br><span class="line">hello(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// desugars to:</span></span><br><span class="line">hello.call(<span class="literal">undefined</span>, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="简单的函数调用"><a href="#简单的函数调用" class="headerlink" title="简单的函数调用"></a>简单的函数调用</h3><p>显而易见，一直用<code>call</code>调用函数将会非常烦人。JavaScript允许我们直接使用括号语法<code>hello(&quot;world&quot;)</code>来调用函数。当我们这样做时，调用“去糖”如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello "</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this:</span></span><br><span class="line">hello(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// desugars to:</span></span><br><span class="line">hello.call(<span class="built_in">window</span>, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>仅在使用严格模式</strong>[2]的ECMAScript 5中，此行为将改变：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this:</span></span><br><span class="line">hello(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// desugars to:</span></span><br><span class="line">hello.call(<span class="literal">undefined</span>, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure>
+
 <p>简短版本的说法是：<strong>像<code>fn(...args)</code>这样的函数调用和<code>fn.call(window [ES5-strict: undefined], ...args)</code>是一模一样的</strong>。<br>注意，对于行内声明的函数<code>(function() {})()</code>也是成立的：<code>(function() {})()</code>和<code>(function() {}).call(window [ES5-strict: undefined)</code>是一模一样的。</p>
 <p><em>[2]事实上，我撒了一点小谎。ECMAScript 5规范说<code>undefined</code>（几乎）总是被传递，但不在严格模式下时被调用函数应该将其<code>thisValue</code>更改为全局对象。这允许严格模式下调用者避免破坏现有的非严格模式库。</em></p>
-<h3 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h3><p>调用方法的下一个非常普遍的方式是作为一个对象的一个成员 (<code>person.hello()</code>)。在这种情况下，调用“去糖”如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Brendan Eich"</span>,</span><br><span class="line">  hello: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> + <span class="string">" says hello "</span> + thing);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this:</span></span><br><span class="line">person.hello(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// desugars to this:</span></span><br><span class="line">person.hello.call(person, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>注意，<code>hello</code>方法在这种形式下是如何附加到对象上是无关紧要的。请记住，我们之前将<code>hello</code>定义为一个独立函数。接下来我们看看如果动态地将其附加到对象上会发生什么：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span> + <span class="string">" says hello "</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person = &#123; <span class="attr">name</span>: <span class="string">"Brendan Eich"</span> &#125;</span><br><span class="line">person.hello = hello;</span><br><span class="line"></span><br><span class="line">person.hello(<span class="string">"world"</span>) <span class="comment">// still desugars to person.hello.call(person, "world")</span></span><br><span class="line"></span><br><span class="line">hello(<span class="string">"world"</span>) <span class="comment">// "[object DOMWindow]world"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h3><p>调用方法的下一个非常普遍的方式是作为一个对象的一个成员 (<code>person.hello()</code>)。在这种情况下，调用“去糖”如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Brendan Eich"</span>,</span><br><span class="line">  hello: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> + <span class="string">" says hello "</span> + thing);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this:</span></span><br><span class="line">person.hello(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// desugars to this:</span></span><br><span class="line">person.hello.call(person, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>注意，<code>hello</code>方法在这种形式下是如何附加到对象上是无关紧要的。请记住，我们之前将<code>hello</code>定义为一个独立函数。接下来我们看看如果动态地将其附加到对象上会发生什么：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span> + <span class="string">" says hello "</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person = &#123; <span class="attr">name</span>: <span class="string">"Brendan Eich"</span> &#125;</span><br><span class="line">person.hello = hello;</span><br><span class="line"></span><br><span class="line">person.hello(<span class="string">"world"</span>) <span class="comment">// still desugars to person.hello.call(person, "world")</span></span><br><span class="line"></span><br><span class="line">hello(<span class="string">"world"</span>) <span class="comment">// "[object DOMWindow]world"</span></span><br></pre></td></tr></table></figure>
+
 <p>注意，函数对其<code>this</code>值没有一贯的定义，它总是在调用时根据调用者调用的方式进行设置。</p>
-<h3 id="使用Function-prototype-bind"><a href="#使用Function-prototype-bind" class="headerlink" title="使用Function.prototype.bind"></a>使用<code>Function.prototype.bind</code></h3><p>因为引用<code>this</code>值一贯不变的函数有时是很方便的，人们历来使用一个简单的闭包技巧将函数转换为<code>this</code>值一贯不变的对应函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Brendan Eich"</span>,</span><br><span class="line">  hello: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" says hello "</span> + thing);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> boundHello = <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123; <span class="keyword">return</span> person.hello.call(person, thing); &#125;</span><br><span class="line"></span><br><span class="line">boundHello(<span class="string">"world"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>尽管我们的<code>boundHello</code>调用仍然“去糖”为<code>boundHello.call(window, &quot;world&quot;)</code>，但我们改变方向并使用我们的原语<code>call</code>方法将<code>this</code>值更改回我们想要的值。<br>我们做些调整可以把这个技巧变为通用解法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bind = <span class="function"><span class="keyword">function</span>(<span class="params">func, thisValue</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> func.apply(thisValue, <span class="built_in">arguments</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> boundHello = bind(person.hello, person);</span><br><span class="line">boundHello(<span class="string">"world"</span>) <span class="comment">// "Brendan Eich says hello world"</span></span><br></pre></td></tr></table></figure></p>
-<p>为了理解这一点，您只需要两个额外的知识。首先，<code>arguments</code>是一个类Array对象，它表示传递给函数的所有参数。其次，<code>apply</code>方法的工作原理和<code>call</code>原语除了它采用类Array对象而不是一次列出一个参数之外完全一样。<br>我们的<code>bind</code>方法简单地返回一个新函数。当它被调用时，我们的新函数只是调用传入的原始函数，并将原始值设置为其<code>this</code>值，当然它也传递参数。<br>因为这是一个有点常见的习惯用法，ES5在所有<code>Function</code>对象上引入了一个新方法<code>bind</code>，实现了此行为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> boundHello = person.hello.bind(person);</span><br><span class="line">boundHello(<span class="string">"world"</span>) <span class="comment">// "Brendan Eich says hello world"</span></span><br></pre></td></tr></table></figure></p>
-<p>当您需要将原始函数作为回调传递时，此方法将非常有用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Alex Russell"</span>,</span><br><span class="line">  hello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" says hello world"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">"#some-div"</span>).click(person.hello.bind(person));</span><br><span class="line"></span><br><span class="line"><span class="comment">// when the div is clicked, "Alex Russell says hello world" is printed</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="使用Function-prototype-bind"><a href="#使用Function-prototype-bind" class="headerlink" title="使用Function.prototype.bind"></a>使用<code>Function.prototype.bind</code></h3><p>因为引用<code>this</code>值一贯不变的函数有时是很方便的，人们历来使用一个简单的闭包技巧将函数转换为<code>this</code>值一贯不变的对应函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Brendan Eich"</span>,</span><br><span class="line">  hello: <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" says hello "</span> + thing);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> boundHello = <span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123; <span class="keyword">return</span> person.hello.call(person, thing); &#125;</span><br><span class="line"></span><br><span class="line">boundHello(<span class="string">"world"</span>);</span><br></pre></td></tr></table></figure>
+<p>尽管我们的<code>boundHello</code>调用仍然“去糖”为<code>boundHello.call(window, &quot;world&quot;)</code>，但我们改变方向并使用我们的原语<code>call</code>方法将<code>this</code>值更改回我们想要的值。<br>我们做些调整可以把这个技巧变为通用解法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bind = <span class="function"><span class="keyword">function</span>(<span class="params">func, thisValue</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> func.apply(thisValue, <span class="built_in">arguments</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> boundHello = bind(person.hello, person);</span><br><span class="line">boundHello(<span class="string">"world"</span>) <span class="comment">// "Brendan Eich says hello world"</span></span><br></pre></td></tr></table></figure>
+
+<p>为了理解这一点，您只需要两个额外的知识。首先，<code>arguments</code>是一个类Array对象，它表示传递给函数的所有参数。其次，<code>apply</code>方法的工作原理和<code>call</code>原语除了它采用类Array对象而不是一次列出一个参数之外完全一样。<br>我们的<code>bind</code>方法简单地返回一个新函数。当它被调用时，我们的新函数只是调用传入的原始函数，并将原始值设置为其<code>this</code>值，当然它也传递参数。<br>因为这是一个有点常见的习惯用法，ES5在所有<code>Function</code>对象上引入了一个新方法<code>bind</code>，实现了此行为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> boundHello = person.hello.bind(person);</span><br><span class="line">boundHello(<span class="string">"world"</span>) <span class="comment">// "Brendan Eich says hello world"</span></span><br></pre></td></tr></table></figure>
+
+<p>当您需要将原始函数作为回调传递时，此方法将非常有用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"Alex Russell"</span>,</span><br><span class="line">  hello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" says hello world"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">"#some-div"</span>).click(person.hello.bind(person));</span><br><span class="line"></span><br><span class="line"><span class="comment">// when the div is clicked, "Alex Russell says hello world" is printed</span></span><br></pre></td></tr></table></figure>
+
 <p>确实，这有点笨，TC39（负责ECMAScript下一版本的委员会）将继续致力于一个更优雅、向后兼容的解决方案。</p>
 <h3 id="面向jQuery"><a href="#面向jQuery" class="headerlink" title="面向jQuery"></a>面向jQuery</h3><p>由于jQuery中大量使用匿名回调函数，因此它在内部使用<code>call</code>方法将这些回调的<code>this</code>值设置为更有用的值。举个例子，在所有事件处理程序中(如不进行特殊干预)，jQuery不接收<code>window</code>作为其<code>this</code>值，而是通过把设置事件处理程序的元素作为它第一个参数在回调函数上调用<code>call</code>。<br>这非常有用，因为匿名回调函数中的默认<code>this</code>的值并不是特别有用，除了它给初学者对javascript的一种印象，<code>this</code><strong>通常</strong>是一个奇怪的，经常变动至于难以解释的概念。<br>如果你理解了将“含糖”函数调用转换为“已去糖”的<code>func.call(thisValue, ...args)</code>的基本规则，那么你应该能够在并不是那么危险的JavaScript<code>this</code>水域中航行。<br><img src="https://s1.ax1x.com/2018/07/31/PdIAoj.png" alt=""></p>
 <h3 id="PS：我撒谎的部分"><a href="#PS：我撒谎的部分" class="headerlink" title="PS：我撒谎的部分"></a>PS：我撒谎的部分</h3><p>在个别地方，我从规范的确切措辞中略微简化了事实。可能最严重的欺骗是我称呼<code>func.call</code>为原语的说法。实际上，规范有一个<code>func.call</code>和<code>[obj.]func()</code>都使用的原语（内部称为<code>[[Call]]</code>）。<br>然而，还是看一下<code>func.call</code>的定义吧：</p>
@@ -151,11 +172,11 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/07/31/javascript-invocation-this.html" data-id="cjocsg39v000xqqildeaa9ade" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/07/31/javascript-invocation-this.html" data-id="ck6dglns5001j07z554hmcz1e" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/this/">this</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/this/" rel="tag">this</a></li></ul>
 
     </footer>
   </div>
@@ -163,7 +184,7 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2018/11/10/pratice-qianshan.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/11/10/practice-qianshan.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -192,7 +213,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/实战/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程语言/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/翻译/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录/">记录</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E6%88%98/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a></li></ul>
     </div>
   </div>
 
@@ -202,7 +223,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algs4/" style="font-size: 15.71px;">Algs4</a> <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/CSS/" style="font-size: 11.43px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15.71px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14.29px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.43px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/SICP/" style="font-size: 17.14px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 17.14px;">Scheme</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/事件对象/" style="font-size: 10px;">事件对象</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小项目/" style="font-size: 12.86px;">小项目</a> <a href="/tags/总结/" style="font-size: 15.71px;">总结</a> <a href="/tags/浮动/" style="font-size: 10px;">浮动</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a>
+      <a href="/tags/Algs4/" style="font-size: 15.71px;">Algs4</a> <a href="/tags/C/" style="font-size: 12.86px;">C</a> <a href="/tags/CSS/" style="font-size: 11.43px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15.71px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14.29px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.43px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/SICP/" style="font-size: 17.14px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 17.14px;">Scheme</a> <a href="/tags/html2canvas/" style="font-size: 10px;">html2canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jsPDF/" style="font-size: 10px;">jsPDF</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">事件对象</a> <a href="/tags/%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">定位</a> <a href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/" style="font-size: 12.86px;">小项目</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 15.71px;">总结</a> <a href="/tags/%E6%B5%AE%E5%8A%A8/" style="font-size: 10px;">浮动</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">链表</a>
     </div>
   </div>
 
@@ -214,7 +235,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2018/11/10/pratice-qianshan.html">千山助手，开发之初体验</a>
+            <a href="/2020/02/08/slowly-html-pdf.html">从 html 到 pdf，为 Slowly 信件换衣裳</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/10/practice-qianshan.html">千山助手，开发之初体验</a>
           </li>
         
           <li>
@@ -229,10 +254,6 @@ ga('send', 'pageview');
             <a href="/2018/06/20/dom-event-1.html">DOM中事件处理程序的第一个参数？</a>
           </li>
         
-          <li>
-            <a href="/2018/06/15/c-segfault.html">一道Leetcode题引起的思考：Segmentation fault是什么？</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -245,7 +266,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Duke Luo<br>
+      &copy; 2020 Duke Luo<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -270,11 +291,17 @@ ga('send', 'pageview');
 </script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 
 

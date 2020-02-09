@@ -21,17 +21,19 @@ ga('send', 'pageview');
   <title>千山助手，开发之初体验 | DukeLuo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记录第一次实现需求的开发过程。">
-<meta name="keywords" content="JavaScript,小项目,jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="千山助手，开发之初体验">
-<meta property="og:url" content="http://dukeluo.github.io/2018/11/10/pratice-qianshan.html">
+<meta property="og:url" content="http://dukeluo.github.io/2018/11/10/practice-qianshan.html">
 <meta property="og:site_name" content="DukeLuo&#39;s Blog">
 <meta property="og:description" content="记录第一次实现需求的开发过程。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-11T11:20:48.036Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-04T20:18:06.000Z">
+<meta property="article:author" content="Duke Luo">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="小项目">
+<meta property="article:tag" content="jQuery">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="千山助手，开发之初体验">
-<meta name="twitter:description" content="记录第一次实现需求的开发过程。">
   
     <link rel="alternate" href="/atom.xml" title="DukeLuo&#39;s Blog" type="application/atom+xml">
   
@@ -41,8 +43,10 @@ ga('send', 'pageview');
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container">
@@ -71,7 +75,7 @@ ga('send', 'pageview');
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" title="Github"></a>
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/DukeLuo" target="_blank" rel="noopener" title="Github"></a>
         
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
@@ -86,14 +90,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-pratice-qianshan" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-practice-qianshan" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/10/pratice-qianshan.html" class="article-date">
+    <a href="/2018/11/10/practice-qianshan.html" class="article-date">
   <time datetime="2018-11-09T16:00:00.000Z" itemprop="datePublished">2018-11-10</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/实战/">实战</a>
+    <a class="article-category-link" href="/categories/%E5%AE%9E%E6%88%98/">实战</a>
   </div>
 
   </div>
@@ -114,6 +118,7 @@ ga('send', 'pageview');
       
         <p>学习编程有些日子了，照着样例写一些花瓶demo着实无聊，最想做的就是用代码实现实际中的需求，让代码真正有价值。</p>
 <a id="more"></a>
+
 <h3 id="千山导航"><a href="#千山导航" class="headerlink" title="千山导航"></a>千山导航</h3><p><a href="http://qianshan.co" target="_blank" rel="noopener">千山导航</a>是一个简洁优雅的导航站，我一直将其设为我的浏览器首页。千山导航有默认的网站分类，也可以自定义设置，不过清除浏览器数据时，会一并删除。第一次遇见千山时，满心欢喜地配置好了，结果在一次清理之后，一切都回到了默认配置，后来，我就再也没有自定义过了。这时候，我有了想法，想为千山导航做点什么。千山助手是一个用户脚本，依托于拓展<a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a>或者<a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank" rel="noopener">Tampermonkey</a>，它为千山导航补充了几个实用功能。千山导航站点在实现中使用了Bootstrap和jQuery，所以这个脚本也相应使用了这两种技术。    </p>
 <h3 id="阻止事件传播"><a href="#阻止事件传播" class="headerlink" title="阻止事件传播"></a>阻止事件传播</h3><p>千山导航有一个快捷键功能，按下快捷键打开相应的网站，不过在Firefox中并没有用，这应该是网站的遗留bug。此脚本往千山导航加上一个搜索框，但当搜索框输入时也会触发快捷键。一开始，我以为这会是脚本开发过程中最大的挑战，后来，一个阻止<code>keydown</code>事件传播的简单操作就完美解决搜索框和千山导航的兼容问题。    </p>
 <h3 id="实现文件下载"><a href="#实现文件下载" class="headerlink" title="实现文件下载"></a>实现文件下载</h3><p>导出备份需要将配置文件下载至本地，解决方案是利用<code>&lt;a&gt;</code>标签，先将配置字符串通过<code>Blob</code>对象转换成二进制数据，后使用<code>URL.createObjectURL()</code>方法将其作为标签<code>&lt;a&gt;</code>的<code>href</code>属性，使用<code>download</code>属性设置文件名，实现文件下载。    </p>
@@ -130,17 +135,26 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukeluo.github.io/2018/11/10/pratice-qianshan.html" data-id="cjocsg38s000fqqil5d11fguo" class="article-share-link">Share</a>
+      <a data-url="http://dukeluo.github.io/2018/11/10/practice-qianshan.html" data-id="ck6dglnsf002607z5axc9e4zn" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小项目/">小项目</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/" rel="tag">小项目</a></li></ul>
 
     </footer>
   </div>
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/02/08/slowly-html-pdf.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          从 html 到 pdf，为 Slowly 信件换衣裳
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/31/javascript-invocation-this.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -162,7 +176,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/实战/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程语言/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/翻译/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录/">记录</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E6%88%98/">实战</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a></li></ul>
     </div>
   </div>
 
@@ -172,7 +186,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algs4/" style="font-size: 15.71px;">Algs4</a> <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/CSS/" style="font-size: 11.43px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15.71px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14.29px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.43px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/SICP/" style="font-size: 17.14px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 17.14px;">Scheme</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/事件对象/" style="font-size: 10px;">事件对象</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/小项目/" style="font-size: 12.86px;">小项目</a> <a href="/tags/总结/" style="font-size: 15.71px;">总结</a> <a href="/tags/浮动/" style="font-size: 10px;">浮动</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a>
+      <a href="/tags/Algs4/" style="font-size: 15.71px;">Algs4</a> <a href="/tags/C/" style="font-size: 12.86px;">C</a> <a href="/tags/CSS/" style="font-size: 11.43px;">CSS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15.71px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14.29px;">JavaScript</a> <a href="/tags/K-R/" style="font-size: 11.43px;">K&R</a> <a href="/tags/Notes/" style="font-size: 20px;">Notes</a> <a href="/tags/Python/" style="font-size: 18.57px;">Python</a> <a href="/tags/SICP/" style="font-size: 17.14px;">SICP</a> <a href="/tags/Scheme/" style="font-size: 17.14px;">Scheme</a> <a href="/tags/html2canvas/" style="font-size: 10px;">html2canvas</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jsPDF/" style="font-size: 10px;">jsPDF</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" style="font-size: 10px;">事件对象</a> <a href="/tags/%E5%AE%9A%E4%BD%8D/" style="font-size: 10px;">定位</a> <a href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/" style="font-size: 12.86px;">小项目</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 15.71px;">总结</a> <a href="/tags/%E6%B5%AE%E5%8A%A8/" style="font-size: 10px;">浮动</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">链表</a>
     </div>
   </div>
 
@@ -184,7 +198,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2018/11/10/pratice-qianshan.html">千山助手，开发之初体验</a>
+            <a href="/2020/02/08/slowly-html-pdf.html">从 html 到 pdf，为 Slowly 信件换衣裳</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/10/practice-qianshan.html">千山助手，开发之初体验</a>
           </li>
         
           <li>
@@ -199,10 +217,6 @@ ga('send', 'pageview');
             <a href="/2018/06/20/dom-event-1.html">DOM中事件处理程序的第一个参数？</a>
           </li>
         
-          <li>
-            <a href="/2018/06/15/c-segfault.html">一道Leetcode题引起的思考：Segmentation fault是什么？</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -215,7 +229,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Duke Luo<br>
+      &copy; 2020 Duke Luo<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -240,11 +254,17 @@ ga('send', 'pageview');
 </script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 
 
