@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2020-02-09T09:00:17.219Z</updated>
+  <updated>2020-02-13T08:56:28.181Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客除草计划（一）：使用 Backblaze、Cloudflare 和 rclone 管理博客图片</title>
+    <link href="http://dukeluo.github.io/2020/02/12/blog-clean-plan-1.html"/>
+    <id>http://dukeluo.github.io/2020/02/12/blog-clean-plan-1.html</id>
+    <published>2020-02-11T16:00:00.000Z</published>
+    <updated>2020-02-13T08:56:28.181Z</updated>
+    
+    <summary type="html">
+    
+      博客除草计划的第一节，记录使用 Backblaze B2、Cloudflare 和 rclone 等工具管理博客图片的过程
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="除草计划" scheme="http://dukeluo.github.io/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>从 html 到 pdf，为 Slowly 信件换衣裳</title>
@@ -108,9 +129,9 @@
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
     
       <category term="定位" scheme="http://dukeluo.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
     
@@ -158,9 +179,9 @@
       <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
+    
+      <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -181,9 +202,9 @@
       <category term="前端" scheme="http://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
-    
       <category term="总结" scheme="http://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="CSS" scheme="http://dukeluo.github.io/tags/CSS/"/>
     
       <category term="浮动" scheme="http://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
     
@@ -468,31 +489,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;Points&quot;&gt;&lt;a href=&quot;#Points&quot; class=&quot;headerlink&quot; title=&quot;Points&quot;&gt;&lt;/a&gt;Points&lt;/h3&gt;&lt;p&gt;第二章介绍数据类型、运算符与表达式的知识，第三章则介绍了C中的控制流，第四章以逆波兰计算器展开介绍函数和程序结构。    &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="编程语言" scheme="http://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="C" scheme="http://dukeluo.github.io/tags/C/"/>
-    
-      <category term="K&amp;R" scheme="http://dukeluo.github.io/tags/K-R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>K&amp;R笔记（一）</title>
-    <link href="http://dukeluo.github.io/2017/09/17/kr-notes-1.html"/>
-    <id>http://dukeluo.github.io/2017/09/17/kr-notes-1.html</id>
-    <published>2017-09-16T16:00:00.000Z</published>
-    <updated>2018-05-11T18:03:44.000Z</updated>
-    
-    <summary type="html">
-    
-      花了四个多月的时间阅读完英文版SICP前三章，速度真心慢，不过锤炼了阅读能力，裸考六级给过了。下一步我准备先将SICP后两章缓一缓，期间先阅读完《The C programming Language》(K&amp;R)，想想体验到编程的乐趣就是通过学校的C语言课程，阅读这本C语言经典希望重新认识C。
     
     </summary>
     
