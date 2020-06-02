@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dukeluo.github.io/"/>
-  <updated>2020-04-16T14:28:52.689Z</updated>
+  <updated>2020-06-02T15:36:13.523Z</updated>
   <id>http://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 git rebase 合并历史提交和修改历史 Commit Message</title>
+    <link href="http://dukeluo.github.io/2020/05/07/git-rebase.html"/>
+    <id>http://dukeluo.github.io/2020/05/07/git-rebase.html</id>
+    <published>2020-05-06T16:00:00.000Z</published>
+    <updated>2020-06-02T15:36:13.523Z</updated>
+    
+    <summary type="html">
+    
+      使用 git rebase 命令合并历史提交和修改历史 Commit Message
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="http://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="git" scheme="http://dukeluo.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>博客除草计划（二）：GitHub Pages Deploy Action 部署 hexo 博客</title>
@@ -464,31 +485,6 @@
     <summary type="html">
     
       介绍背包(bag)、队列(queue)、栈(stack)等三种基础集合数据类型。
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Notes" scheme="http://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="Algs4" scheme="http://dukeluo.github.io/tags/Algs4/"/>
-    
-      <category term="Java" scheme="http://dukeluo.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Algs4笔记（一） --- 并查集</title>
-    <link href="http://dukeluo.github.io/2017/12/26/algs4-notes-1.html"/>
-    <id>http://dukeluo.github.io/2017/12/26/algs4-notes-1.html</id>
-    <published>2017-12-25T16:00:00.000Z</published>
-    <updated>2018-07-31T04:40:14.000Z</updated>
-    
-    <summary type="html">
-    
-      Coursera上算法四的课程第一周讲的是union-find算法和算法分析的基础，通过开发、改进union-find算法的过程，解剖麻雀，向我们展示开发算法的一般过程。
     
     </summary>
     
