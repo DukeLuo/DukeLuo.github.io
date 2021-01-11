@@ -8,7 +8,7 @@
   <meta name="description" content="在知乎上发现此游戏的分享，非常感谢作者的分享。这是我阅读的第一个小项目代码。给我最深的体会便是divide and conquer，逐步实现模块的功能，最后实现游戏的功能。简单分析，好像游戏实现的思路并不难。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小游戏《Let&#39;s Go! PiPiXia!》">
-<meta property="og:url" content="http://dukeluo.github.io/2017/03/06/record-PiPiXia.html">
+<meta property="og:url" content="https://dukeluo.github.io/2017/03/06/record-PiPiXia.html">
 <meta property="og:site_name" content="DukeLuo Blog">
 <meta property="og:description" content="在知乎上发现此游戏的分享，非常感谢作者的分享。这是我阅读的第一个小项目代码。给我最深的体会便是divide and conquer，逐步实现模块的功能，最后实现游戏的功能。简单分析，好像游戏实现的思路并不难。">
 <meta property="og:locale" content="zh_CN">
@@ -37,14 +37,28 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo&#x3D;" defer crossorigin="anonymous"></script>
 
   
-<script src="/js/script.js" defer></script>
-
-  
   
     
 <script src="/js/post.js" defer></script>
 
   
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@2.1.4/fingerprint2.min.js" defer></script>
+
+    
+<script src="/js/fingerprint.js" defer></script>
+
+    
+<script src="/js/gist.js" defer></script>
+
+    
+<script src="/js/like.js" defer type="module"></script>
+
+  
+  
+<script src="/js/script.js" defer></script>
+
   
 <script src="/js/chocolate.js" defer></script>
 
@@ -80,18 +94,29 @@
             <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
         </nav>
         <div id="search-form-wrap">
-            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukeluo.github.io"></form>
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dukeluo.github.io"></form>
         </div>
     </div>
 </header>
 
-      <div class="post-outer">
+      <div class="post-outer" data-post-title="小游戏《Let&#39;s Go! PiPiXia!》" id="post">
   <section class="post-toc">
-    <div class="toc-wrap">
+    <div class="post-fixed-container">
+      <div class="toc-wrap">
   <h3 class="toc-title">目录</h3>
   <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#module-1-PPX的实现"><span class="toc-text">module 1. PPX的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-2-Block的实现"><span class="toc-text">module 2. Block的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-3-主体的实现"><span class="toc-text">module 3. 主体的实现</span></a></li></ol>
 </div>
 
+      
+        <div id="post-like" data-token="YTczZTgwYzg5Y2FlZTA2MzBiMDUyZmRiM2NiMzM5MGI0MzZhNGE1NQ==">
+  <div class="container">
+    <a class="like-icon"></a>
+    <span id="like-count"></span>
+  </div>
+</div>
+
+      
+    </div>
   </section>
   <section class="post-main">
     <article id="post-record-PiPiXia" class="h-entry article article-type-post"
@@ -139,35 +164,49 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://dukeluo.github.io/2017/03/06/record-PiPiXia.html" data-id="ckeqn55ou001zi7z52rjofalm" data-title="小游戏《Let&#39;s Go! PiPiXia!》"
-          class="article-share-link">Share</a>
+        <div id="copyright">
+  <p><a href="https://dukeluo.github.io/2017/03/06/record-PiPiXia.html">https://dukeluo.github.io/2017/03/06/record-PiPiXia.html</a></p>
+  <p>本作品采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可</p>
+</div>
+
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/" rel="tag">Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+  <div id="article-tag">
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/" rel="tag">Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+  </div>
 
 
+      
+        <div class="article-share-links">
+  <a href="https://twitter.com/intent/tweet?text=%E5%B0%8F%E6%B8%B8%E6%88%8F%E3%80%8ALet&#39;s%20Go!%20PiPiXia!%E3%80%8B&amp;url=https%3A%2F%2Fdukeluo.github.io%2F2017%2F03%2F06%2Frecord-PiPiXia.html"
+    class="article-share-twitter" target="_blank" title="Twitter"></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdukeluo.github.io%2F2017%2F03%2F06%2Frecord-PiPiXia.html"
+    class="article-share-facebook" target="_blank" title="Facebook"></a>
+  ​<a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdukeluo.github.io%2F2017%2F03%2F06%2Frecord-PiPiXia.html"
+    class="article-share-pinterest" target="_blank" title="Pinterest"></a>
+  ​<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fdukeluo.github.io%2F2017%2F03%2F06%2Frecord-PiPiXia.html"
+    class="article-share-linkedin" target="_blank" title="LinkedIn"></a>
+</div>
+
+      
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2017/03/13/MIT-6.00.1x-Set3.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          MIT 6.00.1x  计算机科学和Python编程导论  Set 3
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/03/05/MIT-6.00.1x-Set2.html" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MIT 6.00.1x  计算机科学和Python编程导论  Set 2</div>
-    </a>
-  
-</nav>
+  <nav id="article-nav">
+    
+      <a href="/2017/03/13/MIT-6.00.1x-Set3.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <h4 class="article-nav-caption">Read This Next</h4>
+        <div class="article-nav-title">MIT 6.00.1x  计算机科学和Python编程导论  Set 3</div>
+      </a>
+    
+    
+      <a href="/2017/03/05/MIT-6.00.1x-Set2.html" id="article-nav-older" class="article-nav-link-wrap">
+        <h4 class="article-nav-caption">You Might Enjoy</h4>
+        <div class="article-nav-title">MIT 6.00.1x  计算机科学和Python编程导论  Set 2</div>
+      </a>
+    
+  </nav>
 
 
   
@@ -184,7 +223,7 @@
   <div id="gitalk-container"></div>
   <script type="text/javascript">
     // eslint-disable-next-line no-undef
-    var gitalk = new Gitalk({
+    let gitalk = new Gitalk({
       clientID: 'ac13c3b3628335d35671',
       clientSecret: '5c2b1d85739f26158c96d18b9eddc1183bf4b010',
       id: window.location.pathname,
@@ -199,103 +238,6 @@
 </div>
 
     
-    
-      <script type="module">
-  import { Octokit } from 'https://cdn.skypack.dev/@octokit/core';
-
-  const FILE_NAME = 'post-like.json';
-
-  const octokit = new Octokit({
-    auth: 'b8785cac6964523e8c930fe9260b89d56833c377'
-  });
-
-  async function main() {
-    const { id, files } = await getPostLikeGist();
-
-    console.log(files);
-    updatePostLikeGist(id, 'hello world. Im duke');
-  }
-
-  async function updatePostLikeGist(postLikeGistId, content) {
-    const { status, data } = await octokit.request('PATCH /gists/{gistId}', {
-      gistId: postLikeGistId,
-      description: 'description',
-      files: {
-        [FILE_NAME]: {
-          content: JSON.stringify(content)
-        }
-      }
-    });
-
-    if (status !== 200) {
-      return;
-    }
-
-    return {
-      id: data.id,
-      files: data.files
-    };
-  }
-
-  async function getPostLikeGist() {
-    const fileGistIdMap = await getFileGistIdMap();
-    const postLikeGistId = fileGistIdMap.get(Array.from(fileGistIdMap.keys()).find(file => file.filename === FILE_NAME));
-    const { status, data } = await octokit.request('GET /gists/{gistId}', {
-      gistId: postLikeGistId
-    });
-
-    if (status !== 200) {
-      return;
-    }
-
-    return {
-      id: data.id,
-      files: data.files
-    } || await createPostLikeGist();
-  }
-
-  async function getFileGistIdMap() {
-    const { status, data } = await octokit.request('GET /gists');
-
-    if (status !== 200) {
-      return;
-    }
-
-    const fileGistIdMap = new Map();
-    data.reduce(function (map, gist) {
-      Object.values(gist.files).forEach(file => map.set(file, gist.id));
-      return map;
-    }, fileGistIdMap);
-
-    return fileGistIdMap;
-  }
-
-  async function createPostLikeGist() {
-    const { status, data } = await octokit.request('POST /gists', {
-      accept: 'application/vnd.github.v3+json',
-      description: 'A gist to record likes of each post. It\'s used by Hexo theme candelas. https://github.com/DukeLuo/hexo-theme-candelas',
-      files: {
-        [FILE_NAME]: {
-          content: JSON.stringify([])
-        }
-      },
-      public: true
-    });
-
-    if (status !== 201) {
-      return;
-    }
-
-    return {
-      id: data.id,
-      files: data.files
-    };
-  }
-
-  main();
-</script>
-
-    
   </section>
   <section class="post-sidebar">
     <aside>
@@ -303,7 +245,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algs4/" rel="tag">Algs4</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Candelas/" rel="tag">Candelas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Actions/" rel="tag">Github Actions</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/K-R/" rel="tag">K&R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Notes/" rel="tag">Notes</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SICP/" rel="tag">SICP</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheme/" rel="tag">Scheme</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/" rel="tag">html2canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsPDF/" rel="tag">jsPDF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" rel="tag">事件对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9A%E4%BD%8D/" rel="tag">定位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/" rel="tag">小项目</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%AE%E5%8A%A8/" rel="tag">浮动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/" rel="tag">除草计划</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algs4/" rel="tag">Algs4</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Candelas/" rel="tag">Candelas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/" rel="tag">DOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Actions/" rel="tag">Github Actions</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/K-R/" rel="tag">K&R</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Notes/" rel="tag">Notes</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SICP/" rel="tag">SICP</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheme/" rel="tag">Scheme</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/" rel="tag">html2canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsPDF/" rel="tag">jsPDF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" rel="tag">事件对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9A%E4%BD%8D/" rel="tag">定位</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/" rel="tag">小项目</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%AE%E5%8A%A8/" rel="tag">浮动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/" rel="tag">除草计划</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -315,14 +257,6 @@
       <ul>
         
           <li>
-            <a href="/2020/07/31/line-item.html">line-item</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/12/openlmis-update.html">openlmis-update</a>
-          </li>
-        
-          <li>
             <a href="/2020/05/07/git-rebase.html">使用 git rebase 合并历史提交和修改记录 Commit Message</a>
           </li>
         
@@ -331,7 +265,15 @@
           </li>
         
           <li>
-            <a href="/2020/04/08/test.html">slfkjsdlfkjsl</a>
+            <a href="/2020/02/12/blog-clean-plan-1.html">博客除草计划（一）：使用 Backblaze、Cloudflare 和 rclone 管理博客图片</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/08/slowly-html-pdf.html">从 html 到 pdf，为 Slowly 信件换衣裳</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/10/practice-qianshan.html">千山助手，开发之初体验</a>
           </li>
         
       </ul>
@@ -345,7 +287,7 @@
 </div>
 
       <footer id="footer">
-  <p>Copyright &copy; 2020 DukeLuo Blog</p>
+  <p>Copyright &copy; 2021 DukeLuo Blog</p>
   <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> • Theme <a
                 href="https://github.com/DukeLuo/hexo-theme-candelas" target="_blank">Candelas</a></p>
 </footer>
