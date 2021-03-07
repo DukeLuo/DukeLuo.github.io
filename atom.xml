@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dukeluo.github.io/"/>
-  <updated>2020-06-02T15:41:04.030Z</updated>
+  <updated>2021-03-07T10:55:00.452Z</updated>
   <id>https://dukeluo.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 patch-package 修改第三方依赖库</title>
+    <link href="https://dukeluo.github.io/2021/03/07/modify-third-package.html"/>
+    <id>https://dukeluo.github.io/2021/03/07/modify-third-package.html</id>
+    <published>2021-03-06T16:00:00.000Z</published>
+    <updated>2021-03-07T10:55:00.452Z</updated>
+    
+    <summary type="html">
+    
+      介绍一种修改第三方依赖库的方法，使用 patch-package 库生成补丁，结合 npm 勾子修改源代码，达到修改的目的。
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="npm" scheme="https://dukeluo.github.io/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 git rebase 合并历史提交和修改记录 Commit Message</title>
@@ -175,9 +196,9 @@
       <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
-    
       <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
     
       <category term="定位" scheme="https://dukeluo.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
     
@@ -225,9 +246,9 @@
       <category term="编程语言" scheme="https://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="C" scheme="https://dukeluo.github.io/tags/C/"/>
+    
+      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -248,9 +269,9 @@
       <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
-    
       <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
     
       <category term="浮动" scheme="https://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
     
@@ -460,31 +481,6 @@
     <summary type="html">
     
       介绍基本排序算法：选择排序、插入排序和希尔排序。
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
-    
-      <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
-    
-      <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Algs4笔记（二） --- 背包、队列与栈</title>
-    <link href="https://dukeluo.github.io/2018/02/28/algs4-notes-2.html"/>
-    <id>https://dukeluo.github.io/2018/02/28/algs4-notes-2.html</id>
-    <published>2018-02-27T16:00:00.000Z</published>
-    <updated>2018-08-07T04:35:04.000Z</updated>
-    
-    <summary type="html">
-    
-      介绍背包(bag)、队列(queue)、栈(stack)等三种基础集合数据类型。
     
     </summary>
     
