@@ -3,7 +3,7 @@
   <title>DukeLuo Blog</title>
   
   <subtitle>Knowledge is Power</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="https://dukeluo.github.io/atom.xml" rel="self"/>
   
   <link href="https://dukeluo.github.io/"/>
   <updated>2021-03-07T10:55:00.452Z</updated>
@@ -23,17 +23,15 @@
     <published>2021-03-06T16:00:00.000Z</published>
     <updated>2021-03-07T10:55:00.452Z</updated>
     
-    <summary type="html">
     
-      介绍一种修改第三方依赖库的方法，使用 patch-package 库生成补丁，结合 npm 勾子修改源代码，达到修改的目的。
-    
-    </summary>
+    <summary type="html">介绍一种修改第三方依赖库的方法，使用 patch-package 库生成补丁，结合 npm 勾子修改源代码，达到修改的目的。</summary>
     
     
-      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="npm" scheme="https://dukeluo.github.io/tags/npm/"/>
+    <category term="npm" scheme="https://dukeluo.github.io/tags/npm/"/>
     
   </entry>
   
@@ -44,17 +42,15 @@
     <published>2020-05-06T16:00:00.000Z</published>
     <updated>2020-06-02T15:41:04.030Z</updated>
     
-    <summary type="html">
     
-      使用 git rebase 命令合并历史提交和修改记录 Commit Message
-    
-    </summary>
+    <summary type="html">使用 git rebase 命令合并历史提交和修改记录 Commit Message</summary>
     
     
-      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="git" scheme="https://dukeluo.github.io/tags/git/"/>
+    <category term="git" scheme="https://dukeluo.github.io/tags/git/"/>
     
   </entry>
   
@@ -65,21 +61,19 @@
     <published>2020-04-13T16:00:00.000Z</published>
     <updated>2020-04-16T14:28:52.689Z</updated>
     
-    <summary type="html">
     
-      记录使用 GitHub Pages Deploy Action 部署 hexo 博客主题 Candelas 演示站遇到的问题。
-    
-    </summary>
+    <summary type="html">记录使用 GitHub Pages Deploy Action 部署 hexo 博客主题 Candelas 演示站遇到的问题。</summary>
     
     
-      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="除草计划" scheme="https://dukeluo.github.io/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/"/>
+    <category term="除草计划" scheme="https://dukeluo.github.io/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/"/>
     
-      <category term="Github Actions" scheme="https://dukeluo.github.io/tags/Github-Actions/"/>
+    <category term="Github Actions" scheme="https://dukeluo.github.io/tags/Github-Actions/"/>
     
-      <category term="Candelas" scheme="https://dukeluo.github.io/tags/Candelas/"/>
+    <category term="Candelas" scheme="https://dukeluo.github.io/tags/Candelas/"/>
     
   </entry>
   
@@ -90,17 +84,15 @@
     <published>2020-02-11T16:00:00.000Z</published>
     <updated>2020-11-29T05:36:22.662Z</updated>
     
-    <summary type="html">
     
-      博客除草计划的第一节，记录使用 Backblaze B2、Cloudflare 和 rclone 等工具管理博客图片的过程
-    
-    </summary>
+    <summary type="html">博客除草计划的第一节，记录使用 Backblaze B2、Cloudflare 和 rclone 等工具管理博客图片的过程</summary>
     
     
-      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="除草计划" scheme="https://dukeluo.github.io/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/"/>
+    <category term="除草计划" scheme="https://dukeluo.github.io/tags/%E9%99%A4%E8%8D%89%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
@@ -111,23 +103,21 @@
     <published>2020-02-07T16:00:00.000Z</published>
     <updated>2020-11-29T05:29:04.235Z</updated>
     
-    <summary type="html">
     
-      记录 Slowly 信件从 html 到 pdf 的换装之旅
-    
-    </summary>
+    <summary type="html">记录 Slowly 信件从 html 到 pdf 的换装之旅</summary>
     
     
-      <category term="实战" scheme="https://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
+    
+    <category term="实战" scheme="https://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
     
     
-      <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
     
-      <category term="小项目" scheme="https://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
+    <category term="小项目" scheme="https://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
     
-      <category term="jsPDF" scheme="https://dukeluo.github.io/tags/jsPDF/"/>
+    <category term="jsPDF" scheme="https://dukeluo.github.io/tags/jsPDF/"/>
     
-      <category term="html2canvas" scheme="https://dukeluo.github.io/tags/html2canvas/"/>
+    <category term="html2canvas" scheme="https://dukeluo.github.io/tags/html2canvas/"/>
     
   </entry>
   
@@ -138,21 +128,19 @@
     <published>2018-11-09T16:00:00.000Z</published>
     <updated>2018-12-04T20:18:06.000Z</updated>
     
-    <summary type="html">
     
-      记录第一次实现需求的开发过程。
-    
-    </summary>
+    <summary type="html">记录第一次实现需求的开发过程。</summary>
     
     
-      <category term="实战" scheme="https://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
+    
+    <category term="实战" scheme="https://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
     
     
-      <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
     
-      <category term="小项目" scheme="https://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
+    <category term="小项目" scheme="https://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
     
-      <category term="jQuery" scheme="https://dukeluo.github.io/tags/jQuery/"/>
+    <category term="jQuery" scheme="https://dukeluo.github.io/tags/jQuery/"/>
     
   </entry>
   
@@ -163,19 +151,17 @@
     <published>2018-07-30T16:00:00.000Z</published>
     <updated>2018-07-31T04:39:00.000Z</updated>
     
-    <summary type="html">
     
-      翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)。
-    
-    </summary>
+    <summary type="html">翻译文章：[Understanding JavaScript Function Invocation and &quot;this&quot;](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)。</summary>
     
     
-      <category term="翻译" scheme="https://dukeluo.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+    <category term="翻译" scheme="https://dukeluo.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
     
     
-      <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
     
-      <category term="this" scheme="https://dukeluo.github.io/tags/this/"/>
+    <category term="this" scheme="https://dukeluo.github.io/tags/this/"/>
     
   </entry>
   
@@ -186,21 +172,19 @@
     <published>2018-07-09T16:00:00.000Z</published>
     <updated>2018-07-17T03:26:48.000Z</updated>
     
-    <summary type="html">
     
-      利用平面直角坐标系介绍css背景属性`background-position`定位的原理。
-    
-    </summary>
+    <summary type="html">利用平面直角坐标系介绍css背景属性`background-position`定位的原理。</summary>
     
     
-      <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
+    <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
     
-      <category term="定位" scheme="https://dukeluo.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
+    <category term="定位" scheme="https://dukeluo.github.io/tags/%E5%AE%9A%E4%BD%8D/"/>
     
   </entry>
   
@@ -211,21 +195,19 @@
     <published>2018-06-19T16:00:00.000Z</published>
     <updated>2018-06-23T05:14:38.000Z</updated>
     
-    <summary type="html">
     
-      关于DOM中事件处理程序第一个参数是事件对象的理解。
-    
-    </summary>
+    <summary type="html">关于DOM中事件处理程序第一个参数是事件对象的理解。</summary>
     
     
-      <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="事件对象" scheme="https://dukeluo.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"/>
+    <category term="事件对象" scheme="https://dukeluo.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"/>
     
-      <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
     
-      <category term="DOM" scheme="https://dukeluo.github.io/tags/DOM/"/>
+    <category term="DOM" scheme="https://dukeluo.github.io/tags/DOM/"/>
     
   </entry>
   
@@ -236,19 +218,17 @@
     <published>2018-06-14T16:00:00.000Z</published>
     <updated>2018-06-15T19:09:12.000Z</updated>
     
-    <summary type="html">
     
-      介绍C语言中的Segmentation fault错误。
-    
-    </summary>
+    <summary type="html">介绍C语言中的Segmentation fault错误。</summary>
     
     
-      <category term="编程语言" scheme="https://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="编程语言" scheme="https://dukeluo.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="C" scheme="https://dukeluo.github.io/tags/C/"/>
+    <category term="C" scheme="https://dukeluo.github.io/tags/C/"/>
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -259,21 +239,19 @@
     <published>2018-05-12T16:00:00.000Z</published>
     <updated>2018-05-23T02:25:30.000Z</updated>
     
-    <summary type="html">
     
-      介绍清除浮动的常用方法。
-    
-    </summary>
+    <summary type="html">介绍清除浮动的常用方法。</summary>
     
     
-      <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="前端" scheme="https://dukeluo.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
+    <category term="CSS" scheme="https://dukeluo.github.io/tags/CSS/"/>
     
-      <category term="浮动" scheme="https://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
+    <category term="浮动" scheme="https://dukeluo.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
     
   </entry>
   
@@ -284,19 +262,17 @@
     <published>2018-05-07T16:00:00.000Z</published>
     <updated>2018-05-11T18:01:20.000Z</updated>
     
-    <summary type="html">
     
-      GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。
-    
-    </summary>
+    <summary type="html">GitHub宣布支持自定义域名HTTPS，记录Hexo博客开启HTTPS的过程。</summary>
     
     
-      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="Hexo" scheme="https://dukeluo.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://dukeluo.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -307,21 +283,19 @@
     <published>2018-05-03T16:00:00.000Z</published>
     <updated>2018-05-07T00:00:54.000Z</updated>
     
-    <summary type="html">
     
-      介绍面试中常见的链表操作。
-    
-    </summary>
+    <summary type="html">介绍面试中常见的链表操作。</summary>
     
     
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://dukeluo.github.io/tags/JavaScript/"/>
     
-      <category term="链表" scheme="https://dukeluo.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    <category term="链表" scheme="https://dukeluo.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
@@ -332,19 +306,17 @@
     <published>2018-04-19T16:00:00.000Z</published>
     <updated>2018-05-07T00:00:56.000Z</updated>
     
-    <summary type="html">
     
-      个性化定制Hexo博客主题Landscape。
-    
-    </summary>
+    <summary type="html">个性化定制Hexo博客主题Landscape。</summary>
     
     
-      <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    <category term="总结" scheme="https://dukeluo.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="Hexo" scheme="https://dukeluo.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://dukeluo.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -355,21 +327,19 @@
     <published>2018-04-14T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
-    <summary type="html">
     
-      介绍符号表与二叉查找树。
-    
-    </summary>
+    <summary type="html">介绍符号表与二叉查找树。</summary>
     
     
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
+    <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
+    <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
     
-      <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
+    <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
     
   </entry>
   
@@ -380,19 +350,17 @@
     <published>2018-03-27T16:00:00.000Z</published>
     <updated>2018-12-04T20:18:06.000Z</updated>
     
-    <summary type="html">
     
-      介绍贪吃蛇的实现过程。
-    
-    </summary>
+    <summary type="html">介绍贪吃蛇的实现过程。</summary>
     
     
-      <category term="实战" scheme="https://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
+    
+    <category term="实战" scheme="https://dukeluo.github.io/categories/%E5%AE%9E%E6%88%98/"/>
     
     
-      <category term="C" scheme="https://dukeluo.github.io/tags/C/"/>
+    <category term="C" scheme="https://dukeluo.github.io/tags/C/"/>
     
-      <category term="小项目" scheme="https://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
+    <category term="小项目" scheme="https://dukeluo.github.io/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -403,21 +371,19 @@
     <published>2018-03-13T16:00:00.000Z</published>
     <updated>2018-08-07T04:35:02.000Z</updated>
     
-    <summary type="html">
     
-      介绍基本排序算法冒泡排序，总结基本排序算法。
-    
-    </summary>
+    <summary type="html">介绍基本排序算法冒泡排序，总结基本排序算法。</summary>
     
     
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
+    <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
+    <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
     
-      <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
+    <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
     
   </entry>
   
@@ -428,21 +394,19 @@
     <published>2018-03-08T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
-    <summary type="html">
     
-      介绍数据结构堆和优先队列，介绍基本排序算法堆排序。
-    
-    </summary>
+    <summary type="html">介绍数据结构堆和优先队列，介绍基本排序算法堆排序。</summary>
     
     
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
+    <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
+    <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
     
-      <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
+    <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
     
   </entry>
   
@@ -453,21 +417,19 @@
     <published>2018-03-03T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
-    <summary type="html">
     
-      介绍基本排序算法：归并序和快速排序。
-    
-    </summary>
+    <summary type="html">介绍基本排序算法：归并序和快速排序。</summary>
     
     
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
+    <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
+    <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
     
-      <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
+    <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
     
   </entry>
   
@@ -478,21 +440,19 @@
     <published>2018-03-01T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
-    <summary type="html">
     
-      介绍基本排序算法：选择排序、插入排序和希尔排序。
-    
-    </summary>
+    <summary type="html">介绍基本排序算法：选择排序、插入排序和希尔排序。</summary>
     
     
-      <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
+    <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
     
-      <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
+    <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
     
-      <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
+    <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
     
   </entry>
   

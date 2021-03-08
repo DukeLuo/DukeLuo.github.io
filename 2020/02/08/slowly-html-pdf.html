@@ -73,7 +73,7 @@
   
   
   
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -108,11 +108,11 @@
     <div class="post-fixed-container">
       <div class="toc-wrap">
   <h3 class="toc-title">目录</h3>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Slowly"><span class="toc-text">Slowly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选型"><span class="toc-text">选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas"><span class="toc-text">html2canvas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsPDF"><span class="toc-text">jsPDF</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Slowly"><span class="toc-text">Slowly</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E5%9E%8B"><span class="toc-text">选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html2canvas"><span class="toc-text">html2canvas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsPDF"><span class="toc-text">jsPDF</span></a></li></ol>
 </div>
 
       
-        <div id="post-like" data-token="YTczZTgwYzg5Y2FlZTA2MzBiMDUyZmRiM2NiMzM5MGI0MzZhNGE1NQ==">
+        <div id="post-like" data-token="MTBiZjhlNDE3YjA3Y2VmMWFmZmZhMTAxYzMzNzM3Mjk3MjRjYzViNQ==">
   <div class="container">
     <a class="like-icon"></a>
     <span id="like-count"></span>
@@ -155,26 +155,26 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>有一天，我发现 Slowly 应用有 web 端，网页也是简洁的风格，看着陈列的一封封信件，产生想要保存的想法，于是开始了从 html 到 pdf 的换装之旅。</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<h3 id="Slowly"><a href="#Slowly" class="headerlink" title="Slowly"></a>Slowly</h3><p><a href="https://web.getslowly.com/" target="_blank" rel="noopener">Slowly</a>，是一个慢的应用，在这里可以结识天南地北的笔友，交流的信件根据地点不同，派送时间从几天到几小时不等。在这里可以讨论各种东西，每次看到派送的小箭头，心中一片期待。我很喜欢这里。</p>
-<p><img src="https://files.dukeluo.me/2020/02/slowly-stamp.jpg" alt=""></p>
+<h3 id="Slowly"><a href="#Slowly" class="headerlink" title="Slowly"></a>Slowly</h3><p><a target="_blank" rel="noopener" href="https://web.getslowly.com/">Slowly</a>，是一个慢的应用，在这里可以结识天南地北的笔友，交流的信件根据地点不同，派送时间从几天到几小时不等。在这里可以讨论各种东西，每次看到派送的小箭头，心中一片期待。我很喜欢这里。</p>
+<p><img src="https://files.dukeluo.me/2020/02/slowly-stamp.jpg"></p>
 <h3 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h3><p><code>window</code> 对象上有 <code>print</code> 方法，可以直接调用系统的打印方法，选择保存为 pdf，粗暴解决问题。在我的这个场景下，如此会保存整个窗口的内容，样式不美观，我不满意这种效果。看了一些资料后，我选择的方法借助 jsPDF 和 html2canvas 两个三方库，html2canvas 用于把 html 页面转化为 canvas，如此可以保持页面原有的 css 样式，处理 canvas 为图片后，使用 jsPDF 插入 pdf 文档，解决核心问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="keyword">await</span> html2canvas(dom);</span><br><span class="line"></span><br><span class="line">pdf.addImage(canvas.toDataURL(<span class="string">'image/png'</span>), <span class="string">'PNG'</span>, <span class="number">0</span>, <span class="number">0</span>, imgWidth, imgHeight);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="keyword">await</span> html2canvas(dom);</span><br><span class="line"></span><br><span class="line">pdf.addImage(canvas.toDataURL(<span class="string">&#x27;image/png&#x27;</span>), <span class="string">&#x27;PNG&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>, imgWidth, imgHeight);</span><br></pre></td></tr></table></figure>
 
 <h3 id="html2canvas"><a href="#html2canvas" class="headerlink" title="html2canvas"></a>html2canvas</h3><p>在 web 端，一封封信件就是一个个 dom 元素，第一步需要获得这些 dom 元素，生成的 pdf 文档是 a4 规格的，需要对 dom 元素宽度进行微调，开始我使用 <code>cloneNode</code> 方法进行复制，但 <code>html2canvas</code> 方法会报错，后面搜索得知，<code>html2canvas</code> 方法只对 <code>document</code> 中的 dom 元素生效，把复制后的元素插入到 <code>document</code> 中可以解决问题。</p>
 <p>笔友之间的沟通下，会有多封信件，这里需要操作浏览器在信件页面上跳转，使用 <code>window.history.back()</code> 操作浏览器返回上一页面，然后点击下一封信件，抓取内容。但因每个动作之间的间隔过短，点击时页面还没渲染好，会造成错误。我简单地阻塞一段时间，等待页面渲染完成后点击。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(resolve, ms));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.history.back();</span><br><span class="line"><span class="keyword">await</span> sleep(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">setTimeout</span>(resolve, ms));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.history.back();</span><br><span class="line"><span class="keyword">await</span> sleep(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
 
 <p>在我的场景之下，希望 pdf 文档是按照信件的时间顺序来组成的，<code>html2canvas</code> 方法又是异步操作，这就需要处理每个 <code>html2canvas</code> 方法的先后问题。要是简单地使用 <code>then</code> 方法来调整，百来份信件岂不是要 <code>then</code> 到天上去，这里借助数组的 <code>reduce</code> 方法很简洁得排列每个方法的顺序，解决顺序问题。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">doms.reduce(</span><br><span class="line">    (chain, dom) =&gt; chain.then(</span><br><span class="line">        <span class="keyword">async</span> () =&gt; <span class="keyword">await</span> html2pdf(dom)</span><br><span class="line">    ),</span><br><span class="line">    <span class="built_in">Promise</span>.resolve()</span><br><span class="line">).then(</span><br><span class="line">  () =&gt; savePdf()</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <p>上面的代码按照数组元素的索引排列异步操作的顺序，最后返回的也是一个 <code>Promise</code>，可以继续操作，在这里可以进行 pdf 的保存操作。</p>
 <h3 id="jsPDF"><a href="#jsPDF" class="headerlink" title="jsPDF"></a>jsPDF</h3><p>在插入图片到 pdf 文档的过程中，遇到一个问题，过长的图片如何分页。因为是图片，jsPDF 并不知道在何处分页，这是需要自己处理的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> imgWidth = pageWidth;</span><br><span class="line"><span class="keyword">const</span> imgHeight = canvas.height / canvas.width * imgWidth;</span><br><span class="line"><span class="keyword">const</span> count = canvas.height / pageHeight;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= count; i++) &#123;</span><br><span class="line">    pdf.addPage(pageWidth, pageHeight);</span><br><span class="line">    pdf.addImage(canvas.toDataURL(<span class="string">'image/png'</span>), <span class="string">'PNG'</span>, <span class="number">0</span>, - i * pageHeight, imgWidth, imgHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> imgWidth = pageWidth;</span><br><span class="line"><span class="keyword">const</span> imgHeight = canvas.height / canvas.width * imgWidth;</span><br><span class="line"><span class="keyword">const</span> count = canvas.height / pageHeight;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= count; i++) &#123;</span><br><span class="line">    pdf.addPage(pageWidth, pageHeight);</span><br><span class="line">    pdf.addImage(canvas.toDataURL(<span class="string">&#x27;image/png&#x27;</span>), <span class="string">&#x27;PNG&#x27;</span>, <span class="number">0</span>, - i * pageHeight, imgWidth, imgHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>根据 canvas 的宽高比例和 pdf 页面宽度计算出图片的高度，求出图片占置页面的数量，jsPDF 中的<code>addImage</code> 方法的三、四个参数是指定图片放置起点的，不断调整起点位置，便可正确分页。</p>
-<p>我把这个小工具发布为脚本，完整代码在<a href="https://github.com/DukeLuo/duke-user-js" target="_blank" rel="noopener">这里</a>，Greasy Fork 脚本地址在<a href="https://greasyfork.org/en/scripts/395838-slowly-save-helper" target="_blank" rel="noopener">这里</a>，欢迎使用。要说这次折腾的最大收获是什么，当然是<del>（<code>Promise</code>，<code>DOM</code> ）</del>美美的 pdf 文档！</p>
+<p>我把这个小工具发布为脚本，完整代码在<a target="_blank" rel="noopener" href="https://github.com/DukeLuo/duke-user-js">这里</a>，Greasy Fork 脚本地址在<a target="_blank" rel="noopener" href="https://greasyfork.org/en/scripts/395838-slowly-save-helper">这里</a>，欢迎使用。要说这次折腾的最大收获是什么，当然是<del>（<code>Promise</code>，<code>DOM</code> ）</del>美美的 pdf 文档！</p>
 
       
     </div>
@@ -182,7 +182,7 @@
       
         <div id="copyright">
   <p><a href="https://dukeluo.github.io/2020/02/08/slowly-html-pdf.html">https://dukeluo.github.io/2020/02/08/slowly-html-pdf.html</a></p>
-  <p>本作品采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可</p>
+  <p>本作品采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可</p>
 </div>
 
       
@@ -240,8 +240,8 @@
   <script type="text/javascript">
     // eslint-disable-next-line no-undef
     let gitalk = new Gitalk({
-      clientID: 'ac13c3b3628335d35671',
-      clientSecret: '5c2b1d85739f26158c96d18b9eddc1183bf4b010',
+      clientID: '2ed7f9c25568fea2ee69',
+      clientSecret: 'd74f517f2ee83500603767fb640749762723f10d',
       id: window.location.pathname,
       repo: 'DukeLuo.github.io',
       owner: 'DukeLuo',

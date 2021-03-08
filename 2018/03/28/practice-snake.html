@@ -71,7 +71,7 @@
   
   
   
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -106,11 +106,11 @@
     <div class="post-fixed-container">
       <div class="toc-wrap">
   <h3 class="toc-title">目录</h3>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#活动区域"><span class="toc-text">活动区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蛇"><span class="toc-text">蛇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#食物"><span class="toc-text">食物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主函数"><span class="toc-text">主函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E5%8A%A8%E5%8C%BA%E5%9F%9F"><span class="toc-text">活动区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9B%87"><span class="toc-text">蛇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9"><span class="toc-text">食物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%87%BD%E6%95%B0"><span class="toc-text">主函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
 </div>
 
       
-        <div id="post-like" data-token="YTczZTgwYzg5Y2FlZTA2MzBiMDUyZmRiM2NiMzM5MGI0MzZhNGE1NQ==">
+        <div id="post-like" data-token="MTBiZjhlNDE3YjA3Y2VmMWFmZmZhMTAxYzMzNzM3Mjk3MjRjYzViNQ==">
   <div class="container">
     <a class="like-icon"></a>
     <span id="like-count"></span>
@@ -153,22 +153,22 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>贪吃蛇整个游戏过程就是玩家控制蛇在限定区域内重复移动、吃食的过程，因此实现这个小游戏需要一条蛇、一个限定区域以及食物。我们可以用一个数组来表示限定区域，对这个区域而言，我们希望有初始化的方法以及在终端打印的方法;对于蛇来讲，我们希望可以对其初始化、移动以及吃食的方法;食物的话，要求比较简单，只需要在没有食物的时候产生新的食物就可以。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="活动区域"><a href="#活动区域" class="headerlink" title="活动区域"></a>活动区域</h3><p>我选择一维的字符数组来作为活动区域的载体，当储存元素为字符<code>&#39;S&#39;</code>时表示为蛇;元素为字符<code>&#39;F&#39;</code>时表示为食物;元素为字符<code>&#39;+&#39;</code>时表示为边界，其余的空闲空间则储存字符<code>&#39;0&#39;</code>。游戏的过程，本质上就是对这些字符的处理。实现区域的初始化和打印方法非常简单，是实现贪吃蛇过程中最简单的部分了。</p>
 <h3 id="蛇"><a href="#蛇" class="headerlink" title="蛇"></a>蛇</h3><p>我使用了一个类似双端队列的数据结构来表示蛇，不过它比双端队列简单多了，只需要实现双端队列的几个操作就可以了。<code>unshift()</code>用来在队列前端添加元素，<code>pop()</code>用来删除队列末端的元素，<code>get_head()</code>用来获取队首。值得注意的是，前面我用字符数组来实现活动区域，结果也用字符数组来实现这个储存位置的队列，结果给自己挖了一个大坑。蛇在限定区域内不断移动，就是通过操作储存位置的队列来实现的。<br>蛇移动的话，就是在队首添加元素，在队末删除元素。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move_snake</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    board[x] = <span class="string">'S'</span>;</span><br><span class="line">    unshift(x);</span><br><span class="line">    board[pop()] = <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move_snake</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    board[x] = <span class="string">&#x27;S&#x27;</span>;</span><br><span class="line">    unshift(x);</span><br><span class="line">    board[pop()] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>类似移动，吃食不过是不删除队末的元素。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">eat_snake</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    board[x] = <span class="string">'S'</span>;</span><br><span class="line">    unshift(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">eat_snake</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    board[x] = <span class="string">&#x27;S&#x27;</span>;</span><br><span class="line">    unshift(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="食物"><a href="#食物" class="headerlink" title="食物"></a>食物</h3><p>使用库函数<code>rand()</code>随机产生食物，注意，要在没有食物的时候产生！</p>
-<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>实现上面的各个函数后，整个贪吃蛇就呼之欲出了。首先初始化活动区域，初始化蛇，然后循环不断获取用户输入，产生下一个移动位置，蛇对其作出反应，打印活动区域。这其中有一个需要注意的点就是，蛇不能对与运动方向相反的指令作出响应，就是不能调头返回。<br><img src="https://s1.ax1x.com/2018/05/08/CdC3ZD.png" alt=""></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>我实现的贪吃蛇是控制台程序，为了美观，需要清屏、关闭回显、隐藏光标等美化操作。清屏与关闭回显，我使用了库函数中的<code>system()</code>函数;隐藏光标，我使用了<a href="https://blog.csdn.net/kevinshq/article/details/8179252" target="_blank" rel="noopener">这</a>提供的方法。要注意的是，对终端设置后记得在退出时将设置修改回来。还有一个，贪吃蛇需要判断键盘是否有输入，有的话需要及时读入，了解到有这么一个库函数<code>kbhit()</code>实现了这个功能，不过linux下的C并没有这个头文件，我谷歌了一个<code>kbhit()</code>在linux下的实现，在<a href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html" target="_blank" rel="noopener">这</a>，感觉这才是这个程序的重点哈，不过，水平太菜，只好直接复制了。</p>
-<p>源程序： <a href="https://github.com/DukeLuo/Sand" target="_blank" rel="noopener">这里</a></p>
+<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><p>实现上面的各个函数后，整个贪吃蛇就呼之欲出了。首先初始化活动区域，初始化蛇，然后循环不断获取用户输入，产生下一个移动位置，蛇对其作出反应，打印活动区域。这其中有一个需要注意的点就是，蛇不能对与运动方向相反的指令作出响应，就是不能调头返回。<br><img src="https://s1.ax1x.com/2018/05/08/CdC3ZD.png"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>我实现的贪吃蛇是控制台程序，为了美观，需要清屏、关闭回显、隐藏光标等美化操作。清屏与关闭回显，我使用了库函数中的<code>system()</code>函数;隐藏光标，我使用了<a target="_blank" rel="noopener" href="https://blog.csdn.net/kevinshq/article/details/8179252">这</a>提供的方法。要注意的是，对终端设置后记得在退出时将设置修改回来。还有一个，贪吃蛇需要判断键盘是否有输入，有的话需要及时读入，了解到有这么一个库函数<code>kbhit()</code>实现了这个功能，不过linux下的C并没有这个头文件，我谷歌了一个<code>kbhit()</code>在linux下的实现，在<a target="_blank" rel="noopener" href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html">这</a>，感觉这才是这个程序的重点哈，不过，水平太菜，只好直接复制了。</p>
+<p>源程序： <a target="_blank" rel="noopener" href="https://github.com/DukeLuo/Sand">这里</a></p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><a href="https://aotu.io/notes/2017/09/25/h5game-snake/index.html" target="_blank" rel="noopener">H5游戏开发：贪吃蛇</a></li>
-<li><a href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html" target="_blank" rel="noopener">kbhit() for linux</a></li>
-<li><a href="https://blog.csdn.net/kevinshq/article/details/8179252" target="_blank" rel="noopener">C/C++ linux下光标定位和清屏函数(printf 实现)</a></li>
+<li><a target="_blank" rel="noopener" href="https://aotu.io/notes/2017/09/25/h5game-snake/index.html">H5游戏开发：贪吃蛇</a></li>
+<li><a target="_blank" rel="noopener" href="https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html">kbhit() for linux</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/kevinshq/article/details/8179252">C/C++ linux下光标定位和清屏函数(printf 实现)</a></li>
 </ul>
 
       
@@ -177,7 +177,7 @@
       
         <div id="copyright">
   <p><a href="https://dukeluo.github.io/2018/03/28/practice-snake.html">https://dukeluo.github.io/2018/03/28/practice-snake.html</a></p>
-  <p>本作品采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可</p>
+  <p>本作品采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可</p>
 </div>
 
       
@@ -235,8 +235,8 @@
   <script type="text/javascript">
     // eslint-disable-next-line no-undef
     let gitalk = new Gitalk({
-      clientID: 'ac13c3b3628335d35671',
-      clientSecret: '5c2b1d85739f26158c96d18b9eddc1183bf4b010',
+      clientID: '2ed7f9c25568fea2ee69',
+      clientSecret: 'd74f517f2ee83500603767fb640749762723f10d',
       id: window.location.pathname,
       repo: 'DukeLuo.github.io',
       owner: 'DukeLuo',
