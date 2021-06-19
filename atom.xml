@@ -6,7 +6,7 @@
   <link href="https://dukeluo.github.io/atom.xml" rel="self"/>
   
   <link href="https://dukeluo.github.io/"/>
-  <updated>2021-03-07T10:55:00.452Z</updated>
+  <updated>2021-06-19T13:37:53.184Z</updated>
   <id>https://dukeluo.github.io/</id>
   
   <author>
@@ -17,9 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>React useEffect 函数体和返回体的执行次数</title>
+    <link href="https://dukeluo.github.io/2021/06/18/react-useeffect.html"/>
+    <id>https://dukeluo.github.io/2021/06/18/react-useeffect.html</id>
+    <published>2021-06-18T16:00:00.000Z</published>
+    <updated>2021-06-19T13:37:53.184Z</updated>
+    
+    
+    <summary type="html">介绍 useEffect 的函数体和返回体在不同依赖、不同生命周期下的执行次数情况。</summary>
+    
+    
+    
+    <category term="记录" scheme="https://dukeluo.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="React" scheme="https://dukeluo.github.io/tags/React/"/>
+    
+    <category term="Hook" scheme="https://dukeluo.github.io/tags/Hook/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用 patch-package 修改第三方依赖库</title>
-    <link href="https://dukeluo.github.io/2021/03/07/modify-third-package.html"/>
-    <id>https://dukeluo.github.io/2021/03/07/modify-third-package.html</id>
+    <link href="https://dukeluo.github.io/2021/03/06/modify-third-package.html"/>
+    <id>https://dukeluo.github.io/2021/03/06/modify-third-package.html</id>
     <published>2021-03-06T16:00:00.000Z</published>
     <updated>2021-03-07T10:55:00.452Z</updated>
     
@@ -37,8 +58,8 @@
   
   <entry>
     <title>使用 git rebase 合并历史提交和修改记录 Commit Message</title>
-    <link href="https://dukeluo.github.io/2020/05/07/git-rebase.html"/>
-    <id>https://dukeluo.github.io/2020/05/07/git-rebase.html</id>
+    <link href="https://dukeluo.github.io/2020/05/06/git-rebase.html"/>
+    <id>https://dukeluo.github.io/2020/05/06/git-rebase.html</id>
     <published>2020-05-06T16:00:00.000Z</published>
     <updated>2020-06-02T15:41:04.030Z</updated>
     
@@ -56,8 +77,8 @@
   
   <entry>
     <title>博客除草计划（二）：GitHub Pages Deploy Action 部署 hexo 博客</title>
-    <link href="https://dukeluo.github.io/2020/04/14/blog-clean-plan-2.html"/>
-    <id>https://dukeluo.github.io/2020/04/14/blog-clean-plan-2.html</id>
+    <link href="https://dukeluo.github.io/2020/04/13/blog-clean-plan-2.html"/>
+    <id>https://dukeluo.github.io/2020/04/13/blog-clean-plan-2.html</id>
     <published>2020-04-13T16:00:00.000Z</published>
     <updated>2020-04-16T14:28:52.689Z</updated>
     
@@ -79,8 +100,8 @@
   
   <entry>
     <title>博客除草计划（一）：使用 Backblaze、Cloudflare 和 rclone 管理博客图片</title>
-    <link href="https://dukeluo.github.io/2020/02/12/blog-clean-plan-1.html"/>
-    <id>https://dukeluo.github.io/2020/02/12/blog-clean-plan-1.html</id>
+    <link href="https://dukeluo.github.io/2020/02/11/blog-clean-plan-1.html"/>
+    <id>https://dukeluo.github.io/2020/02/11/blog-clean-plan-1.html</id>
     <published>2020-02-11T16:00:00.000Z</published>
     <updated>2020-11-29T05:36:22.662Z</updated>
     
@@ -98,8 +119,8 @@
   
   <entry>
     <title>从 html 到 pdf，为 Slowly 信件换衣裳</title>
-    <link href="https://dukeluo.github.io/2020/02/08/slowly-html-pdf.html"/>
-    <id>https://dukeluo.github.io/2020/02/08/slowly-html-pdf.html</id>
+    <link href="https://dukeluo.github.io/2020/02/07/slowly-html-pdf.html"/>
+    <id>https://dukeluo.github.io/2020/02/07/slowly-html-pdf.html</id>
     <published>2020-02-07T16:00:00.000Z</published>
     <updated>2020-11-29T05:29:04.235Z</updated>
     
@@ -123,8 +144,8 @@
   
   <entry>
     <title>千山助手，开发之初体验</title>
-    <link href="https://dukeluo.github.io/2018/11/10/practice-qianshan.html"/>
-    <id>https://dukeluo.github.io/2018/11/10/practice-qianshan.html</id>
+    <link href="https://dukeluo.github.io/2018/11/09/practice-qianshan.html"/>
+    <id>https://dukeluo.github.io/2018/11/09/practice-qianshan.html</id>
     <published>2018-11-09T16:00:00.000Z</published>
     <updated>2018-12-04T20:18:06.000Z</updated>
     
@@ -146,8 +167,8 @@
   
   <entry>
     <title>翻译 | 深入理解JavaScirpt的函数调用和&quot;this&quot;</title>
-    <link href="https://dukeluo.github.io/2018/07/31/javascript-invocation-this.html"/>
-    <id>https://dukeluo.github.io/2018/07/31/javascript-invocation-this.html</id>
+    <link href="https://dukeluo.github.io/2018/07/30/javascript-invocation-this.html"/>
+    <id>https://dukeluo.github.io/2018/07/30/javascript-invocation-this.html</id>
     <published>2018-07-30T16:00:00.000Z</published>
     <updated>2018-07-31T04:39:00.000Z</updated>
     
@@ -167,8 +188,8 @@
   
   <entry>
     <title>CSS学习（二）：背景图片如何定位？</title>
-    <link href="https://dukeluo.github.io/2018/07/10/css-bgposition.html"/>
-    <id>https://dukeluo.github.io/2018/07/10/css-bgposition.html</id>
+    <link href="https://dukeluo.github.io/2018/07/09/css-bgposition.html"/>
+    <id>https://dukeluo.github.io/2018/07/09/css-bgposition.html</id>
     <published>2018-07-09T16:00:00.000Z</published>
     <updated>2018-07-17T03:26:48.000Z</updated>
     
@@ -190,8 +211,8 @@
   
   <entry>
     <title>DOM中事件处理程序的第一个参数？</title>
-    <link href="https://dukeluo.github.io/2018/06/20/dom-event-1.html"/>
-    <id>https://dukeluo.github.io/2018/06/20/dom-event-1.html</id>
+    <link href="https://dukeluo.github.io/2018/06/19/dom-event-1.html"/>
+    <id>https://dukeluo.github.io/2018/06/19/dom-event-1.html</id>
     <published>2018-06-19T16:00:00.000Z</published>
     <updated>2018-06-23T05:14:38.000Z</updated>
     
@@ -213,8 +234,8 @@
   
   <entry>
     <title>一道Leetcode题引起的思考：Segmentation fault是什么？</title>
-    <link href="https://dukeluo.github.io/2018/06/15/c-segfault.html"/>
-    <id>https://dukeluo.github.io/2018/06/15/c-segfault.html</id>
+    <link href="https://dukeluo.github.io/2018/06/14/c-segfault.html"/>
+    <id>https://dukeluo.github.io/2018/06/14/c-segfault.html</id>
     <published>2018-06-14T16:00:00.000Z</published>
     <updated>2018-06-15T19:09:12.000Z</updated>
     
@@ -234,8 +255,8 @@
   
   <entry>
     <title>CSS学习（一）：清除浮动</title>
-    <link href="https://dukeluo.github.io/2018/05/13/css-clearfix.html"/>
-    <id>https://dukeluo.github.io/2018/05/13/css-clearfix.html</id>
+    <link href="https://dukeluo.github.io/2018/05/12/css-clearfix.html"/>
+    <id>https://dukeluo.github.io/2018/05/12/css-clearfix.html</id>
     <published>2018-05-12T16:00:00.000Z</published>
     <updated>2018-05-23T02:25:30.000Z</updated>
     
@@ -257,8 +278,8 @@
   
   <entry>
     <title>官方支持，Hexo博客自定义域名开启HTTPS</title>
-    <link href="https://dukeluo.github.io/2018/05/08/hexo-https.html"/>
-    <id>https://dukeluo.github.io/2018/05/08/hexo-https.html</id>
+    <link href="https://dukeluo.github.io/2018/05/07/hexo-https.html"/>
+    <id>https://dukeluo.github.io/2018/05/07/hexo-https.html</id>
     <published>2018-05-07T16:00:00.000Z</published>
     <updated>2018-05-11T18:01:20.000Z</updated>
     
@@ -278,8 +299,8 @@
   
   <entry>
     <title>剖析链表，链表常用操作集合</title>
-    <link href="https://dukeluo.github.io/2018/05/04/linkedlist-1.html"/>
-    <id>https://dukeluo.github.io/2018/05/04/linkedlist-1.html</id>
+    <link href="https://dukeluo.github.io/2018/05/03/linkedlist-1.html"/>
+    <id>https://dukeluo.github.io/2018/05/03/linkedlist-1.html</id>
     <published>2018-05-03T16:00:00.000Z</published>
     <updated>2018-05-07T00:00:54.000Z</updated>
     
@@ -301,8 +322,8 @@
   
   <entry>
     <title>定制自己的Hexo博客主题Landscape</title>
-    <link href="https://dukeluo.github.io/2018/04/20/hexo-customization-1.html"/>
-    <id>https://dukeluo.github.io/2018/04/20/hexo-customization-1.html</id>
+    <link href="https://dukeluo.github.io/2018/04/19/hexo-customization-1.html"/>
+    <id>https://dukeluo.github.io/2018/04/19/hexo-customization-1.html</id>
     <published>2018-04-19T16:00:00.000Z</published>
     <updated>2018-05-07T00:00:56.000Z</updated>
     
@@ -322,8 +343,8 @@
   
   <entry>
     <title>Algs4笔记（七） --- 符号表与二叉查找树</title>
-    <link href="https://dukeluo.github.io/2018/04/15/algs4-notes-7.html"/>
-    <id>https://dukeluo.github.io/2018/04/15/algs4-notes-7.html</id>
+    <link href="https://dukeluo.github.io/2018/04/14/algs4-notes-7.html"/>
+    <id>https://dukeluo.github.io/2018/04/14/algs4-notes-7.html</id>
     <published>2018-04-14T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
@@ -345,8 +366,8 @@
   
   <entry>
     <title>C语言实现贪吃蛇步骤实述</title>
-    <link href="https://dukeluo.github.io/2018/03/28/practice-snake.html"/>
-    <id>https://dukeluo.github.io/2018/03/28/practice-snake.html</id>
+    <link href="https://dukeluo.github.io/2018/03/27/practice-snake.html"/>
+    <id>https://dukeluo.github.io/2018/03/27/practice-snake.html</id>
     <published>2018-03-27T16:00:00.000Z</published>
     <updated>2018-12-04T20:18:06.000Z</updated>
     
@@ -366,8 +387,8 @@
   
   <entry>
     <title>Algs4笔记（六） --- 冒泡排序与排序算法总结</title>
-    <link href="https://dukeluo.github.io/2018/03/14/algs4-notes-6.html"/>
-    <id>https://dukeluo.github.io/2018/03/14/algs4-notes-6.html</id>
+    <link href="https://dukeluo.github.io/2018/03/13/algs4-notes-6.html"/>
+    <id>https://dukeluo.github.io/2018/03/13/algs4-notes-6.html</id>
     <published>2018-03-13T16:00:00.000Z</published>
     <updated>2018-08-07T04:35:02.000Z</updated>
     
@@ -389,8 +410,8 @@
   
   <entry>
     <title>Algs4笔记（五） --- 堆、优先队列与堆排序</title>
-    <link href="https://dukeluo.github.io/2018/03/09/algs4-notes-5.html"/>
-    <id>https://dukeluo.github.io/2018/03/09/algs4-notes-5.html</id>
+    <link href="https://dukeluo.github.io/2018/03/08/algs4-notes-5.html"/>
+    <id>https://dukeluo.github.io/2018/03/08/algs4-notes-5.html</id>
     <published>2018-03-08T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
@@ -412,36 +433,13 @@
   
   <entry>
     <title>Algs4笔记（四） --- 归并排序与快速排序</title>
-    <link href="https://dukeluo.github.io/2018/03/04/algs4-notes-4.html"/>
-    <id>https://dukeluo.github.io/2018/03/04/algs4-notes-4.html</id>
+    <link href="https://dukeluo.github.io/2018/03/03/algs4-notes-4.html"/>
+    <id>https://dukeluo.github.io/2018/03/03/algs4-notes-4.html</id>
     <published>2018-03-03T16:00:00.000Z</published>
     <updated>2018-05-11T18:03:44.000Z</updated>
     
     
     <summary type="html">介绍基本排序算法：归并序和快速排序。</summary>
-    
-    
-    
-    <category term="算法" scheme="https://dukeluo.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="Notes" scheme="https://dukeluo.github.io/tags/Notes/"/>
-    
-    <category term="Algs4" scheme="https://dukeluo.github.io/tags/Algs4/"/>
-    
-    <category term="Java" scheme="https://dukeluo.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Algs4笔记（三） --- 选择排序、插入排序与希尔排序</title>
-    <link href="https://dukeluo.github.io/2018/03/02/algs4-notes-3.html"/>
-    <id>https://dukeluo.github.io/2018/03/02/algs4-notes-3.html</id>
-    <published>2018-03-01T16:00:00.000Z</published>
-    <updated>2018-05-11T18:03:44.000Z</updated>
-    
-    
-    <summary type="html">介绍基本排序算法：选择排序、插入排序和希尔排序。</summary>
     
     
     
